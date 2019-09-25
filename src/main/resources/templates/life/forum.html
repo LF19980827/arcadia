@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Arcadia - 大学生活</title>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--    <script src="../../static/js/jquery-1.12.4.min.js"></script>-->
+    <!--    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="../../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /*body * {*/
+        /*    outline: 1px solid gainsboro;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display  影院品牌logo-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">失物招领<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">发布</a></li>
+                        <li><a href="#">发布</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">社团活动<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">社团纳新</a></li>
+                        <li><a href="#">学分互动</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">表白墙<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">发布</a></li>
+                        <li><a href="#">查看</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">大学生活<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">在线交友</a></li>
+                        <li><a href="#">ＸＸＸ</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="表白墙">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="log_in"><a href="login_user.html">登陆</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">个人中心<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../personalInformation.html">我的资料</a></li>
+                        <li><a href="../personAttention.html">我的关注</a></li>
+                        <li><a href="../personFan.html">我的粉丝</a></li>
+                        <li><a href="../personCollection.html">我的收藏</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="../personNotification.html">我的消息</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- 巨幕 -->
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="img/9a504fc2d5628535d097abde96ef76c6a6ef63dd.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
+<div class="container-fluid bg-color">
+    <div class="row">
+        <div class="col-lg-2 hidden-md hidden-sm hidden-xs">
+            <div class="panel panel=primary">
+                <div class="list-group">
+                    <a href="#" class="list-group-item disabled">校园论坛</a>
+                    <a href="#" class="list-group-item ">同校交友</a>
+                    <a href="#" class="list-group-item ">其他</a>
+                    <a href="#" class="list-group-item ">其他</a>
+                    <a href="#" class="list-group-item ">其他</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <!--3右下方模块-->
+            <div class="page-header">
+                <h1>校园论坛
+                    <small>在这里,分享你的生活!</small>
+                    <a class="btn btn-default" href="#" role="button" style="float: right">我要发帖</a>
+                </h1>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">置顶<a style="float: right" href="#" class="text-muted">更多</a></h3>
+
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <th>标题</th>
+                            <th>楼主</th>
+                            <th>楼层</th>
+                            <th>人气</th>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="#"> 为新中国成立70周年献礼！</a></strong></td>
+                            <td class="text-muted"><a href="#">Benjamin</a></td>
+                            <td class="text-muted">999</td>
+                            <td class="text-muted">999</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="#"> 为新中国成立70周年献礼！</a></strong></td>
+                            <td class="text-muted"><a href="#">Benjamin</a></td>
+                            <td class="text-muted">999</td>
+                            <td class="text-muted">999</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">热帖·学习区<a style="float: right" href="#" class="text-muted">更多</a></h3>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#">LeetCode周赛题目，第一名写的代码，看不懂，求解释。</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#">LeetCode周赛题目，第一名写的代码，看不懂，求解释。</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#">LeetCode周赛题目，第一名写的代码，看不懂，求解释。</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#">LeetCode周赛题目，第一名写的代码，看不懂，求解释。</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#">LeetCode周赛题目，第一名写的代码，看不懂，求解释。</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">热帖·生活区<a style="float: right" href="#" class="text-muted">更多</a></h3>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#"> 你们国庆放几天？ 从几号到几号？</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#"> 你们国庆放几天？ 从几号到几号？</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#"> 你们国庆放几天？ 从几号到几号？</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#"> 你们国庆放几天？ 从几号到几号？</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 90%"><strong><a href="#"> 你们国庆放几天？ 从几号到几号？</a></strong></td>
+                            <td class="text-muted">1天以前</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+            <div >
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+    $('.carousel').carousel({
+        interval: 1000
+    });
+
+</script>
+
+</body>
+</html>
