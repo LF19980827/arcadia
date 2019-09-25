@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
-
+    <!--    <script src="https://cdn.staticfile.org/jquery/2.3.1/jquery.min.js"></script>-->
+    <!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="../static/js/jquery-1.12.4.min.js"></script>
     <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-
 <!--导航条-->
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
@@ -106,10 +106,10 @@
                 <div class="list-group">
                     <a href="personalInformation.html" class="list-group-item ">个人资料</a>
                     <a href="personCollection.html" class="list-group-item ">我的收藏</a>
-                    <a href="#" class="list-group-item disabled">我的关注</a>
+                    <a href="personAttention.html" class="list-group-item">我的关注</a>
                     <a href="personFan.html" class="list-group-item">我的粉丝</a>
                     <a href="personActivity.html" class="list-group-item">活动轨迹</a>
-                    <a href="personNotification.html" class="list-group-item">消息与通知</a>
+                    <a href="#" class="list-group-item disabled">消息与通知</a>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
         <div class="col-lg-8">
             <!--3右下方模块-->
             <div>
-                <h1>我的关注</h1>
+                <h1>消息与通知</h1>
             </div>
 
             <ul class="nav nav-list"><li class="divider"></li></ul>
@@ -126,28 +126,31 @@
                 <ul class="personCollectionList">
                     <li>
                         <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <div class="col-lg-11"><h3 class="panel-title">消息标题1</h3></div>
+                                <div ><span class="glyphicon glyphicon-heart" aria-hidden="true">删除消息</span></div>
+                            </div>
                             <div class="panel-body">
-                                <img src="../static/img/1.jpg" width="80" height="80" alt="">
-                                <a href="#">我关注的人1</a>
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true">取消关注</span>
+                                消息内容简介
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                <div class="col-lg-11"><h3 class="panel-title">邮件标题1</h3></div>
+                                <div ><span class="glyphicon glyphicon-heart" aria-hidden="true">删除邮件</span></div>
+                            </div>
                             <div class="panel-body">
-                                <img src="../static/img/2.png" width="80" height="80" alt="">
-                                <a href="#">我关注的人2</a>
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true">取消关注</span>
+                                删除内容简介
                             </div>
                         </div>
                     </li>
-
                 </ul>
             </div>
-
             <ul class="nav nav-list"><li class="divider"></li></ul>
-
             <div class="col-lg-4"></div>
             <div >
                 <nav aria-label="Page navigation">
@@ -171,7 +174,6 @@
                 </nav>
             </div>
 
-        </div>
         </div>
 
 

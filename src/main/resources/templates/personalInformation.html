@@ -8,8 +8,8 @@
     <title>Bootstrap 101 Template</title>
 
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.3.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -104,11 +104,11 @@
             <div class="panel panel=primary">
                 <div class="list-group">
                     <a href="#" class="list-group-item disabled">个人资料</a>
-                    <a href="#" class="list-group-item">我的收藏</a>
-                    <a href="#" class="list-group-item">我的关注</a>
-                    <a href="#" class="list-group-item">我的粉丝</a>
-                    <a href="#" class="list-group-item">活动轨迹</a>
-                    <a href="#" class="list-group-item">邮件</a>
+                    <a href="personCollection.html" class="list-group-item">我的收藏</a>
+                    <a href="personAttention.html" class="list-group-item">我的关注</a>
+                    <a href="personFan.html" class="list-group-item">我的粉丝</a>
+                    <a href="personActivity.html" class="list-group-item">活动轨迹</a>
+                    <a href="personNotification.html" class="list-group-item">消息与通知</a>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="col-lg-5">
 <!--                        <button class="btn btn-primary btn-sm" id="user_update_modal_btn">修改资料</button>-->
-                        <span class="mod"><a href="#">修改资料</a> </span>
+                        <span class="mod" id="user_update_modal_btn">修改资料 </span>
                     </div>
                 </div>
                 <div class="row_person_right_2">
@@ -159,49 +159,89 @@
     </div>
 
 
-<!--&lt;!&ndash; 修改资料的模态框 &ndash;&gt;-->
-<!--<div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-<!--                <h4 class="modal-title" id="myModalLabel">员工添加</h4>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <form class="form-horizontal">-->
-<!--                    <div class="form-group">-->
-<!--                        <label class="col-sm-2 control-label">empName</label>-->
-<!--                        <div class="col-sm-10">-->
-<!--                            <input type="text" name="empName" class="form-control" id="empName_add_input" placeholder="empName">-->
-<!--                            <span class="help-block"></span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label class="col-sm-2 control-label">email</label>-->
-<!--                        <div class="col-sm-10">-->
-<!--                            <input type="text" name="email" class="form-control" id="email_add_input" placeholder="email@qq.com">-->
-<!--                            <span class="help-block"></span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--                <button type="button" class="btn btn-primary" id="employee_save_btn">保存</button>-->
-<!--                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<!-- 修改资料的模态框 -->
+<div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">个人资料修改</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="userName" class="form-control" id="userName_add_input" placeholder="userName">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender1_add_input" value="男" checked="checked"> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender2_add_input" value="女"> 女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">生日</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="userBirth" class="form-control" id="userBirth_add_input" placeholder="userBirth">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">地区</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="userArea" class="form-control" id="userArea_add_input" placeholder="userArea">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">行业</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="userJob" class="form-control" id="userJob_add_input" placeholder="userJob">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">职位</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="userPosition" class="form-control" id="userPosition_add_input" placeholder="userPosition">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">简介</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="userIntroduction" class="form-control" id="userIntroduction_add_input" placeholder="userIntroduction">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
 
-<!--<script type="text/javascript">-->
-<!--    $("#user_update_modal_btn").click(function () {-->
-<!--        //清除表单数据（重置）-->
-<!--        //发送Ajax请求-->
-<!--        //弹出模态框-->
-<!--        $("#userUpdateModal").modal({-->
-<!--            backdrop:"static"-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="employee_save_btn">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#user_update_modal_btn").click(function () {
+        //清除表单数据（重置）
+        //发送Ajax请求
+        //弹出模态框
+        $("#userUpdateModal").modal({
+            backdrop:"static"
+        });
+    });
+</script>
 </body>
 </html>
