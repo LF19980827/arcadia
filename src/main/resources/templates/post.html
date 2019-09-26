@@ -144,6 +144,41 @@
                             </div>
                         </div>
                         <div class="col-lg-10">
+                            <div class="panel panel-default" style="padding: 0;">
+                                <p>
+                                    wowpH
+                                    Bbs1
+                                    Blank
+                                    结帖率 100%
+                                    题目链接，题目来源 LeetCode 第 9 场双周赛
+
+                                    算法版，版主都没有，人太少。。。只能发这里来了。
+
+                                    第一名uwi的代码如下：
+                                    class Solution {
+                                    public int minKnightMoves(    int x, int y) {
+                                    return (int) knightDistance(x, y);
+                                    }
+
+                                    public long knightDistance(    long r, long c) {
+                                    r = Math.abs(r);
+                                    c = Math.abs(c);
+                                    if (r + c == 0)
+                                    return 0;
+                                    if (r + c == 1)
+                                    return 3;
+                                    if (r == 2 && c == 2)
+                                    return 4;
+
+                                    // 下面代码，，，大佬的思路理解不了。。。或者说我太菜。。。
+                                    long step = Math.max((r + 1) / 2, (c + 1) / 2);
+                                    step = Math.max(step, (r + c + 2) / 3);
+                                    step += (step ^ r ^ c) & 1;
+                                    return step;
+                                    }
+                                    }
+                                </p>
+                            </div>
 
                         </div>
                     </div>
