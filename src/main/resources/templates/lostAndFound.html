@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
+    <script src="../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display  影院品牌logo-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >失物招领<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">发布</a></li>
+                        <li><a href="#">发布</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">社团活动<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">社团纳新</a></li>
+                        <li><a href="#">学分互动</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表白墙<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">发布</a></li>
+                        <li><a href="#">查看</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">大学生活<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">在线交友</a></li>
+                        <li><a href="#">ＸＸＸ</a></li>
+                        <li role="separator" class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="表白墙">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="log_in"><a href="login_user.html">登陆</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">我的资料</a></li>
+                        <li><a href="#">我的关注</a></li>
+                        <li><a href="#">点赞</a></li>
+                        <li><a href="#">收藏</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">我的消息</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- 巨幕 -->
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="img/9a504fc2d5628535d097abde96ef76c6a6ef63dd.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container-fluid bg-color">
+        <div class="row">
+            <div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
+                <div class="panel panel=primary">
+                    <div class="heading">失物招领</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+                <div class="panel panel=primary">
+                    <div class="heading">社团活动</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+                <div class="panel panel=primary">
+                    <div class="heading">表白墙</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+                <div class="panel panel=primary">
+                    <div class="heading">其它活动</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <nav class="navbar navbar-default navbar-static-top nav02 hidden-xs">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">首页</span></a></li>
+                                <li><a href="#">失物招领</a></li>
+                            </ul>
+                            <form action="" class="navbar-form navbar-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="搜索">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <p>今天下午篮球场丢了一个手机，华为p30,蓝色，希望捡到的同学能联系我，谢谢，联系方式：13773217899</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>有哪个小可爱拾到一张银行卡吗，农业银行的，尾号是592952，希望拾到的小可爱能联系我qq：1537177801</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>今天下午篮球场丢了一个手机，华为p30,蓝色，希望捡到的同学能联系我，谢谢，联系方式：13773217899</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>有哪个小可爱拾到一张银行卡吗，农业银行的，尾号是592952，希望拾到的小可爱能联系我qq：1537177801</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>今天下午篮球场丢了一个手机，华为p30,蓝色，希望捡到的同学能联系我，谢谢，联系方式：13773217899</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>有哪个小可爱拾到一张银行卡吗，农业银行的，尾号是592952，希望拾到的小可爱能联系我qq：1537177801</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>今天下午篮球场丢了一个手机，华为p30,蓝色，希望捡到的同学能联系我，谢谢，联系方式：13773217899</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <p>有哪个小可爱拾到一张银行卡吗，农业银行的，尾号是592952，希望拾到的小可爱能联系我qq：1537177801</p>
+                        <img src="1.jpg" width="200" height="113">
+                    </div>
+                    <div>
+                        <div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    </div>
+
+    </div>
+</div>
+
+</body>
+</html>
