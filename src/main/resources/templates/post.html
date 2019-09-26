@@ -7,15 +7,15 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Arcadia - 帖子</title>
 
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <!--    <script src="../../static/js/jquery-1.12.4.min.js"></script>-->
     <!--    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>-->
-    <script src="../../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <style>
-        body * {
-            outline: 1px solid gainsboro;
-        }
+        /*body * {*/
+        /*    outline: 1px solid gainsboro;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -86,12 +86,12 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">个人中心<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="../personalInformation.html">我的资料</a></li>
-                        <li><a href="../personAttention.html">我的关注</a></li>
-                        <li><a href="../personFan.html">我的粉丝</a></li>
-                        <li><a href="../personCollection.html">我的收藏</a></li>
+                        <li><a href="personalInformation.html">我的资料</a></li>
+                        <li><a href="personAttention.html">我的关注</a></li>
+                        <li><a href="personFan.html">我的粉丝</a></li>
+                        <li><a href="personCollection.html">我的收藏</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="../personNotification.html">我的消息</a></li>
+                        <li><a href="personNotification.html">我的消息</a></li>
                     </ul>
                 </li>
             </ul>
@@ -104,7 +104,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="img/9a504fc2d5628535d097abde96ef76c6a6ef63dd.jpg" alt="">
+                <img class="img-responsive" src="../static/img/11111111.jpg" alt="">
             </div>
         </div>
     </div>
@@ -113,17 +113,7 @@
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
     <div class="row">
-        <div class="col-lg-2 hidden-md hidden-sm hidden-xs">
-            <!--            <div class="panel panel=primary">-->
-            <!--                <div class="list-group">-->
-            <!--                    <a href="#" class="list-group-item disabled">校园论坛</a>-->
-            <!--                    <a href="#" class="list-group-item ">同校交友</a>-->
-            <!--                    <a href="#" class="list-group-item ">其他</a>-->
-            <!--                    <a href="#" class="list-group-item ">其他</a>-->
-            <!--                    <a href="#" class="list-group-item ">其他</a>-->
-            <!--                </div>-->
-            <!--            </div>-->
-        </div>
+        <div class="col-lg-2 hidden-md hidden-sm hidden-xs"></div>
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -136,29 +126,20 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-2">
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
-                                        data-toggle="dropdown" data-hover="dropdown">
-                                    主题
-                                    <span class="caret"></span>
+                        <div class="col-lg-2 panel panel-default">
+                            <div class="dropup">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="http://benjaminlee.cn:8989/hello/images/20181115213421.jpg" style="height: 100px;width: 100px;">
                                 </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Java</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">
-                                            数据通信/网络
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
-                                    </li>
+                                <ul class="list-group" style="text-align: center">
+                                    <li class="list-group-item"><a href="#">Benjamin</a></li>
+                                </ul>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
                                 </ul>
                             </div>
                         </div>
