@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,168 +8,759 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
 
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
     <script src="../static/js/jquery-1.12.4.min.js"></script>
     <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
 </head>
+
 <body>
-<!--导航条-->
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display  影院品牌logo-->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
-        </div>
+    <!--导航条-->
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display  影院品牌logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >失物招领<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">发布</a></li>
-                        <li><a href="#">发布</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">社团活动<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">社团纳新</a></li>
-                        <li><a href="#">学分互动</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表白墙<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">发布</a></li>
-                        <li><a href="#">查看</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">大学生活<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">在线交友</a></li>
-                        <li><a href="#">ＸＸＸ</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="表白墙">
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li id="log_in"><a href="login_user.html">登陆</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="personalInformation.html">我的资料</a></li>
-                        <li><a href="personAttention.html">我的关注</a></li>
-                        <li><a href="personFan.html">我的粉丝</a></li>
-                        <li><a href="personCollection.html">我的收藏</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="personNotification.html">我的消息</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-
-<!-- 巨幕 -->
-<div class="jumbotron">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <img class="img-responsive" src="img/9a504fc2d5628535d097abde96ef76c6a6ef63dd.jpg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
-<div class="container-fluid bg-color">
-    <div class="row">
-        <div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
-            <div class="panel panel=primary">
-                <div class="heading">礼物卡</div>
-                <div class="panel-body">
-                    <a href="#"> 现在已经推出</a>
-                </div>
-            </div>
-            <div class="panel panel=primary">
-                <div class="heading">礼物卡</div>
-                <div class="panel-body">
-                    <a href="#"> 现在已经推出</a>
-                </div>
-            </div>
-            <div class="panel panel=primary">
-                <div class="heading">礼物卡</div>
-                <div class="panel-body">
-                    <a href="#"> 现在已经推出</a>
-                </div>
-            </div>
-            <div class="panel panel=primary">
-                <div class="heading">礼物卡</div>
-                <div class="panel-body">
-                    <a href="#"> 现在已经推出</a>
-                    <a href="#"> 现在已经推出</a>
-                    <a href="#"> 现在已经推出</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-8">
-            <nav class="navbar navbar-default navbar-static-top nav02 hidden-xs">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">首页</span></a></li>
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">首页</a></li>
+            <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">失物招领<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">发布</a></li>
+                            <li><a href="#">发布</a></li>
+                            <li role="separator" class="divider"></li>
                         </ul>
-                        <form action="" class="navbar-form navbar-right">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="搜索">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">社团活动<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">社团纳新</a></li>
+                            <li><a href="#">学分互动</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">表白墙<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">发布</a></li>
+                            <li><a href="#">查看</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">大学生活<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">在线交友</a></li>
+                            <li><a href="#">ＸＸＸ</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="表白墙">
                     </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="log_in"><a href="login_user.html">登陆</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">个人中心<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="personalInformation.html">我的资料</a></li>
+                            <li><a href="personAttention.html">我的关注</a></li>
+                            <li><a href="personFan.html">我的粉丝</a></li>
+                            <li><a href="personCollection.html">我的收藏</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="personNotification.html">我的消息</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- 巨幕 -->
+    <div class="jumbotron"
+         style="background:url(../static/img/bigm.jpg);background-size:cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <img class="img-responsive" alt="" style="width:100%;height:100px;"> -->
                 </div>
-            </nav>
-            <div class="banner01">
-                <h4 style="color:white;margin-top:40px">精选和推荐</h4>
-
-                       
-                    </div>
-                </div>
-                
+            </div>
+        </div>
     </div>
-</div>
-<script type="text/javascript">
-    $('.carousel').carousel({
-        interval:1000
-    });
 
-</script>
+
+    <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
+    <div class="container-fluid bg-color">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2 hidden-md hidden-sm hidden-xs">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation" class="active"><a href="#">推荐</a></li>
+                    <li role="presentation"><a href="#">关注</a></li>
+                    <li role="presentation"><a href="#">其他</a></li>
+                    <li role="presentation"><a href="#">其他</a></li>
+                    <li role="presentation"><a href="#">其他</a></li>
+                    <li role="presentation"><a href="#">其他</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"style="font-size:18px;font-weight:800;color:#ddd">
+                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">失物一览</a>
+                    </li>
+                    <li role="presentation"style="font-size:18px;font-weight:800;color:#ddd">
+                        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">表白天地</a>
+                    </li>
+                    <li role="presentation"style="font-size:18px;font-weight:800;color:#ddd">
+                        <a href="#message" aria-controls="message" role="tab" data-toggle="tab">社团纳新</a>
+                    </li>
+                    <li role="presentation"style="font-size:18px;font-weight:800;color:#ddd">
+                        <a href="#setting" aria-controls="setting" role="tab" data-toggle="tab">趣事中心</a>
+                    </li>
+                </ul>
+                <!-- 使用bootstarp面板组件实现 -->
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="home">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    </ol>
+                                    <!--Wrapper for slides  -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px;margin-top: 10px">
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="profile">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    </ol>
+                                    <!--Wrapper for slides  -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px;margin-top: 10px">
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="message">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    </ol>
+                                    <!--Wrapper for slides  -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px;margin-top: 10px">
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="setting">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    </ol>
+                                    <!--Wrapper for slides  -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="../static/img/timg%20.jpeg" alt="">
+                                            <div class="carousel-caption">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px">
+                                <img src="../static/img/timg%20.jpeg" alt="" style="width: 330px;height:120px;margin-top: 10px">
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="list_con">
+                                    <div class="title">
+                                        <h2>
+                                            <a href="https://blog.csdn.net/morixinguan/article/details/100826483"
+                                                target="_blank"
+                                                data-report-click='{"mod":"popu_459","dest":"https://blog.csdn.net/morixinguan/article/details/100826483","strategy":"alirecmd","index":"0","extend1":"1007.58626.121967.100200300000000:300b8a86-7b76-4bd4-bfd1-a80e2f9e4b53:gxgalaxy:0:0:0:::36:content___100826483:article:cd:2.91949820728794:0.0590549086390727:21.36588155653197:1569419079204::::::::::"}'>
+                                                C语言在开发中的应用博文汇总贴 </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="summary">
+                                        自己成长的同时也不要忘记带动别人一起成长，前人种树，后人乘凉，我宁愿做种树人，让读者乘凉。以下有些文章时间比较长了，这里只做汇总，随着个人能力的提升，不可否认有些文章中描述的有不正确或者不恰当的地方，如果您看到了，请帮忙指出，感谢您对我的支持。一、C基础关于C语言中输出格式C语言指针分析(一)浅谈C之精华—指针C语言关键字static的绝妙用途C语言结构体深度剖析对嵌入式开发C语言...
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-2">
+                <div class="right_box">
+                    <h3 class="feed_new_tit">
+                        <span class="line"></span><span class="txt" style="font-size: 18px;">今日推荐</span>
+                    </h3>
+                    <div class="feed_company csdn-tracking-statistics" data-dsm="post">
+                        <ul class="company_list">
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/tangxiaoyin/article/details/101354014","strategy":"","index":"0"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/tangxiaoyin/article/details/101354014","strategy":"","index":"0"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/tangxiaoyin/article/details/101354014"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190925/e86281f4a441f0c2a9f953065edc9acf.png?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="阿里 20 年，逍遥子宣告「全面迈入数字经济时代」"
+                                            href="https://blog.csdn.net/tangxiaoyin/article/details/101354014"
+                                            target="_blank">阿里 20 年，逍遥子宣告「全面迈入数字经济时代」</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380","strategy":"","index":"1"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380","strategy":"","index":"1"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190923/7898671f5c797f0dde22cb4e01679ddf.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="架构师必备技能：教你画出一张合格的技术架构图"
+                                            href="https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380"
+                                            target="_blank">架构师必备技能：教你画出一张合格的技术架构图</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blogdev.blog.csdn.net/article/details/101368277","strategy":"","index":"2"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blogdev.blog.csdn.net/article/details/101368277","strategy":"","index":"2"}'>
+                                <div class="img_box"><a href="https://blogdev.blog.csdn.net/article/details/101368277"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190909/e9934c13e0037b85d19dc9c28d46c984.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="CSDN日报190925：操作系统、数据库、架构干货来啦"
+                                            href="https://blogdev.blog.csdn.net/article/details/101368277"
+                                            target="_blank">CSDN日报190925：操作系统、数据库、架构干货来啦</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://aiprocon.csdn.net/m/topic/ai_procon/index","strategy":"","index":"3"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://aiprocon.csdn.net/m/topic/ai_procon/index","strategy":"","index":"3"}'>
+                                <div class="img_box"><a href="https://aiprocon.csdn.net/m/topic/ai_procon/index"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190910/b01fe63f1b85520f5010557121dca94a.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="【PPT下载+图文直播】2019 AI开发者大会精彩分享"
+                                            href="https://aiprocon.csdn.net/m/topic/ai_procon/index"
+                                            target="_blank">【PPT下载+图文直播】2019 AI开发者大会精彩分享</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189434","strategy":"","index":"4"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189434","strategy":"","index":"4"}'>
+                                <div class="img_box"><a href="https://blog.csdn.net/csdnnews/article/details/101189434"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190925/cf153ec1c904966d3890ba51b10e551d.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="“不给钱就删库”的勒索病毒， 程序员该如何防护？"
+                                            href="https://blog.csdn.net/csdnnews/article/details/101189434"
+                                            target="_blank">“不给钱就删库”的勒索病毒， 程序员该如何防护？</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189453","strategy":"","index":"5"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189453","strategy":"","index":"5"}'>
+                                <div class="img_box"><a href="https://blog.csdn.net/csdnnews/article/details/101189453"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190924/dd87db8ca59dee459e2928141b01bc1a.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="滴滴“负重”387天！"
+                                            href="https://blog.csdn.net/csdnnews/article/details/101189453"
+                                            target="_blank">滴滴“负重”387天！</a></h3>
+                                    <p class="txt oneline">滴滴“负重”387天！</p>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101129761","strategy":"","index":"6"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101129761","strategy":"","index":"6"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/csdnsevenn/article/details/101129761"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190925/dc8f0cd26be6b2d225e9e69fa95a6f1c.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="小白必看！Django 模板语言进阶！"
+                                            href="https://blog.csdn.net/csdnsevenn/article/details/101129761"
+                                            target="_blank">小白必看！Django 模板语言进阶！</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101180597","strategy":"","index":"7"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101180597","strategy":"","index":"7"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/csdnsevenn/article/details/101180597"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190924/cda63df23c981624459295745e849a0a.jpg?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="作为曾经的 Web 开发“王者”，jQuery 的传奇怎么续写？"
+                                            href="https://blog.csdn.net/csdnsevenn/article/details/101180597"
+                                            target="_blank">作为曾经的 Web 开发“王者”，jQuery 的传奇怎么续写？</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101014386","strategy":"","index":"8"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101014386","strategy":"","index":"8"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/csdnsevenn/article/details/101014386"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190920/ced29020f0f3782a38eca03e333e6326.png?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="谷歌开始收集面部数据，隐私问题再度引爆！"
+                                            href="https://blog.csdn.net/csdnsevenn/article/details/101014386"
+                                            target="_blank">谷歌开始收集面部数据，隐私问题再度引爆！</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101014386","strategy":"","index":"8"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101014386","strategy":"","index":"8"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/csdnsevenn/article/details/101014386"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190920/ced29020f0f3782a38eca03e333e6326.png?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="谷歌开始收集面部数据，隐私问题再度引爆！"
+                                            href="https://blog.csdn.net/csdnsevenn/article/details/101014386"
+                                            target="_blank">谷歌开始收集面部数据，隐私问题再度引爆！</a></h3>
+                                </div>
+                            </li>
+                            <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101014386","strategy":"","index":"8"}'
+                                data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101014386","strategy":"","index":"8"}'>
+                                <div class="img_box"><a
+                                        href="https://blog.csdn.net/csdnsevenn/article/details/101014386"
+                                        target="_blank"><img
+                                            src="https://csdnimg.cn/feed/20190920/ced29020f0f3782a38eca03e333e6326.png?x-oss-process=image/resize,h_64"
+                                            alt=""></a></div>
+                                <div class="content">
+                                    <h3 class="company_name"><a title="谷歌开始收集面部数据，隐私问题再度引爆！"
+                                            href="https://blog.csdn.net/csdnsevenn/article/details/101014386"
+                                            target="_blank">谷歌开始收集面部数据，隐私问题再度引爆！</a></h3>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <script type="text/javascript">
+            $('.carousel').carousel({
+                interval: 1000
+            });
+
+        </script>
+
+
+
+
+
 
 </body>
+
 </html>
