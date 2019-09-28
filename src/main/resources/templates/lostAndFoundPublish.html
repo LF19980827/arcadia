@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
-    <!--    <script src="https://cdn.staticfile.org/jquery/2.3.1/jquery.min.js"></script>-->
-    <!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <meta charset="UTF-8">
+    <title>Title</title>
     <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
     <script src="../static/js/jquery-1.12.4.min.js"></script>
     <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<body>
 <!--导航条-->
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display  影院品牌logo-->
         <div class="navbar-header">
@@ -105,91 +101,72 @@
     </div>
 </div>
 
-<!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
-<div class="container-fluid bg-color">
-    <div class="row">
-        <div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
-            <div class="panel panel=primary">
-                <div class="list-group">
-                    <a href="personalInformation.html" class="list-group-item ">个人资料</a>
-                    <a href="#" class="list-group-item disabled">我的收藏</a>
-                    <a href="personAttention.html" class="list-group-item">我的关注</a>
-                    <a href="personFan.html" class="list-group-item">我的粉丝</a>
-                    <a href="personActivity.html" class="list-group-item">活动轨迹</a>
-                    <a href="personNotification.html" class="list-group-item">消息与通知</a>
+<div>
+    <div class="container-fluid bg-color">
+        <div class="row">
+            <div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
+                <div class="panel panel=primary">
+                    <div class="heading">失物招领</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+                <div class="panel panel=primary">
+                    <div class="heading">社团活动</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+                <div class="panel panel=primary">
+                    <div class="heading">表白墙</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
+                </div>
+                <div class="panel panel=primary">
+                    <div class="heading">其它活动</div>
+                    <div class="panel-body">
+                        <a href="#"> 进入</a>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col-lg-8">
+                <nav class="navbar navbar-default navbar-static-top nav02 hidden-xs">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
 
-        <div class="col-lg-8">
-            <!--3右下方模块-->
-            <div>
-                <h1>我的收藏</h1>
-            </div>
-
-            <ul class="nav nav-list"><li class="divider"></li></ul>
-
-            <div >
-                <ul class="personCollectionList">
-                    <li>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-
-                                <div class="col-lg-11"><h3 class="panel-title">收藏标题1</h3></div>
-                                <div ><span class="glyphicon glyphicon-star" aria-hidden="true">取消收藏</span></div>
-                            </div>
-                            <div class="panel-body">
-                                收藏内容
-                            </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-
-                                <div class="col-lg-11"><h3 class="panel-title">收藏标题1</h3></div>
-                                <div ><span class="glyphicon glyphicon-star" aria-hidden="true">取消收藏</span></div>
-                            </div>
-                            <div class="panel-body">
-                                收藏内容
-                            </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">首页</span></a></li>
+                                <li><a href="#">失物招领发布</a></li>
+                            </ul>
+                            <form action="" class="navbar-form navbar-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="搜索">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                                </div>
+                            </form>
                         </div>
-                    </li>
-                </ul>
-            </div>
-            <ul class="nav nav-list"><li class="divider"></li></ul>
-            <div class="col-lg-4"></div>
-            <div >
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                    </div>
                 </nav>
-            </div>
-
-        </div>
-
-
-
-        </div>
-
-    </div>
-</div>
-
+                <div>
+                    <div>
+                        <input type="text" placeholder="失物说明及失主信息" onclick="" maxlength="100" style="width:800px; height:100px;">
+                    </div>
+                    <br>
+                    <div>
+                        <img src="#"  width="400px" height="300px">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="submit" value="发布" onclick="">
+                    </div>
+                </div>
 
 </body>
 </html>
