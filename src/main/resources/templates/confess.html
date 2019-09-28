@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>表白墙</title>
     <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
     <script src="../static/js/jquery-1.12.4.min.js"></script>
     <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -103,46 +103,32 @@
     <div class="row">
         <div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
             <div class="panel panel=primary">
-                <div class="heading">表白历史</div>
+                <div class="heading">失物招领</div>
                 <div class="panel-body">
                     <a href="#">进入</a>
                 </div>
             </div>
             <div class="panel panel=primary">
-                <div class="heading">同校表白</div>
+                <div class="heading">社团活动</div>
                 <div class="panel-body">
                     <a href="#">进入</a>
                 </div>
             </div>
             <div class="panel panel=primary">
-                <div class="heading">异校表白</div>
+                <div class="heading">大学生活</div>
                 <div class="panel-body">
                     <a href="#">进入</a>
                 </div>
             </div>
         </div>
+
         <div class="col-lg-8">
             <nav class="navbar navbar-default navbar-static-top nav02 hidden-xs">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">首页</span></a></li>
-                            <li><a href="#">表白墙</a></li>
-                        </ul>
-                        <form action="" class="navbar-form navbar-right">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="搜索">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
+                    <h1>表白墙
+                        <small>爱就要大声说出来</small>
+                        <a class="btn btn-default" href="#" role="button" style="float: right">我要发帖</a>
+                    </h1>
                 </div>
             </nav>
             <div class="panel panel-default">
@@ -205,18 +191,27 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-default" style="text-align: center">上一页</button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">1</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">2</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">3</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">4</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">5</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">6</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">7</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">8</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">9</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center"><a href="#">10</a></button>
-            <button type="button" class="btn btn-default" style="text-align: center">下一页</button>
+            <div style="text-align: center">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
         </div>
     </div>
