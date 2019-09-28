@@ -27,7 +27,7 @@
 
         .content {
             width: 400px;
-            height: 400px;
+            height: 500px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -88,7 +88,8 @@
             color:#fff;
         }
         .content input[type="text"],
-        .content input[type="password"] {
+        .content input[type="password"],
+        .content input[type="Telphone"]{
             padding: 13px 10px;
             width: 92.5%;
             font-size: 16px;
@@ -118,23 +119,6 @@
         .content input[type="submit"]:hover {
             transition-duration: 0.9s;
             background:rgba(91, 157, 214, 0.76);
-        }
-        .content .registe,
-        .content .forget{
-            margin-top:10px;
-            font-size: 16px;
-            font-family: 'Open Sans', sans-serif;
-            color:#fff;
-        }
-        .content .registe{
-            float: left;
-        }
-        .content .forget{
-            float: right;
-        }
-        .content .registe a,
-        .content .forget a{
-            color:#fff;
         }
 
     </style>
@@ -223,13 +207,14 @@
 
     <div class="content">
         <form action="">
-            <input type="text" name="name"placeholder="User name or email">
+            <input type="text" name="name"placeholder="User name">
             <br>
-            <input type="password" name="possword" placeholder="Password" class="padding">
+            <input type="Telphone" name="Telphone" placeholder="Telphone" class="padding">
+            <input type="password" name="oldpossword" placeholder="Old Password" class="padding">
+            <input type="password" name="newpossword" placeholder="New Password" class="padding">
             <br><br>
-            <input type="submit" class="demo" value="login">
-            <p class="registe"><a href="Registe.html">Registe</a></p>
-            <p class="forget"><a href="Forget.html">Forget Password</a></p>
+            <input type="submit" class="demo" value="REGISTER">
+
         </form>
 
     </div>
