@@ -13,9 +13,139 @@
     <script src="../static/js/jquery-1.12.4.min.js"></script>
     <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <style>
-        /*body * {*/
-        /*    outline: 1px solid gainsboro;*/
-        /*}*/
+    .wrapper {
+    border-bottom: 1px solid #ddd;
+    }
+
+    #person {
+    /* border: 1px solid #ddd; */
+    width: 14%;
+    height: 150px;
+    float: left;
+    display: inline-block;
+    position: absolute;
+    }
+
+    .panel-body img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    }
+
+    .discuss {
+    width: 85%;
+    height: 150px;
+    margin-left: 15%;
+    }
+
+    .discuss p {
+    text-indent: 2em;
+    font-size: 17px;
+
+    }
+
+    .discuss .text {
+    margin-top: 10px;
+    height: 75%;
+    }
+
+    .discuss .bot {
+    height: 25px;
+    }
+
+    .discuss .bot .tip {
+    float: right;
+    margin-right: 20px;
+    }
+    .main {
+        width: 100%;
+        border: 1px solid #ccc;
+        height: 160px;
+        margin: 0 auto;
+    }
+    .main .view {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        float: left;
+    }
+    .main .hover {
+        width: 100px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        text-align: center;
+        color: #fff;
+        transform: rotate(55deg);
+        transition: all 0.5s;
+        overflow: hidden;
+        height: 0;
+        z-index: 4000; /*transform:translateX(200px);*/
+    } /*写好样式，进行隐藏，用overflow:hidden; height:0;*/
+    .main .hover p {
+        line-height: 130%;
+        text-align: center;
+        color:#f5f5f5;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .main .view:hover .hover {
+        height: 120px;
+        transform: rotate(0deg);
+    }
+    /*before   after为选择器，一般给选择器加动画背景，设置动画样式*/
+    .main .view:before {
+        content: "";
+        position: absolute;
+        top: -240px;
+        right: 0;
+        width: 360px;
+        height: 360px;
+        background: rgba(150, 50, 100, 0.5);
+        transform: rotate(55deg) translateX(60px);
+        transform-origin: 100% 0%;
+        transition: all 0.5s ease 0.3s;
+
+    } /*写好样式，进行隐藏，用top:-240px;*/
+    .main .view:hover:before {
+        top: 0;
+    }
+    .main .view:after {
+        content: "";
+        position: absolute;
+        bottom: -240px;
+        left: 0;
+        width: 360px;
+        height: 360px;
+        background: rgba(150, 50, 100, 0.5);
+        transform: rotate(55deg) translateX(-60px);
+        transform-origin: 0% 100%;
+        transition: all 0.5s ease 0.3s;
+    }
+    .main .view:hover:after {
+        bottom: 0px;
+    }
+    .main .view .hover .liker{
+        width: 50px;
+        height: 20px;
+        border-radius: 10px;
+        background: #f40;
+        display: inline-block;
+        text-align: center;
+    }
+    .main .view .hover .liker a{
+        color:#fff;
+        text-decoration: none;
+    }
+
+     body{
+         background: url("../static/img/index.jpeg");
+         background-repeat: no-repeat;
+         background-size:100% 100%;
+         /*opacity: 0.8;*/
+     }
+
     </style>
 </head>
 <body>
@@ -32,7 +162,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="index.html"><img src="../static/img/logoD.png" height="50"></a>
+            <a href="index.html"><img src="../static/img/logo.png" height="50"></a>
             <!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.png" height="30"></a>-->
         </div>
 
@@ -101,16 +231,6 @@
     </div><!-- /.container-fluid -->
 </nav>
 <!-- 巨幕 -->
-<div class="jumbotron"
-     style="background:url(../static/img/bigm.jpg);background-size:cover;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- <img class="img-responsive" alt="" style="width:100%;height:100px;"> -->
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
@@ -126,81 +246,220 @@
                         </div>
                     </h3>
                 </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-2 panel panel-default">
-                            <div class="dropup">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="http://benjaminlee.cn:8989/hello/images/20181115213421.jpg" style="height: 100px;width: 100px;">
-                                </button>
-                                <ul class="list-group" style="text-align: center">
-                                    <li class="list-group-item"><a href="#">Benjamin</a></li>
-                                </ul>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
+                <div class="wrapper main">
+                    <div class="panel-body view" id="person">
+                        <img src="../static/img/person1.jpg" alt="">
+                        <div class="hover">
+                            <p>等级:LV1</p>
+                            <p class="liker"><a href="#">关注</a></p>
                         </div>
-                        <div class="col-lg-10">
-                            <div class="panel panel-default" style="padding: 0;">
-                                <p>
-                                    wowpH
-                                    Bbs1
-                                    Blank
-                                    结帖率 100%
-                                    题目链接，题目来源 LeetCode 第 9 场双周赛
-
-                                    算法版，版主都没有，人太少。。。只能发这里来了。
-
-                                    第一名uwi的代码如下：
-                                    class Solution {
-                                    public int minKnightMoves(    int x, int y) {
-                                    return (int) knightDistance(x, y);
-                                    }
-
-                                    public long knightDistance(    long r, long c) {
-                                    r = Math.abs(r);
-                                    c = Math.abs(c);
-                                    if (r + c == 0)
-                                    return 0;
-                                    if (r + c == 1)
-                                    return 3;
-                                    if (r == 2 && c == 2)
-                                    return 4;
-
-                                    // 下面代码，，，大佬的思路理解不了。。。或者说我太菜。。。
-                                    long step = Math.max((r + 1) / 2, (c + 1) / 2);
-                                    step = Math.max(step, (r + c + 2) / 3);
-                                    step += (step ^ r ^ c) & 1;
-                                    return step;
-                                    }
-                                    }
-                                </p>
-                            </div>
-
+                        <p>younggalaxy</p>
+                    </div>
+                    <div class="discuss">
+                        <div class="text">
+                            <p>我估计是你线程里面掉窗体变量，你先创建的线程后创建的窗体，线程里面使用窗体的时候，窗体还没有创建好，你把创建线程和窗体的顺序换一下</p>
+                        </div>
+                        <div class="bot">
+                            <span class="time">2019-09-28&nbsp;&nbsp;23:49:30</span>
+                            <span class="tip">
+                                    <span>回复数</span>
+                                    <span id="flag" style="color:#f40">45</span>
+                                    <span>举报</span>
+                                    <span>楼主</span></span>
                         </div>
                     </div>
                 </div>
-
+                <div class="wrapper main">
+                    <div class="panel-body view" id="person">
+                        <img src="../static/img/person1.jpg" alt="">
+                        <div class="hover">
+                            <p>等级:LV1</p>
+                            <p class="liker"><a href="#">关注</a></p>
+                        </div>
+                        <p>younggalaxy</p>
+                    </div>
+                    <div class="discuss">
+                        <div class="text">
+                            <p>我估计是你线程里面掉窗体变量，你先创建的线程后创建的窗体，线程里面使用窗体的时候，窗体还没有创建好，你把创建线程和窗体的顺序换一下</p>
+                        </div>
+                        <div class="bot">
+                            <span class="time">2019-09-28&nbsp;&nbsp;23:49:30</span>
+                            <span class="tip">
+                                    <span>回复数</span>
+                                    <span id="flag" style="color:#f40">45</span>
+                                    <span>举报</span>
+                                    <span>楼主</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper main">
+                    <div class="panel-body view" id="person">
+                        <img src="../static/img/person1.jpg" alt="">
+                        <div class="hover">
+                            <p>等级:LV1</p>
+                            <p class="liker"><a href="#">关注</a></p>
+                        </div>
+                        <p>younggalaxy</p>
+                    </div>
+                    <div class="discuss">
+                        <div class="text">
+                            <p>我估计是你线程里面掉窗体变量，你先创建的线程后创建的窗体，线程里面使用窗体的时候，窗体还没有创建好，你把创建线程和窗体的顺序换一下</p>
+                        </div>
+                        <div class="bot">
+                            <span class="time">2019-09-28&nbsp;&nbsp;23:49:30</span>
+                            <span class="tip">
+                                    <span>回复数</span>
+                                    <span id="flag" style="color:#f40">45</span>
+                                    <span>举报</span>
+                                    <span>楼主</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper main">
+                    <div class="panel-body view" id="person">
+                        <img src="../static/img/person1.jpg" alt="">
+                        <div class="hover">
+                            <p>等级:LV1</p>
+                            <p class="liker"><a href="#">关注</a></p>
+                        </div>
+                        <p>younggalaxy</p>
+                    </div>
+                    <div class="discuss">
+                        <div class="text">
+                            <p>我估计是你线程里面掉窗体变量，你先创建的线程后创建的窗体，线程里面使用窗体的时候，窗体还没有创建好，你把创建线程和窗体的顺序换一下</p>
+                        </div>
+                        <div class="bot">
+                            <span class="time">2019-09-28&nbsp;&nbsp;23:49:30</span>
+                            <span class="tip">
+                                    <span>回复数</span>
+                                    <span id="flag" style="color:#f40">45</span>
+                                    <span>举报</span>
+                                    <span>楼主</span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
         <div class="col-lg-2">
-            123123123
+            <div class="right_box">
+                <h3 class="feed_new_tit">
+                    <span class="line"></span><span class="txt" style="font-size: 18px;">今日推荐</span>
+                </h3>
+                <div class="feed_company csdn-tracking-statistics" data-dsm="post">
+                    <ul class="company_list">
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/tangxiaoyin/article/details/101354014","strategy":"","index":"0"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/tangxiaoyin/article/details/101354014","strategy":"","index":"0"}'>
+                            <div class="img_box"><a
+                                    href="https://blog.csdn.net/tangxiaoyin/article/details/101354014"
+                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190925/e86281f4a441f0c2a9f953065edc9acf.png?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="阿里 20 年，逍遥子宣告「全面迈入数字经济时代」"
+                                                            href="https://blog.csdn.net/tangxiaoyin/article/details/101354014"
+                                                            target="_blank">阿里 20 年，逍遥子宣告「全面迈入数字经济时代」</a></h3>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380","strategy":"","index":"1"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380","strategy":"","index":"1"}'>
+                            <div class="img_box"><a
+                                    href="https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380"
+                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190923/7898671f5c797f0dde22cb4e01679ddf.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="架构师必备技能：教你画出一张合格的技术架构图"
+                                                            href="https://blog.csdn.net/FL63Zv9Zou86950w/article/details/101183380"
+                                                            target="_blank">架构师必备技能：教你画出一张合格的技术架构图</a></h3>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blogdev.blog.csdn.net/article/details/101368277","strategy":"","index":"2"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blogdev.blog.csdn.net/article/details/101368277","strategy":"","index":"2"}'>
+                            <div class="img_box"><a href="https://blogdev.blog.csdn.net/article/details/101368277"
+                                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190909/e9934c13e0037b85d19dc9c28d46c984.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="CSDN日报190925：操作系统、数据库、架构干货来啦"
+                                                            href="https://blogdev.blog.csdn.net/article/details/101368277"
+                                                            target="_blank">CSDN日报190925：操作系统、数据库、架构干货来啦</a></h3>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://aiprocon.csdn.net/m/topic/ai_procon/index","strategy":"","index":"3"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://aiprocon.csdn.net/m/topic/ai_procon/index","strategy":"","index":"3"}'>
+                            <div class="img_box"><a href="https://aiprocon.csdn.net/m/topic/ai_procon/index"
+                                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190910/b01fe63f1b85520f5010557121dca94a.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="【PPT下载+图文直播】2019 AI开发者大会精彩分享"
+                                                            href="https://aiprocon.csdn.net/m/topic/ai_procon/index"
+                                                            target="_blank">【PPT下载+图文直播】2019 AI开发者大会精彩分享</a></h3>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189434","strategy":"","index":"4"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189434","strategy":"","index":"4"}'>
+                            <div class="img_box"><a href="https://blog.csdn.net/csdnnews/article/details/101189434"
+                                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190925/cf153ec1c904966d3890ba51b10e551d.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="“不给钱就删库”的勒索病毒， 程序员该如何防护？"
+                                                            href="https://blog.csdn.net/csdnnews/article/details/101189434"
+                                                            target="_blank">“不给钱就删库”的勒索病毒， 程序员该如何防护？</a></h3>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189453","strategy":"","index":"5"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnnews/article/details/101189453","strategy":"","index":"5"}'>
+                            <div class="img_box"><a href="https://blog.csdn.net/csdnnews/article/details/101189453"
+                                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190924/dd87db8ca59dee459e2928141b01bc1a.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="滴滴“负重”387天！"
+                                                            href="https://blog.csdn.net/csdnnews/article/details/101189453"
+                                                            target="_blank">滴滴“负重”387天！</a></h3>
+                                <p class="txt oneline">滴滴“负重”387天！</p>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101129761","strategy":"","index":"6"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101129761","strategy":"","index":"6"}'>
+                            <div class="img_box"><a
+                                    href="https://blog.csdn.net/csdnsevenn/article/details/101129761"
+                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190925/dc8f0cd26be6b2d225e9e69fa95a6f1c.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="小白必看！Django 模板语言进阶！"
+                                                            href="https://blog.csdn.net/csdnsevenn/article/details/101129761"
+                                                            target="_blank">小白必看！Django 模板语言进阶！</a></h3>
+                            </div>
+                        </li>
+                        <li data-report-view='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101180597","strategy":"","index":"7"}'
+                            data-report-click='{"mod":"popu_474","dest":"https://blog.csdn.net/csdnsevenn/article/details/101180597","strategy":"","index":"7"}'>
+                            <div class="img_box"><a
+                                    href="https://blog.csdn.net/csdnsevenn/article/details/101180597"
+                                    target="_blank"><img
+                                    src="https://csdnimg.cn/feed/20190924/cda63df23c981624459295745e849a0a.jpg?x-oss-process=image/resize,h_64"
+                                    alt=""></a></div>
+                            <div class="content">
+                                <h3 class="company_name"><a title="作为曾经的 Web 开发“王者”，jQuery 的传奇怎么续写？"
+                                                            href="https://blog.csdn.net/csdnsevenn/article/details/101180597"
+                                                            target="_blank">作为曾经的 Web 开发“王者”，jQuery 的传奇怎么续写？</a></h3>
+                            </div>
+                        </li>
+
+
+
+
+                    </ul>
+
+                </div>
+            </div>
         </div>
 
     </div>
-
-</div>
-<script type="text/javascript">
-    $('.carousel').carousel({
-        interval: 1000
-    });
-
-</script>
 
 </body>
 </html>
