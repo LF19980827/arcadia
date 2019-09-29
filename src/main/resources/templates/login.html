@@ -29,8 +29,9 @@
             width: 400px;
             height: 400px;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 47%;
+            /*left: 39%;*/
+            left: 58%;
             overflow: hidden;
             margin-top: -200px;
             border-radius: 10px;
@@ -139,7 +140,7 @@
         .helpMessage{
             font-size: 14px;
             color: red;
-
+            display: block;
         }
 
     </style>
@@ -153,6 +154,7 @@
 <body>
 
 <div class="main">
+
     <!--导航条-->
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -164,8 +166,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html"><img src="../static/img/logo.png" height="50"></a>
-<!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.jpg" width="100" height="35"></a>-->
+                <a href="index.html"><img src="../static/img/logoD.png" height="50"></a>
+                <!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.jpg" width="100" height="35"></a>-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
@@ -238,6 +240,7 @@
             <span class="padding2"><img src="../static/img/logoA.png" height="50" width="50"></span>
             <input type="text" name="name"placeholder="userName" class="padding">
             <input type="password" name="possword" placeholder="password" class="padding">
+            <span class="helpMessage"></span>
             <br><br>
             <input type="submit" class="demo" value="login">
             <p class="forget"><a href="forget.html">forget Password</a></p>
