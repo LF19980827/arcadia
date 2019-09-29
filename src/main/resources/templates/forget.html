@@ -29,8 +29,9 @@
             width: 400px;
             height: 500px;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 47%;
+            /*left: 39%;*/
+            left: 58%;
             overflow: hidden;
             margin-top: -200px;
             border-radius: 10px;
@@ -73,7 +74,7 @@
             color:#265a88;
         }
         .padding {
-            margin: 20px 0 30px;
+            margin: 15px 0 15px;
         }
         ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color:#fff;
@@ -121,6 +122,12 @@
             background:rgba(91, 157, 214, 0.76);
         }
 
+        .helpMessage{
+            font-size: 14px;
+            color: red;
+            display: block;
+        }
+
     </style>
     <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
     <script src="../static/js/jquery-1.12.4.min.js"></script>
@@ -142,22 +149,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="../static/img/logo.jpg" width="100" height="35"></a>
+                <a href="index.html"><img src="../static/img/logoD.png" height="50"></a>
+                <!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.jpg" width="100" height="35"></a>-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >失物招领<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">失物招领<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">发布</a></li>
-                            <li><a href="#">发布</a></li>
+                            <li><a href="lostAndFound.html">失物招领</a></li>
+                            <li><a href="#">发布信息</a></li>
                             <li role="separator" class="divider"></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">社团活动<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">社团活动<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">社团纳新</a></li>
                             <li><a href="#">学分互动</a></li>
@@ -165,18 +176,19 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表白墙<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">表白墙<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">发布</a></li>
-                            <li><a href="#">查看</a></li>
+                            <li><a href="confessRelease.html">发布</a></li>
+                            <li><a href="confess.html">查看</a></li>
                             <li role="separator" class="divider"></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">大学生活<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">大学生活<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">在线交友</a></li>
-                            <li><a href="#">ＸＸＸ</a></li>
+                            <li><a href="forum.html">校园论坛</a></li>
                             <li role="separator" class="divider"></li>
                         </ul>
                     </li>
@@ -188,9 +200,10 @@
                     <button type="submit" class="btn btn-default">搜索</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="log_in"><a href="login_user.html">登陆</a></li>
+                    <li id="log_in"><a href="login.html">登陆</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">个人中心<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="personalInformation.html">我的资料</a></li>
                             <li><a href="personAttention.html">我的关注</a></li>
@@ -206,17 +219,65 @@
     </nav>
 
     <div class="content">
-        <form action="">
-            <input type="text" name="name"placeholder="User name">
-            <br>
-            <input type="Telphone" name="Telphone" placeholder="Telphone" class="padding">
-            <input type="password" name="oldpossword" placeholder="Old Password" class="padding">
-            <input type="password" name="newpossword" placeholder="New Password" class="padding">
+        <form action="login.html">
+            <span><img src="../static/img/logoA.png" height="50" width="50"></span>
+            <input type="text" name="name"placeholder="userName" class="padding">
+            <span class="helpMessage"></span>
+            <input type="text" name="Telephone" placeholder="Telephone" class="padding">
+            <span class="helpMessage"></span>
+            <!--            <input type="password" name="oldPassword" placeholder="Old Password" class="padding">-->
+            <input type="password" name="newPassword" placeholder="New Password" id="password_forget_btn" class="padding">
+            <span class="helpMessage"></span>
             <br><br>
-            <input type="submit" class="demo" value="REGISTER">
-
+            <input type="submit" class="demo" id="user_forget_btn" value="Submit">
         </form>
-
     </div>
 </div>
+
+<script type="text/javascript">
+    //校验表单数据
+    function validate_add_form(){
+        //拿到要校验的数据，使用正则表达式
+        //4.检验密码正则
+        var password= $("#password_forget_btn").val();
+        //校验电话的正则
+        var regPassword = /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[\\(\\)])+$)([^(0-9a-zA-Z)]|[\\(\\)]|[a-zA-Z]|[0-9]){6,20}$/;
+        if(!regPassword.test(password)){
+            show_validate_message("#password_forget_btn", "error", "密码6-20位字符,必须要有数字和英文符号");
+            return false;
+        }else{
+            show_validate_message("#password_forget_btn", "success", "");
+        }
+
+        return true;
+    }
+
+    //显示校验结果的提示信息
+    function show_validate_message(ele,status,msg){
+        //清除当前元素的校验状态
+        $(ele).parent().removeClass("has-success has-error");
+        $(ele).next("span").text("");
+
+
+        if("success"==status){
+            $(ele).parent().addClass("has-success");
+            $(ele).next("span").text(msg);
+        }else if("error" == status){
+            $(ele).parent().addClass("has-error");
+            $(ele).next("span").text(msg);
+        }
+    }
+
+    //点击保存，更新资料
+    $("#user_forget_btn").click(function () {
+        //模态框中填写的表单数据提交给服务器进行保存
+        //1.前端校验需要提交的数据
+        if(!validate_add_form()){
+            return false;
+        }
+        //修改密码成功
+        alert("修改成功");
+
+    })
+</script>
 </body>
