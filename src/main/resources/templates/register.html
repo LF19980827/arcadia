@@ -73,7 +73,7 @@
             color:#265a88;
         }
         .padding {
-            margin: 20px 0 30px;
+            margin: 15px 0 15px;
         }
         ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color:#fff;
@@ -128,17 +128,22 @@
             font-family: 'Open Sans', sans-serif;
             color:#fff;
         }
-        .content .registe{
+        .content .register{
             float: left;
         }
         .content .forget{
             float: right;
         }
-        .content .registe a,
+        .content .register a,
         .content .forget a{
             color:#fff;
         }
 
+        .helpMessage{
+            font-size: 14px;
+            color: red;
+
+        }
     </style>
     <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
     <script src="../static/js/jquery-1.12.4.min.js"></script>
@@ -160,7 +165,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html"><img src="../static/img/logo.png" height="50"></a>
+                <a href="index.html"><img src="../static/img/logoD.png" height="50"></a>
                 <!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.jpg" width="100" height="35"></a>-->
             </div>
 
@@ -230,11 +235,11 @@
     </nav>
 
     <div class="content">
-        <form action="">
-            <input type="text" name="name" id="userName_register_btn" placeholder="userName">
+        <form action="login.html">
+            <span class="padding2"><img src="../static/img/logoA.png" height="50" width="50"></span>
+            <input type="text" name="name" id="userName_register_btn" placeholder="userName" class="padding">
             <span class="helpMessage"></span>
-            <br>
-            <input type="Email" name="Email" id="email_register_btn" placeholder="Email"  class="padding" >
+            <input type="Email" name="Email" id="email_register_btn" placeholder="Email"  class="padding">
             <span class="helpMessage"></span>
             <input type="text" name="Telephone" id="telephone_register_btn" placeholder="Telephone" class="padding">
             <span class="helpMessage"></span>
@@ -256,8 +261,8 @@
         //校验用户名的正则
         var regName = /(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,5})/;
         if (!regName.test(userName)){
-            //alert("用户名可以是2-5位中文或者6-16位英文和数字的组合");
-            show_validate_message("#userName_register_btn", "error", "用户名可以是2-5位中文或者6-16位英文和数字的组合");
+            //alert("必须是2-5位中文或6-16位英文和数字的组合");
+            show_validate_message("#userName_register_btn", "error", "必须是2-5位中文或6-16位英文和数字的组合");
             return false;
         }else{
             show_validate_message("#userName_register_btn", "success", "");
@@ -323,8 +328,6 @@
         }
         //注册成功
         alert("注册成功");
-        // window.location.href = '/arcadia/templates/login.html';
-        // alert("注册成功11111");
 
     })
 </script>
