@@ -18,6 +18,18 @@
         body{
             background: #f5f6f7;
         }
+        .panel{
+            width: 200px;
+        }
+        .wrapper{
+            width: 200px;
+        }
+        #content{
+            width:900px;
+            height: 500px;
+            border:1px solid black;
+            margin-left:15px;
+        }
     </style>
 </head>
 <body>
@@ -106,9 +118,10 @@
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
     <div class="row">
-        <div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2 hidden-md hidden-sm hidden-xs wrapper" >
             <div class="panel panel=primary">
-                <div class="list-group">
+                <div class="list-group wrapper">
                     <a href="#" class="list-group-item disabled">个人资料</a>
                     <a href="personCollection.html" class="list-group-item">我的收藏</a>
                     <a href="personAttention.html" class="list-group-item">我的关注</a>
@@ -119,16 +132,18 @@
             </div>
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-8" id="content">
         <!--3右下方模块-->
             <div class="person_right_1">
-                <div class="col-md-12"><h1>个人资料</h1></div>
+                <div class="col-md-12">
+                    <h2>个人资料</h2>
+                    <hr style="color:black">
+                </div>
             </div>
             <div class="person_right_1">
                 <div class="person_right_2">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" style="border: 1px solid black;height: 300px;width:200px">
                         <img src="../static/img/1.jpg" width="80" height="80" alt="">
-<!--                        <p class="modify">修改头像</p>-->
                         <p class="modify"><span class="mod" id="Avatar_update_modal_btn"><a>修改头像</a> </span></p>
                     </div>
                     <div class="col-lg-4">
@@ -140,7 +155,7 @@
                     </div>
                 </div>
                 <div class="row_person_right_2">
-                    <span style="margin-right: 16px; color: rgb(77, 77, 77); font-size: 14px;">关注 99</span>
+                    <span style="color: rgb(77, 77, 77); font-size: 14px;display: block">关注 99</span>
                     <span data-v-0d738edb="" style="margin-right: 16px; color: rgb(77, 77, 77); font-size: 14px;">粉丝 99</span>
                 </div>
                 <ul class="nav nav-list"><li class="divider"></li></ul>
