@@ -130,7 +130,7 @@
             <div class="page-header">
                 <h1>校园论坛
                     <small>在这里,分享你的生活!</small>
-                    <button type="button" class="btn btn-info btn-lg" style="float: right;width: 100px">我要发帖</button>
+                    <button type="button" class="btn btn-info btn-lg" id="forum_enter_btn" style="float: right;width: 100px">我要发帖</button>
                 </h1>
 
                 <div class="panel panel-default">
@@ -245,6 +245,10 @@
 </div>
 </div>
 <script type="text/javascript">
+    $("#forum_enter_btn").click(function () {
+        $(location).attr("href", "submitPost.html");
+    });
+    
     $('.carousel').carousel({
         interval: 1000
     });

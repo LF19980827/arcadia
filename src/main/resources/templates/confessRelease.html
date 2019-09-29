@@ -157,10 +157,10 @@
 							</div>
 						</div>
 						<div class="col-lg-10">
-							<form action="#" method="get">
+							<form action="confess.html" method="get">
 								<textarea name="confess" placeholder="请开始你的表演" id="confess" cols="100" rows="10"></textarea>
 								<div id="input" style="text-align: center">
-									<input type="submit" value="提交" style="text-align: center">
+									<input type="submit" value="提交" id="confessRelease_submit_btn" style="text-align: center">
 								</div>
 							</form>
 						</div>
@@ -173,6 +173,12 @@
 </div>
 
 <script type="text/javascript">
+
+	$("#confessRelease_submit_btn").click(function () {
+		alert("发布成功");
+	});
+
+
 	$('.carousel').carousel({
 		interval:1000
 	});
