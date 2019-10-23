@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
+    <script src="../static/js/jquery-1.12.4.min.js" th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"></script>
     <style type="text/css">
         * {
             margin: 0px;
@@ -22,6 +25,7 @@
             height: 100%;
             position: relative;
             background: url(../static/img/login.jpg) center top;
+            background: url(/img/login.jpg) center top;
             background-size: cover;
         }
 
@@ -54,6 +58,7 @@
             margin: -30px;
             /*消除边缘透明*/
             background: url(../static/img/login.jpg) center top;
+            background: url(/img/login.jpg) center top;
             background-size: cover;
             background-attachment: fixed;  /*位置固定*/
         }
@@ -144,10 +149,6 @@
         }
 
     </style>
-    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-
 
 </head>
 
@@ -167,7 +168,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html"><img src="../static/img/logoD.png" height="50"></a>
+                <a href="index.html"><img src="../static/img/logoD.png" height="50" th:src="@{/img/logoD.png}"></a>
                 <!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.png" height="30"></a>-->
             </div>
 
@@ -241,15 +242,18 @@
     </nav>
 
     <div class="content">
-        <form action="index.html">
-            <span class="padding2"><img src="../static/img/logoA.png" height="50" width="50"></span>
-            <input type="text" name="name"placeholder="userName" class="padding">
-            <input type="password" name="possword" placeholder="password" class="padding">
-            <span class="helpMessage"></span>
+        <form action="index.html" th:action="@{/login}" method="post">
+            <span class="padding2"><img src="../static/img/logoA.png" height="50" width="50" th:src="@{/img/logoA.png}"></span>
+            <input type="text" name="username"placeholder="userName" class="padding" th:placeholder="#{login.username}">
+            <input type="password" name="password" placeholder="password" class="padding" th:placeholder="#{login.password}">
+            <span class="helpMessage" th:text="${msg}"></span>
             <br><br>
-            <input type="submit" class="demo" value="login">
-            <p class="forget"><a href="forget.html">forget Password</a></p>
-            <p class="register"><a href="register.html">Register</a></p>
+            <input type="submit" class="demo" value="login" th:value="#{login.tip}">
+            <p class="forget"><a href="forget.html" th:text="#{login.forget}">forget Password</a></p>
+            <p class="register"><a href="register.html" th:text="#{login.register}">Register</a></p>
+
+            <a class="btn btn-sm" th:href="@{/index.html(l='zh_CN')}">中文</a>
+            <a class="btn btn-sm" th:href="@{/index.html(l='en_US')}">English</a>
         </form>
 
     </div>

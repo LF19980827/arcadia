@@ -25,47 +25,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
-            <!--bootstrap jquery-->
-
-<!--        &lt;!&ndash; bootstrap &ndash;&gt;-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.webjars/bootstrap &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.webjars</groupId>-->
-<!--            <artifactId>bootstrap</artifactId>-->
-<!--            <version>3.3.5</version>-->
-<!--        </dependency>-->
-
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.webjars.bower/jquery &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.webjars.bower</groupId>-->
-<!--            <artifactId>jquery</artifactId>-->
-<!--            <version>3.2.1</version>-->
-<!--        </dependency>-->
-
-
+        
 
 <!--        <dependency>-->
 <!--            <groupId>org.webjars</groupId>-->
 <!--            <artifactId>webjars-locator</artifactId>-->
 <!--            <version>0.36</version>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.webjars</groupId>-->
-<!--            <artifactId>bootstrap</artifactId>-->
-<!--            <version>3.3.7</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--        <groupId>org.webjars</groupId>-->
-<!--        <artifactId>jquery</artifactId>-->
-<!--        <version>3.3.1</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-context</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>jquery</artifactId>
+        <version>3.3.1</version>
+        </dependency>
 
 
         <dependency>
@@ -83,6 +59,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--导入配置文件处理器，配置文件进行绑定就会有提示-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -93,9 +76,5 @@
             </plugin>
         </plugins>
     </build>
-
-
-
-
 
 </project>
