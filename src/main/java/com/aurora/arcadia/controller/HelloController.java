@@ -36,7 +36,7 @@ public class HelloController {
         }else {
             //登陆失败
             map.put("msg","用户名密码错误");
-            return "login";
+            return "accountManagement/login";
         }
     }
 

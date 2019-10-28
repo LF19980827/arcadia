@@ -8,9 +8,11 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
 
-    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../static/bootstrap-3.3.7/css/bootstrap.css">
+    <script src="../../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+</head>
     <style>
         body{
             background: #f5f6f7;
@@ -19,12 +21,10 @@
             width: 200px;
         }
     </style>
-</head>
 <body>
 
 <!--导航条-->
 <div th:replace="commons/demo :: topBar"></div>
-
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
     <div class="row">
@@ -32,10 +32,10 @@
         <div class="col-lg-2 hidden-md hidden-sm hidden-xs wrapper" >
             <div class="panel panel=primary">
                 <div class="list-group wrapper">
-                    <a href="personalInformation.html" class="list-group-item ">个人资料</a>
+                    <a href="personInformation.html" class="list-group-item ">个人资料</a>
                     <a href="personCollection.html" class="list-group-item ">我的收藏</a>
-                    <a href="personAttention.html" class="list-group-item ">我的关注</a>
-                    <a href="#" class="list-group-item disabled">我的粉丝</a>
+                    <a href="#" class="list-group-item disabled">我的关注</a>
+                    <a href="personFan.html" class="list-group-item">我的粉丝</a>
                     <a href="personActivity.html" class="list-group-item">活动轨迹</a>
                     <a href="personNotification.html" class="list-group-item">消息与通知</a>
                 </div>
@@ -45,7 +45,7 @@
         <div class="col-lg-7">
             <!--3右下方模块-->
             <div>
-                <h2>我的粉丝</h2>
+                <h2>我的关注</h2>
             </div>
 
             <ul class="nav nav-list"><li class="divider"></li></ul>
@@ -55,18 +55,18 @@
                     <li>
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <img src="../static/img/1.jpg" width="80" height="80" alt="">
-                                <a href="#">关注我的人1</a>
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"style="float: right">加关注</span>
+                                <img src="../../static/img/1.jpg" width="80" height="80" alt="">
+                                <a href="#">我关注的人1</a>
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"style="float: right">取消关注</span>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <img src="../static/img/2.png" width="80" height="80" alt="">
-                                <a href="#">关注我的人2</a>
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"style="float: right">加关注</span>
+                                <img src="../../static/img/2.png" width="80" height="80" alt="">
+                                <a href="#">我关注的人2</a>
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"style="float: right">取消关注</span>
                             </div>
                         </div>
                     </li>
@@ -100,14 +100,12 @@
             </div>
 
         </div>
+        </div>
+
+
+
     </div>
 
-
-
-</div>
-
-</div>
-</div>
 
 
 </body>

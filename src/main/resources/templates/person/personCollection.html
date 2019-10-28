@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
-
-    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!--    <script src="https://cdn.staticfile.org/jquery/2.3.1/jquery.min.js"></script>-->
+    <!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="../../static/bootstrap-3.3.7/css/bootstrap.css">
+    <script src="../../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</head>
     <style>
         body{
             background: #f5f6f7;
@@ -19,8 +21,6 @@
             width: 200px;
         }
     </style>
-
-</head>
 <body>
 
 <!--导航条-->
@@ -29,15 +29,16 @@
 
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-2 hidden-md hidden-sm hidden-xs wrapper" >
-        <div class="panel panel=primary">
-            <div class="list-group wrapper">
-                    <a href="personalInformation.html" class="list-group-item ">个人资料</a>
-                    <a href="personCollection.html" class="list-group-item ">我的收藏</a>
-                    <a href="personAttention.html" class="list-group-item ">我的关注</a>
-                    <a href="personFan.html" class="list-group-item ">我的粉丝</a>
-                    <a href="#" class="list-group-item disabled">活动轨迹</a>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2 hidden-md hidden-sm hidden-xs wrapper" >
+            <div class="panel panel=primary">
+                <div class="list-group wrapper">
+                    <a href="personalInformation.html.html" class="list-group-item">个人资料</a>
+                    <a href="#" class="list-group-item disabled">我的收藏</a>
+                    <a href="personAttention.html" class="list-group-item">我的关注</a>
+                    <a href="personFan.html" class="list-group-item">我的粉丝</a>
+                    <a href="personActivity.html" class="list-group-item">活动轨迹</a>
                     <a href="personNotification.html" class="list-group-item">消息与通知</a>
                 </div>
             </div>
@@ -46,27 +47,36 @@
         <div class="col-lg-7">
             <!--3右下方模块-->
             <div>
-                <h2>活动轨迹</h2>
+                <h1>我的收藏</h1>
             </div>
             <div >
                 <ul class="personCollectionList">
                     <li>
-                        <div class="panel panel-default" style="width: 900px">
+                        <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">活动1</h3>
+                                <div class="col-lg-11"><h3 class="panel-title">收藏标题1</h3></div>
+                                <div ><span class="glyphicon glyphicon-star" aria-hidden="true">取消收藏</span></div>
                             </div>
                             <div class="panel-body">
-                                ......
+                                收藏内容
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
 
-
+                                <div class="col-lg-11"><h3 class="panel-title">收藏标题1</h3></div>
+                                <div ><span class="glyphicon glyphicon-star" aria-hidden="true">取消收藏</span></div>
+                            </div>
+                            <div class="panel-body">
+                                收藏内容
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
-
             <ul class="nav nav-list"><li class="divider"></li></ul>
-
             <div class="col-lg-4"></div>
             <div >
                 <nav aria-label="Page navigation">
@@ -91,13 +101,12 @@
             </div>
 
         </div>
+
+
+
+        </div>
+
     </div>
-
-
-
-</div>
-
-</div>
 </div>
 
 

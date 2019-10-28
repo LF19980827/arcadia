@@ -21,13 +21,13 @@
             width: 100%;
             height: 100%;
             position: relative;
-            background: url(../static/img/login.jpg) center top;
+            background: url(../../static/img/login.jpg) center top;
             background-size: cover;
         }
 
         .content {
             width: 400px;
-            height: 520px;
+            height: 500px;
             position: absolute;
             top: 47%;
             /*left: 39%;*/
@@ -53,7 +53,7 @@
             filter: blur(6px);
             margin: -30px;
             /*消除边缘透明*/
-            background: url(../static/img/login.jpg) center top;
+            background: url(../../static/img/login.jpg) center top;
             background-size: cover;
             background-attachment: fixed;  /*位置固定*/
         }
@@ -90,7 +90,6 @@
         }
         .content input[type="text"],
         .content input[type="password"],
-        .content input[type="Email"],
         .content input[type="Telphone"]{
             padding: 13px 10px;
             width: 92.5%;
@@ -122,33 +121,17 @@
             transition-duration: 0.9s;
             background:rgba(91, 157, 214, 0.76);
         }
-        .content .registe,
-        .content .forget{
-            margin-top:10px;
-            font-size: 16px;
-            font-family: 'Open Sans', sans-serif;
-            color:#fff;
-        }
-        .content .register{
-            float: left;
-        }
-        .content .forget{
-            float: right;
-        }
-        .content .register a,
-        .content .forget a{
-            color:#fff;
-        }
 
         .helpMessage{
             font-size: 14px;
             color: red;
             display: block;
         }
+
     </style>
-    <link rel="stylesheet" href="../static/bootstrap-3.3.7/css/bootstrap.css">
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../static/bootstrap-3.3.7/css/bootstrap.css">
+    <script src="../../static/js/jquery-1.12.4.min.js"></script>
+    <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -160,14 +143,16 @@
 
     <div class="content">
         <form action="login.html">
-            <span class="padding2"><img src="../static/img/logoA.png" height="50" width="50"></span>
-            <input type="text" name="name" id="userName_modify_btn" placeholder="userName" class="padding">
-            <input type="password" name="oldPassword" id="oldPassword_modify_btn"  placeholder="Old Password"  class="padding">
+            <span><img src="../../static/img/logoA.png" height="50" width="50"></span>
+            <input type="text" name="name"placeholder="userName" class="padding">
             <span class="helpMessage"></span>
-            <input type="password" name="newPassword" id="newPassword_modify_btn" placeholder="New Password" class="padding">
+            <input type="text" name="Telephone" placeholder="Telephone" class="padding">
+            <span class="helpMessage"></span>
+            <!--            <input type="password" name="oldPassword" placeholder="Old Password" class="padding">-->
+            <input type="password" name="newPassword" placeholder="New Password" id="password_forget_btn" class="padding">
             <span class="helpMessage"></span>
             <br><br>
-            <input type="submit" class="demo" id="user_modify_btn" value="Modify">
+            <input type="submit" class="demo" id="user_forget_btn" value="Submit">
         </form>
     </div>
 </div>
@@ -177,14 +162,14 @@
     function validate_add_form(){
         //拿到要校验的数据，使用正则表达式
 
-        var password= $("#newPassword_modify_btn").val();
+        var password= $("#password_forget_btn").val();
         //检验密码正则
         var regPassword = /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[\\(\\)])+$)([^(0-9a-zA-Z)]|[\\(\\)]|[a-zA-Z]|[0-9]){6,20}$/;
         if(!regPassword.test(password)){
-            show_validate_message("#newPassword_modify_btn", "error", "密码6-20位字符,必须要有数字和英文符号");
+            show_validate_message("#password_forget_btn", "error", "密码6-20位字符,必须要有数字和英文符号");
             return false;
         }else{
-            show_validate_message("#newPassword_modify_btn", "success", "");
+            show_validate_message("#password_forget_btn", "success", "");
         }
 
         return true;
@@ -207,13 +192,13 @@
     }
 
     //点击保存，更新资料
-    $("#user_modify_btn").click(function () {
+    $("#user_forget_btn").click(function () {
         //模态框中填写的表单数据提交给服务器进行保存
         //1.前端校验需要提交的数据
         if(!validate_add_form()){
             return false;
         }
-        //修改成功
+        //修改密码成功
         alert("修改成功");
 
     })
