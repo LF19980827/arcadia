@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,89 +56,7 @@
 <body>
 
 <!--导航条-->
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display  影院品牌logo-->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="index.html"><img src="../static/img/logoD.png" height="50"></a>
-            <!--                <a class="navbar-brand" href="#"><img src="../static/img/logo.png" height="30"></a>-->
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling 收集导航链接，表单和其他内容以进行切换-->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">失物招领<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="lostAndFound.html">失物招领</a></li>
-                        <li><a href="lostAndFoundPublish.html">发布信息</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">社团活动<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="communityActivites.html">活动列表</a></li>
-                        <li><a href="#">活动发布</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">表白墙<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="confessRelease.html">发布</a></li>
-                        <li><a href="confess.html">查看</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">大学生活<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="forum.html">校园论坛</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="表白墙">
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-            </form>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li id="log_in"><a href="login.html">登陆</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">个人中心<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="personalInformation.html">我的资料</a></li>
-                        <li><a href="personAttention.html">我的关注</a></li>
-                        <li><a href="personFan.html">我的粉丝</a></li>
-                        <li><a href="personCollection.html">我的收藏</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="personNotification.html">我的消息</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="modifyPassword.html">修改密码</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+<div th:replace="commons/demo :: topBar"></div>
 
 
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
