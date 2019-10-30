@@ -1,5 +1,6 @@
 package com.aurora.arcadia.config;
 
+
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;
 
