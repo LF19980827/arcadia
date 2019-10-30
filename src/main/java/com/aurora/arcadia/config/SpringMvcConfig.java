@@ -34,12 +34,12 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 
             }
 
-            //注册拦截器
-            @Override
-            public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                        .excludePathPatterns("/index.html","/","/login");
-            }
+//            //注册拦截器
+//            @Override
+//            public void addInterceptors(InterceptorRegistry registry) {
+//                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//                        .excludePathPatterns("/index.html","/","/login");
+//            }
         };
 
         return adapter;
