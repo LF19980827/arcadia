@@ -16,7 +16,7 @@ public class MyBatisConfig {
             @Override
             public void customize(org.apache.ibatis.session.Configuration configuration) {
                 //驼峰命名规则
-
+                configuration.setMapUnderscoreToCamelCase(true);
             }
         };
     }
