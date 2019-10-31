@@ -2,6 +2,9 @@ package com.aurora.arcadia.model;
 
 import java.util.Date;
 
+/**
+ * 信息
+ */
 public class UserMessage {
     private Integer userId;
 

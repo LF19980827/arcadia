@@ -1,5 +1,8 @@
 package com.aurora.arcadia.model;
 
+/**
+ * 帖子信息
+ */
 public class Post {
     private Integer postId;
 
