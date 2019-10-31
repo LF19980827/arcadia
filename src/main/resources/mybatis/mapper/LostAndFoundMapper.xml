@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.LostAndFoundMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.LostAndFound">
+    <id column="lost_id" jdbcType="INTEGER" property="lostId" />
+    <result column="lost_title" jdbcType="VARCHAR" property="lostTitle" />
+    <result column="lost_intro" jdbcType="VARCHAR" property="lostIntro" />
+    <result column="lost_sign" jdbcType="INTEGER" property="lostSign" />
+    <result column="lost_user_id" jdbcType="INTEGER" property="lostUserId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    lost_id, lost_title, lost_intro, lost_sign, lost_user_id
+  </sql>
+  <select id="selectByExample" parameterType="com.aurora.arcadia.model.LostAndFoundExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from lostandfound
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from lostandfound
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from lostandfound
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.aurora.arcadia.model.LostAndFoundExample">
+    delete from lostandfound
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.LostAndFound">
+    insert into lostandfound (lost_id, lost_title, lost_intro, 
+      lost_sign, lost_user_id)
+    values (#{lostId,jdbcType=INTEGER}, #{lostTitle,jdbcType=VARCHAR}, #{lostIntro,jdbcType=VARCHAR}, 
+      #{lostSign,jdbcType=INTEGER}, #{lostUserId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.LostAndFound">
+    insert into lostandfound
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lostId != null">
+        lost_id,
+      </if>
+      <if test="lostTitle != null">
+        lost_title,
+      </if>
+      <if test="lostIntro != null">
+        lost_intro,
+      </if>
+      <if test="lostSign != null">
+        lost_sign,
+      </if>
+      <if test="lostUserId != null">
+        lost_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lostId != null">
+        #{lostId,jdbcType=INTEGER},
+      </if>
+      <if test="lostTitle != null">
+        #{lostTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="lostIntro != null">
+        #{lostIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="lostSign != null">
+        #{lostSign,jdbcType=INTEGER},
+      </if>
+      <if test="lostUserId != null">
+        #{lostUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.aurora.arcadia.model.LostAndFoundExample" resultType="java.lang.Long">
+    select count(*) from lostandfound
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update lostandfound
+    <set>
+      <if test="record.lostId != null">
+        lost_id = #{record.lostId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lostTitle != null">
+        lost_title = #{record.lostTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lostIntro != null">
+        lost_intro = #{record.lostIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lostSign != null">
+        lost_sign = #{record.lostSign,jdbcType=INTEGER},
+      </if>
+      <if test="record.lostUserId != null">
+        lost_user_id = #{record.lostUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update lostandfound
+    set lost_id = #{record.lostId,jdbcType=INTEGER},
+      lost_title = #{record.lostTitle,jdbcType=VARCHAR},
+      lost_intro = #{record.lostIntro,jdbcType=VARCHAR},
+      lost_sign = #{record.lostSign,jdbcType=INTEGER},
+      lost_user_id = #{record.lostUserId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.LostAndFound">
+    update lostandfound
+    <set>
+      <if test="lostTitle != null">
+        lost_title = #{lostTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="lostIntro != null">
+        lost_intro = #{lostIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="lostSign != null">
+        lost_sign = #{lostSign,jdbcType=INTEGER},
+      </if>
+      <if test="lostUserId != null">
+        lost_user_id = #{lostUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.LostAndFound">
+    update lostandfound
+    set lost_title = #{lostTitle,jdbcType=VARCHAR},
+      lost_intro = #{lostIntro,jdbcType=VARCHAR},
+      lost_sign = #{lostSign,jdbcType=INTEGER},
+      lost_user_id = #{lostUserId,jdbcType=INTEGER}
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </update>
+</mapper>

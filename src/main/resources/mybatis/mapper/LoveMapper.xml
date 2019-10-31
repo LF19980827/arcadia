@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.LoveMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Love">
+    <id column="love_id" jdbcType="INTEGER" property="loveId" />
+    <result column="love_user_id" jdbcType="INTEGER" property="loveUserId" />
+    <result column="love_intro" jdbcType="VARCHAR" property="loveIntro" />
+    <result column="love_sign" jdbcType="INTEGER" property="loveSign" />
+    <result column="love_user_status" jdbcType="BIT" property="loveUserStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    love_id, love_user_id, love_intro, love_sign, love_user_status
+  </sql>
+  <select id="selectByExample" parameterType="com.aurora.arcadia.model.LoveExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from love
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from love
+    where love_id = #{loveId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from love
+    where love_id = #{loveId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.aurora.arcadia.model.LoveExample">
+    delete from love
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Love">
+    insert into love (love_id, love_user_id, love_intro, 
+      love_sign, love_user_status)
+    values (#{loveId,jdbcType=INTEGER}, #{loveUserId,jdbcType=INTEGER}, #{loveIntro,jdbcType=VARCHAR}, 
+      #{loveSign,jdbcType=INTEGER}, #{loveUserStatus,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Love">
+    insert into love
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loveId != null">
+        love_id,
+      </if>
+      <if test="loveUserId != null">
+        love_user_id,
+      </if>
+      <if test="loveIntro != null">
+        love_intro,
+      </if>
+      <if test="loveSign != null">
+        love_sign,
+      </if>
+      <if test="loveUserStatus != null">
+        love_user_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loveId != null">
+        #{loveId,jdbcType=INTEGER},
+      </if>
+      <if test="loveUserId != null">
+        #{loveUserId,jdbcType=INTEGER},
+      </if>
+      <if test="loveIntro != null">
+        #{loveIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="loveSign != null">
+        #{loveSign,jdbcType=INTEGER},
+      </if>
+      <if test="loveUserStatus != null">
+        #{loveUserStatus,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.aurora.arcadia.model.LoveExample" resultType="java.lang.Long">
+    select count(*) from love
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update love
+    <set>
+      <if test="record.loveId != null">
+        love_id = #{record.loveId,jdbcType=INTEGER},
+      </if>
+      <if test="record.loveUserId != null">
+        love_user_id = #{record.loveUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.loveIntro != null">
+        love_intro = #{record.loveIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loveSign != null">
+        love_sign = #{record.loveSign,jdbcType=INTEGER},
+      </if>
+      <if test="record.loveUserStatus != null">
+        love_user_status = #{record.loveUserStatus,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update love
+    set love_id = #{record.loveId,jdbcType=INTEGER},
+      love_user_id = #{record.loveUserId,jdbcType=INTEGER},
+      love_intro = #{record.loveIntro,jdbcType=VARCHAR},
+      love_sign = #{record.loveSign,jdbcType=INTEGER},
+      love_user_status = #{record.loveUserStatus,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Love">
+    update love
+    <set>
+      <if test="loveUserId != null">
+        love_user_id = #{loveUserId,jdbcType=INTEGER},
+      </if>
+      <if test="loveIntro != null">
+        love_intro = #{loveIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="loveSign != null">
+        love_sign = #{loveSign,jdbcType=INTEGER},
+      </if>
+      <if test="loveUserStatus != null">
+        love_user_status = #{loveUserStatus,jdbcType=BIT},
+      </if>
+    </set>
+    where love_id = #{loveId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Love">
+    update love
+    set love_user_id = #{loveUserId,jdbcType=INTEGER},
+      love_intro = #{loveIntro,jdbcType=VARCHAR},
+      love_sign = #{loveSign,jdbcType=INTEGER},
+      love_user_status = #{loveUserStatus,jdbcType=BIT}
+    where love_id = #{loveId,jdbcType=INTEGER}
+  </update>
+</mapper>

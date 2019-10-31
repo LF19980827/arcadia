@@ -51,7 +51,19 @@
             如不需要example类添加下面四个属性
             enableCountByExample="false" enableDeleteByExample="false"
             enableSelectByExample="false" enableUpdateByExample="false"></table>-->
-        <table tableName="club" domainObjectName="club"></table>
+        <table tableName="activity" 	 domainObjectName="Activity"></table>
+        <table tableName="attention"     domainObjectName="Attention"></table>
+        <table tableName="club" 	     domainObjectName="Club"></table>
+        <table tableName="collection"    domainObjectName="Collection"></table>
+        <table tableName="history"       domainObjectName="History"></table>
+        <table tableName="lostandfound"  domainObjectName="LostAndFound"></table>
+        <table tableName="love"          domainObjectName="Love"></table>
+        <table tableName="message"       domainObjectName="Message"></table>
+        <table tableName="post"          domainObjectName="Post"></table>
+        <table tableName="reply"         domainObjectName="Reply"></table>
+        <table tableName="user"          domainObjectName="User"></table>
+        <table tableName="user_message"  domainObjectName="UserMessage"></table>
+
 
     </context>
 </generatorConfiguration>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.ReplyMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Reply">
+    <id column="reply_id" jdbcType="INTEGER" property="replyId" />
+    <result column="reply_post_id" jdbcType="INTEGER" property="replyPostId" />
+    <result column="reply_time" jdbcType="TIMESTAMP" property="replyTime" />
+    <result column="reply_intro" jdbcType="VARCHAR" property="replyIntro" />
+    <result column="reply_user_id" jdbcType="INTEGER" property="replyUserId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    reply_id, reply_post_id, reply_time, reply_intro, reply_user_id
+  </sql>
+  <select id="selectByExample" parameterType="com.aurora.arcadia.model.ReplyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from reply
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from reply
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from reply
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.aurora.arcadia.model.ReplyExample">
+    delete from reply
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Reply">
+    insert into reply (reply_id, reply_post_id, reply_time, 
+      reply_intro, reply_user_id)
+    values (#{replyId,jdbcType=INTEGER}, #{replyPostId,jdbcType=INTEGER}, #{replyTime,jdbcType=TIMESTAMP}, 
+      #{replyIntro,jdbcType=VARCHAR}, #{replyUserId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Reply">
+    insert into reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="replyId != null">
+        reply_id,
+      </if>
+      <if test="replyPostId != null">
+        reply_post_id,
+      </if>
+      <if test="replyTime != null">
+        reply_time,
+      </if>
+      <if test="replyIntro != null">
+        reply_intro,
+      </if>
+      <if test="replyUserId != null">
+        reply_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="replyId != null">
+        #{replyId,jdbcType=INTEGER},
+      </if>
+      <if test="replyPostId != null">
+        #{replyPostId,jdbcType=INTEGER},
+      </if>
+      <if test="replyTime != null">
+        #{replyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyIntro != null">
+        #{replyIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="replyUserId != null">
+        #{replyUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.aurora.arcadia.model.ReplyExample" resultType="java.lang.Long">
+    select count(*) from reply
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update reply
+    <set>
+      <if test="record.replyId != null">
+        reply_id = #{record.replyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.replyPostId != null">
+        reply_post_id = #{record.replyPostId,jdbcType=INTEGER},
+      </if>
+      <if test="record.replyTime != null">
+        reply_time = #{record.replyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.replyIntro != null">
+        reply_intro = #{record.replyIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="record.replyUserId != null">
+        reply_user_id = #{record.replyUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update reply
+    set reply_id = #{record.replyId,jdbcType=INTEGER},
+      reply_post_id = #{record.replyPostId,jdbcType=INTEGER},
+      reply_time = #{record.replyTime,jdbcType=TIMESTAMP},
+      reply_intro = #{record.replyIntro,jdbcType=VARCHAR},
+      reply_user_id = #{record.replyUserId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Reply">
+    update reply
+    <set>
+      <if test="replyPostId != null">
+        reply_post_id = #{replyPostId,jdbcType=INTEGER},
+      </if>
+      <if test="replyTime != null">
+        reply_time = #{replyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyIntro != null">
+        reply_intro = #{replyIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="replyUserId != null">
+        reply_user_id = #{replyUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Reply">
+    update reply
+    set reply_post_id = #{replyPostId,jdbcType=INTEGER},
+      reply_time = #{replyTime,jdbcType=TIMESTAMP},
+      reply_intro = #{replyIntro,jdbcType=VARCHAR},
+      reply_user_id = #{replyUserId,jdbcType=INTEGER}
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </update>
+</mapper>
