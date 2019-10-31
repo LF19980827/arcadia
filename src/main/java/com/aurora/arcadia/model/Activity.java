@@ -2,6 +2,7 @@ package com.aurora.arcadia.model;
 
 import java.util.Date;
 
+/*社团活动信息*/
 public class Activity {
     private Integer activityId;
 

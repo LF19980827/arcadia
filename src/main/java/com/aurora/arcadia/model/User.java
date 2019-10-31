@@ -1,5 +1,5 @@
 package com.aurora.arcadia.model;
-
+/*用户登陆信息*/
 public class User {
     private Integer userId;
 

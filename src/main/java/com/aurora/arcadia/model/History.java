@@ -2,6 +2,7 @@ package com.aurora.arcadia.model;
 
 import java.util.Date;
 
+/*历史发布*/
 public class History {
     private Integer historyId;
 
