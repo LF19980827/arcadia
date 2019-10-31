@@ -1,6 +1,5 @@
 package com.aurora.arcadia.model;
 
-/*社团信息*/
 public class Club {
     private Integer clubId;
 

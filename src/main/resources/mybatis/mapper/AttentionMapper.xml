@@ -6,6 +6,207 @@
     <result column="att_user_id" jdbcType="INTEGER" property="attUserId" />
     <result column="att_be_user_id" jdbcType="INTEGER" property="attBeUserId" />
   </resultMap>
+  <sql id="Base_Column_List">
+    att_id, att_user_id, att_be_user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from attention
+    where att_id = #{attId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from attention
+    where att_id = #{attId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Attention">
+    insert into attention (att_id, att_user_id, att_be_user_id
+      )
+    values (#{attId,jdbcType=INTEGER}, #{attUserId,jdbcType=INTEGER}, #{attBeUserId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Attention">
+    insert into attention
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        att_id,
+      </if>
+      <if test="attUserId != null">
+        att_user_id,
+      </if>
+      <if test="attBeUserId != null">
+        att_be_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        #{attId,jdbcType=INTEGER},
+      </if>
+      <if test="attUserId != null">
+        #{attUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attBeUserId != null">
+        #{attBeUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Attention">
+    update attention
+    <set>
+      <if test="attUserId != null">
+        att_user_id = #{attUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attBeUserId != null">
+        att_be_user_id = #{attBeUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where att_id = #{attId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Attention">
+    update attention
+    set att_user_id = #{attUserId,jdbcType=INTEGER},
+      att_be_user_id = #{attBeUserId,jdbcType=INTEGER}
+    where att_id = #{attId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Attention">
+    <id column="att_id" jdbcType="INTEGER" property="attId" />
+    <result column="att_user_id" jdbcType="INTEGER" property="attUserId" />
+    <result column="att_be_user_id" jdbcType="INTEGER" property="attBeUserId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    att_id, att_user_id, att_be_user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from attention
+    where att_id = #{attId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from attention
+    where att_id = #{attId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Attention">
+    insert into attention (att_id, att_user_id, att_be_user_id
+      )
+    values (#{attId,jdbcType=INTEGER}, #{attUserId,jdbcType=INTEGER}, #{attBeUserId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Attention">
+    insert into attention
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        att_id,
+      </if>
+      <if test="attUserId != null">
+        att_user_id,
+      </if>
+      <if test="attBeUserId != null">
+        att_be_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        #{attId,jdbcType=INTEGER},
+      </if>
+      <if test="attUserId != null">
+        #{attUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attBeUserId != null">
+        #{attBeUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Attention">
+    update attention
+    <set>
+      <if test="attUserId != null">
+        att_user_id = #{attUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attBeUserId != null">
+        att_be_user_id = #{attBeUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where att_id = #{attId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Attention">
+    update attention
+    set att_user_id = #{attUserId,jdbcType=INTEGER},
+      att_be_user_id = #{attBeUserId,jdbcType=INTEGER}
+    where att_id = #{attId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Attention">
+    <id column="att_id" jdbcType="INTEGER" property="attId" />
+    <result column="att_user_id" jdbcType="INTEGER" property="attUserId" />
+    <result column="att_be_user_id" jdbcType="INTEGER" property="attBeUserId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    att_id, att_user_id, att_be_user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from attention
+    where att_id = #{attId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from attention
+    where att_id = #{attId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Attention">
+    insert into attention (att_id, att_user_id, att_be_user_id
+      )
+    values (#{attId,jdbcType=INTEGER}, #{attUserId,jdbcType=INTEGER}, #{attBeUserId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Attention">
+    insert into attention
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        att_id,
+      </if>
+      <if test="attUserId != null">
+        att_user_id,
+      </if>
+      <if test="attBeUserId != null">
+        att_be_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        #{attId,jdbcType=INTEGER},
+      </if>
+      <if test="attUserId != null">
+        #{attUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attBeUserId != null">
+        #{attBeUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Attention">
+    update attention
+    <set>
+      <if test="attUserId != null">
+        att_user_id = #{attUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attBeUserId != null">
+        att_be_user_id = #{attBeUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where att_id = #{attId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Attention">
+    update attention
+    set att_user_id = #{attUserId,jdbcType=INTEGER},
+      att_be_user_id = #{attBeUserId,jdbcType=INTEGER}
+    where att_id = #{attId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Attention">
+    <id column="att_id" jdbcType="INTEGER" property="attId" />
+    <result column="att_user_id" jdbcType="INTEGER" property="attUserId" />
+    <result column="att_be_user_id" jdbcType="INTEGER" property="attBeUserId" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

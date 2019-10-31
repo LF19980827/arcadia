@@ -8,6 +8,273 @@
     <result column="club_intro" jdbcType="VARCHAR" property="clubIntro" />
     <result column="club_manager" jdbcType="INTEGER" property="clubManager" />
   </resultMap>
+  <sql id="Base_Column_List">
+    club_id, club_name, club_kind, club_intro, club_manager
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from club
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from club
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Club">
+    insert into club (club_id, club_name, club_kind, 
+      club_intro, club_manager)
+    values (#{clubId,jdbcType=INTEGER}, #{clubName,jdbcType=VARCHAR}, #{clubKind,jdbcType=VARCHAR}, 
+      #{clubIntro,jdbcType=VARCHAR}, #{clubManager,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Club">
+    insert into club
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="clubId != null">
+        club_id,
+      </if>
+      <if test="clubName != null">
+        club_name,
+      </if>
+      <if test="clubKind != null">
+        club_kind,
+      </if>
+      <if test="clubIntro != null">
+        club_intro,
+      </if>
+      <if test="clubManager != null">
+        club_manager,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="clubId != null">
+        #{clubId,jdbcType=INTEGER},
+      </if>
+      <if test="clubName != null">
+        #{clubName,jdbcType=VARCHAR},
+      </if>
+      <if test="clubKind != null">
+        #{clubKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clubIntro != null">
+        #{clubIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="clubManager != null">
+        #{clubManager,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Club">
+    update club
+    <set>
+      <if test="clubName != null">
+        club_name = #{clubName,jdbcType=VARCHAR},
+      </if>
+      <if test="clubKind != null">
+        club_kind = #{clubKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clubIntro != null">
+        club_intro = #{clubIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="clubManager != null">
+        club_manager = #{clubManager,jdbcType=INTEGER},
+      </if>
+    </set>
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Club">
+    update club
+    set club_name = #{clubName,jdbcType=VARCHAR},
+      club_kind = #{clubKind,jdbcType=VARCHAR},
+      club_intro = #{clubIntro,jdbcType=VARCHAR},
+      club_manager = #{clubManager,jdbcType=INTEGER}
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Club">
+    <id column="club_id" jdbcType="INTEGER" property="clubId" />
+    <result column="club_name" jdbcType="VARCHAR" property="clubName" />
+    <result column="club_kind" jdbcType="VARCHAR" property="clubKind" />
+    <result column="club_intro" jdbcType="VARCHAR" property="clubIntro" />
+    <result column="club_manager" jdbcType="INTEGER" property="clubManager" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    club_id, club_name, club_kind, club_intro, club_manager
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from club
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from club
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Club">
+    insert into club (club_id, club_name, club_kind, 
+      club_intro, club_manager)
+    values (#{clubId,jdbcType=INTEGER}, #{clubName,jdbcType=VARCHAR}, #{clubKind,jdbcType=VARCHAR}, 
+      #{clubIntro,jdbcType=VARCHAR}, #{clubManager,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Club">
+    insert into club
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="clubId != null">
+        club_id,
+      </if>
+      <if test="clubName != null">
+        club_name,
+      </if>
+      <if test="clubKind != null">
+        club_kind,
+      </if>
+      <if test="clubIntro != null">
+        club_intro,
+      </if>
+      <if test="clubManager != null">
+        club_manager,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="clubId != null">
+        #{clubId,jdbcType=INTEGER},
+      </if>
+      <if test="clubName != null">
+        #{clubName,jdbcType=VARCHAR},
+      </if>
+      <if test="clubKind != null">
+        #{clubKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clubIntro != null">
+        #{clubIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="clubManager != null">
+        #{clubManager,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Club">
+    update club
+    <set>
+      <if test="clubName != null">
+        club_name = #{clubName,jdbcType=VARCHAR},
+      </if>
+      <if test="clubKind != null">
+        club_kind = #{clubKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clubIntro != null">
+        club_intro = #{clubIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="clubManager != null">
+        club_manager = #{clubManager,jdbcType=INTEGER},
+      </if>
+    </set>
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Club">
+    update club
+    set club_name = #{clubName,jdbcType=VARCHAR},
+      club_kind = #{clubKind,jdbcType=VARCHAR},
+      club_intro = #{clubIntro,jdbcType=VARCHAR},
+      club_manager = #{clubManager,jdbcType=INTEGER}
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Club">
+    <id column="club_id" jdbcType="INTEGER" property="clubId" />
+    <result column="club_name" jdbcType="VARCHAR" property="clubName" />
+    <result column="club_kind" jdbcType="VARCHAR" property="clubKind" />
+    <result column="club_intro" jdbcType="VARCHAR" property="clubIntro" />
+    <result column="club_manager" jdbcType="INTEGER" property="clubManager" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    club_id, club_name, club_kind, club_intro, club_manager
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from club
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from club
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Club">
+    insert into club (club_id, club_name, club_kind, 
+      club_intro, club_manager)
+    values (#{clubId,jdbcType=INTEGER}, #{clubName,jdbcType=VARCHAR}, #{clubKind,jdbcType=VARCHAR}, 
+      #{clubIntro,jdbcType=VARCHAR}, #{clubManager,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Club">
+    insert into club
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="clubId != null">
+        club_id,
+      </if>
+      <if test="clubName != null">
+        club_name,
+      </if>
+      <if test="clubKind != null">
+        club_kind,
+      </if>
+      <if test="clubIntro != null">
+        club_intro,
+      </if>
+      <if test="clubManager != null">
+        club_manager,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="clubId != null">
+        #{clubId,jdbcType=INTEGER},
+      </if>
+      <if test="clubName != null">
+        #{clubName,jdbcType=VARCHAR},
+      </if>
+      <if test="clubKind != null">
+        #{clubKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clubIntro != null">
+        #{clubIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="clubManager != null">
+        #{clubManager,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Club">
+    update club
+    <set>
+      <if test="clubName != null">
+        club_name = #{clubName,jdbcType=VARCHAR},
+      </if>
+      <if test="clubKind != null">
+        club_kind = #{clubKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clubIntro != null">
+        club_intro = #{clubIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="clubManager != null">
+        club_manager = #{clubManager,jdbcType=INTEGER},
+      </if>
+    </set>
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Club">
+    update club
+    set club_name = #{clubName,jdbcType=VARCHAR},
+      club_kind = #{clubKind,jdbcType=VARCHAR},
+      club_intro = #{clubIntro,jdbcType=VARCHAR},
+      club_manager = #{clubManager,jdbcType=INTEGER}
+    where club_id = #{clubId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Club">
+    <id column="club_id" jdbcType="INTEGER" property="clubId" />
+    <result column="club_name" jdbcType="VARCHAR" property="clubName" />
+    <result column="club_kind" jdbcType="VARCHAR" property="clubKind" />
+    <result column="club_intro" jdbcType="VARCHAR" property="clubIntro" />
+    <result column="club_manager" jdbcType="INTEGER" property="clubManager" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

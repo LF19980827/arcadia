@@ -1,6 +1,5 @@
 package com.aurora.arcadia.model;
 
-/*表白墙信息*/
 public class Love {
     private Integer loveId;
 

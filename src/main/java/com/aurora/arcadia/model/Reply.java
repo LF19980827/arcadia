@@ -2,7 +2,6 @@ package com.aurora.arcadia.model;
 
 import java.util.Date;
 
-/*帖子回复信息*/
 public class Reply {
     private Integer replyId;
 

@@ -1,6 +1,5 @@
 package com.aurora.arcadia.model;
 
-/*系统通知信息*/
 public class Message {
     private Integer msgId;
 
