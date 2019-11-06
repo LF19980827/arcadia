@@ -25,19 +25,19 @@ public class HelloController {
         return "Hello World!";
     }
 
-    @PostMapping(value = "/login")
-    public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        Map<String ,Object> map, HttpSession session){
-        if(!StringUtils.isEmpty(username)){
-            //登陆成功
-            session.setAttribute("loginUser",username);
-            return "redirect:/main.html";
-        }else {
-            //登陆失败
-            map.put("msg","用户名密码错误");
-            return "accountManagement/login";
-        }
-    }
+//    @PostMapping(value = "/login")
+//    public String login(@RequestParam("username") String username,
+//                        @RequestParam("password") String password,
+//                        Map<String ,Object> map, HttpSession session){
+//        if(!StringUtils.isEmpty(username)){
+//            //登陆成功
+//            session.setAttribute("loginUser",username);
+//            return "redirect:/main.html";
+//        }else {
+//            //登陆失败
+//            map.put("msg","用户名密码错误");
+//            return "accountManagement/login";
+//        }
+//    }
 
 }
