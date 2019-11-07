@@ -22,8 +22,6 @@
             <span class="padding2"><img src="../../static/img/logoA.png" height="50" width="50"></span>
             <input type="text" name="name" id="userName_register_btn" placeholder="userName" class="padding">
             <span class="helpMessage"></span>
-            <input type="Email" name="Email" id="email_register_btn" placeholder="Email"  class="padding">
-            <span class="helpMessage"></span>
             <input type="text" name="Telephone" id="telephone_register_btn" placeholder="Telephone" class="padding">
             <span class="helpMessage"></span>
             <input type="password" name="password" id="password_register_btn" placeholder="Password" class="padding">
@@ -50,18 +48,8 @@
             show_validate_message("#userName_register_btn", "success", "");
         }
 
-        //2.校验邮箱
-        var email= $("#email_register_btn").val();
-        //校验邮箱的正则
-        var regEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-        if(!regEmail.test(email)){
-            show_validate_message("#email_register_btn", "error", "邮箱格式不正确");
-            return false;
-        }else{
-            show_validate_message("#email_register_btn", "success", "");
-        }
 
-        //3.检验电话
+        //2.检验电话
         var telephone= $("#telephone_register_btn").val();
         //校验电话的正则
         var regTelephone = /^0?(13[0-9]|15[012356789]|18[012346789]|14[57]|17[678]|170[059]|14[57]|166|19[89])[0-9]{8}$/;
@@ -71,7 +59,7 @@
         }else{
             show_validate_message("#telephone_register_btn", "success", "");
         }
-        //4.检验密码正则
+        //3.检验密码正则
         var password= $("#password_register_btn").val();
         //校验密码的正则
         var regPassword = /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[\\(\\)])+$)([^(0-9a-zA-Z)]|[\\(\\)]|[a-zA-Z]|[0-9]){6,20}$/;

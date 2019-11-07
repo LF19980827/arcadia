@@ -97,4 +97,12 @@
       user_mobile = #{userMobile,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
+
+  <!--根据电话更改密码-->
+  <update id="updateByTelephone" parameterType="com.aurora.arcadia.model.User">
+  update user
+    set user_password = #{userPassword,jdbcType=VARCHAR}
+    where user_mobile = #{userMobile,jdbcType=VARCHAR}
+  </update>
+
 </mapper>

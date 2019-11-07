@@ -28,4 +28,11 @@ public interface UserMapper {
      * @return
      */
     User selectByName(User user);
+
+    /**
+     * 根据电话修改密码
+     * @param user
+     * @return
+     */
+    boolean updateByTelephone(User user);
 }

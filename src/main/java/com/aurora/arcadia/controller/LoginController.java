@@ -31,14 +31,11 @@ public class LoginController {
                                      @RequestParam(value = "password", required = true) String password,
                                      HttpSession session) {
 
-        System.out.println(username);
-        System.out.println(password);
-
         Map<String, Object> map = new HashMap<>();
 
         Integer userId;
 
-        if (username.length() != 11 && password.length() <= 20 && password.length() >= 6) {
+        if (username.length() != 11 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "用户名密码格式错误");
@@ -46,7 +43,7 @@ public class LoginController {
         }
 
         userId = userService.getUser(username, password);
-        if (null == userId) {
+        if (userId == null) {
             //登陆失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "用户名密码错误");
@@ -61,18 +58,11 @@ public class LoginController {
 
     @PostMapping(value = "/register")
     public Map<String, Object> register(@RequestParam(value = "username", required = true) String username,
-                           @RequestParam(value = "password", required = true) String password,
-                           @RequestParam(value = "telephone", required = true) String telephone) {
+                                        @RequestParam(value = "password", required = true) String password,
+                                        @RequestParam(value = "telephone", required = true) String telephone) {
         Map<String, Object> map = new HashMap<>();
 
-        if (telephone!=username) {
-            //校验失败
-            map.put(Constants.CODE, Constants.ERROE);
-            map.put(Constants.ERROR_MESSAGE, "用户名需和手机号相同");
-            return map;
-        }
-
-        if (telephone.length() != 11 && password.length() <= 20 && password.length() >= 6) {
+        if (telephone.length() != 11 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "格式错误");
@@ -96,5 +86,60 @@ public class LoginController {
         }
         return map;
 
+    }
+
+    @PostMapping(value = "/forget")
+    public Map<String, Object> forget(@RequestParam(value = "telephone", required = true) String telephone,
+                                      @RequestParam(value = "password", required = true) String password) {
+        Map<String, Object> map = new HashMap<>();
+
+        if (telephone.length() != 11 || password.length() > 20 || password.length() < 6) {
+            //校验失败
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "格式错误");
+            return map;
+        }
+
+        if (userService.UpdateUserByTelephone(telephone, password)) {
+            map.put(Constants.CODE, Constants.SUCCESS);
+        } else {
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "更新失败");
+        }
+
+        return map;
+    }
+
+    @PostMapping(value = "/modifyPassword")
+    public Map<String, Object> modifyPassword(@RequestParam(value = "username", required = true) String username,
+                                              @RequestParam(value = "oldpassword", required = true) String oldpassword,
+                                              @RequestParam(value = "newpassword", required = true) String newpassword) {
+        Map<String, Object> map = new HashMap<>();
+        Integer userId;
+
+        if (oldpassword.length() > 20 || oldpassword.length() < 6
+                || newpassword.length() > 20 || newpassword.length() < 6) {
+            //校验失败
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "密码格式错误");
+            return map;
+        }
+
+        userId = userService.getUser(username, oldpassword);
+
+        if (userId == null) {
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "用户名或密码错误");
+            return map;
+        }
+
+        if (userService.UpdateUserById(userId,newpassword)) {
+            map.put(Constants.CODE, Constants.SUCCESS);
+        } else {
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "修改失败");
+        }
+
+        return map;
     }
 }

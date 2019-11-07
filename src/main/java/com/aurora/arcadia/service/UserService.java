@@ -37,4 +37,20 @@ public interface UserService {
      * @param telephone
      */
     boolean InsertUser(String username, String password, String telephone);
+
+    /**
+     * 根据电话号更改密码
+     * @param telephone
+     * @param password
+     * @return
+     */
+    boolean UpdateUserByTelephone(String telephone, String password);
+
+    /**
+     * 根据用户ID修改用户密码
+     * @param userId
+     * @param newpassword
+     * @return
+     */
+    boolean UpdateUserById(Integer userId, String newpassword);
 }

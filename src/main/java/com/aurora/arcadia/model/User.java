@@ -28,6 +28,7 @@ public class User {
         this.userMobile = userMobile;
     }
 
+
     public Integer getUserId() {
         return userId;
     }

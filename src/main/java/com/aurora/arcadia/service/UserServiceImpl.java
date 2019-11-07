@@ -59,4 +59,23 @@ public class UserServiceImpl implements UserService  {
        }
         return true;
     }
+
+    @Override
+    public boolean UpdateUserByTelephone(String telephone, String password) {
+        if (userMapper.updateByTelephone(new User(null,null,password,telephone))){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean UpdateUserById(Integer userId, String password) {
+        try {
+            userMapper.updateByPrimaryKeySelective(new User(userId,null,password,null));
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }
