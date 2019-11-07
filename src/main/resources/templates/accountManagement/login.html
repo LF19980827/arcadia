@@ -7,148 +7,8 @@
     <link rel="stylesheet" href="../../static/bootstrap-3.3.7/css/bootstrap.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">
     <script src="../../static/js/jquery-1.12.4.min.js" th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
     <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"></script>
-    <style type="text/css">
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
 
-        html,
-        body {
-            color: rgba(0, 0, 0, 0.8);
-            width: 100%;
-            height: 100%;
-        }
-
-        .main {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            /*background: url(../static/img/login.jpg) center top;*/
-            background: url(img/login.jpg) center top;
-            background-size: cover;
-        }
-
-        .content {
-            width: 400px;
-            height: 450px;
-            position: absolute;
-            top: 47%;
-            /*left: 39%;*/
-            left: 58%;
-            overflow: hidden;
-            margin-top: -200px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            z-index: 1;
-            padding: 50px;
-            box-sizing: border-box;
-            /*不会把盒子撑开*/
-        }
-
-        .content::before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            z-index: -1;  /*-1 可以当背景*/
-            filter: blur(6px);
-            margin: -30px;
-            /*消除边缘透明*/
-            /*background: url(../static/img/login.jpg) center top;*/
-            background: url(img/login.jpg) center top;
-            background-size: cover;
-            background-attachment: fixed;  /*位置固定*/
-        }
-
-        .content form {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 23px;
-        }
-
-        .content form input {
-            width:300px;
-            height: 40px;
-            color:#ddd;
-            font-size: 20px;
-        }
-        .content .demo{
-            color:#265a88;
-        }
-        .padding {
-            margin: 20px 0 30px;
-        }
-        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color:#fff;
-        }
-        ::-moz-placeholder { /* Firefox 19+ */
-            color:#fff;
-        }
-        ::-ms-input-placeholder { /* IE 10+ */
-            color:#fff;
-        }
-        ::-moz-placeholder { /* Firefox 18- */
-            color:#fff;
-        }
-        .content input[type="text"],
-        .content input[type="password"] {
-            padding: 13px 10px;
-            width: 92.5%;
-            font-size: 16px;
-            outline: none;
-            background:transparent;
-            border:0px;
-            border-bottom: 1px solid #fff;
-            border-radius: 0px;
-            font-family: 'Open Sans', sans-serif;
-            letter-spacing:1.6px;
-            color:#fff;
-        }
-        .content input[type="submit"]{
-            font-size: 18px;
-            padding: 10px 20px;
-            letter-spacing:1.2px;
-            border: none;
-            text-transform: capitalize;
-            outline: none;
-            background: #03A9F4;
-            color: #fff;
-            cursor: pointer;
-            margin: 0 auto;
-            font-family: 'Open Sans', sans-serif;
-            transition-duration: 0.9s;
-        }
-        .content input[type="submit"]:hover {
-            transition-duration: 0.9s;
-            background:rgba(91, 157, 214, 0.76);
-        }
-        .content .register,
-        .content .forget{
-            margin-top:10px;
-            font-size: 16px;
-            font-family: 'Open Sans', sans-serif;
-            color:#fff;
-        }
-        .content .register{
-            float: right;
-        }
-        .content .forget{
-            float: left;
-        }
-        .content .register a,
-        .content .forget a{
-            color:#fff;
-        }
-        .helpMessage{
-            font-size: 14px;
-            color: red;
-            display: block;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{css/login.css}">
 
 </head>
 
@@ -189,22 +49,18 @@
             dataType: "json",
             data: {"username":$username,"password":$password},
             success: function (result) {
-                // var rtn = jQuery.parseJSON(result);
-                alert(result);
-                var rtn = JSON.parse(result);
-                alert(rtn);
+                // var rtn = JSON.parse(result);
 
-                var code = rtn.code;
-                alert(result.code);
+                var code = result.code;
                 if (code == 'success') {
                     //登陆成功
-                    $(location).attr('href', '/BHY/html/BHY-findUserLimit.html');
+
                 } else if (code == 'error') {
                     //密码不正确
-                    var errorMessage = rtn.errorMessage;
+                    var errorMessage = result.errorMessage;
                 }
             },error:function () {
-                alert("error");
+                alert("error!");
             }
         })
     }

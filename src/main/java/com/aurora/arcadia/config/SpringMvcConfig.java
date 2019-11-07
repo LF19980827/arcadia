@@ -3,6 +3,7 @@ package com.aurora.arcadia.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -21,6 +22,14 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/hanhan").setViewName("login");
     }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        super.addResourceHandlers(registry);
+        registry.addResourceHandler("/arcadia/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/template/**").addResourceLocations("classpath:/static/");
+
+    }
 
     //所有的WebMvcConfigurerAdapter组件都会一起起作用
     @Bean //将组件注册在容器

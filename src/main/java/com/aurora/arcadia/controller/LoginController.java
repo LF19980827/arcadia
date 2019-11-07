@@ -37,7 +37,6 @@ public class LoginController {
         System.out.println(password);
 
         Map<String, Object> map = new HashMap<>();
-        Map<String, Object> data = new HashMap<>();
 
         Integer userId;
 
@@ -58,8 +57,6 @@ public class LoginController {
 
         //登陆成功
         map.put(Constants.CODE, Constants.SUCCESS);
-        data.put("userMessage", userService.getUserMessageById(userId));
-        map.put(Constants.DATA, data);
         session.setAttribute(Constants.SESSION_USER, username);
         return map;
     }
