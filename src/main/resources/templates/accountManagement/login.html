@@ -337,13 +337,13 @@
     <div th:replace="commons/demo :: topBar"></div>
 
     <div class="content">
-        <form action="../index.html" th:action="@{/login}" method="post">
+        <form action="../index.html">
             <span class="padding2"><img src="../../static/img/logoA.png" height="50" width="50" th:src="@{/img/logoA.png}"></span>
             <input id="username" type="text" name="username"placeholder="userName" class="padding" th:placeholder="#{login.username}">
             <input id="password" type="password" name="password" placeholder="password" class="padding" th:placeholder="#{login.password}">
             <span class="helpMessage" th:text="${msg}"></span>
             <br><br>
-            <input type="submit" class="demo" value="login" th:value="#{login.tip}">
+            <input type="button" class="demo" value="login" th:value="#{login.tip}">
             <p class="forget"><a href="forget.html" th:text="#{login.forget}">forget Password</a></p>
             <p class="register"><a href="register.html" th:text="#{login.register}">Register</a></p>
 
@@ -369,7 +369,7 @@
                 var code = rtn.code;
                 if (code == 'success') {
                     //登陆成功
-                    //$(location).attr('href', '/BHY/html/BHY-findUserLimit.html');
+                    $(location).attr('href', '/BHY/html/BHY-findUserLimit.html');
                 } else if (code == 'error') {
                     //密码不正确
                     var errorMessage = rtn.errorMessagr;
