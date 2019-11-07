@@ -182,22 +182,26 @@
         $username = $("#username").val();
         $password = $("#password").val();
 
+
         $.ajax({
-            url: "https://169.254.106.172:8888/arcadia/login",//
+            url: "/arcadia/login",
             type: "post",
-            data: {"username":$username,"password":$password},
             dataType: "json",
+            data: {"username":$username,"password":$password},
             success: function (result) {
-                //var rtn = jQuery.parseJSON(result);
-                //var code = rtn.code;
-                if (result.status == 'success') {
+                // var rtn = jQuery.parseJSON(result);
+                alert(result);
+                var rtn = JSON.parse(result);
+                alert(rtn);
+
+                var code = rtn.code;
+                alert(result.code);
+                if (code == 'success') {
                     //登陆成功
                     $(location).attr('href', '/BHY/html/BHY-findUserLimit.html');
-                } else if (result.status == 'error') {
+                } else if (code == 'error') {
                     //密码不正确
-                    //var errorMessage = rtn.errorMessage;
-                    //alert(errorMessage)
-                    alert("登录失败")
+                    var errorMessage = rtn.errorMessage;
                 }
             },error:function () {
                 alert("error");

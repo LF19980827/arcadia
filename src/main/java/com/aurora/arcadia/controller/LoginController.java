@@ -29,9 +29,13 @@ public class LoginController {
 
 
     @PostMapping(value = "/login")
-    public Object login(@RequestParam(value = "username", required = true) String username,
-                        @RequestParam(value = "password", required = true) String password,
-                        HttpSession session) {
+    public Map<String, Object> login(@RequestParam(value = "username", required = true) String username,
+                                     @RequestParam(value = "password", required = true) String password,
+                                     HttpSession session) {
+
+        System.out.println(username);
+        System.out.println(password);
+
         Map<String, Object> map = new HashMap<>();
         Map<String, Object> data = new HashMap<>();
 
@@ -61,7 +65,7 @@ public class LoginController {
     }
 
     @PostMapping(value = "/register")
-    public Object register(@RequestParam(value = "username", required = true) String username,
+    public Map<String, Object> register(@RequestParam(value = "username", required = true) String username,
                            @RequestParam(value = "password", required = true) String password,
                            @RequestParam(value = "telephone", required = true) String telephone) {
         Map<String, Object> map = new HashMap<>();
