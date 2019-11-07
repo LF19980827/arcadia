@@ -1,8 +1,5 @@
 package com.aurora.arcadia.model;
 
-/**
- * 个人关注信息
- */
 public class Attention {
     private Integer attId;
 

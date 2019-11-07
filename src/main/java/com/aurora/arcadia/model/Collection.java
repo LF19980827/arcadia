@@ -1,8 +1,5 @@
 package com.aurora.arcadia.model;
 
-/**
- * 收藏信息
- */
 public class Collection {
     private Integer colId;
 

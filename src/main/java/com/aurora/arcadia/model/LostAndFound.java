@@ -1,8 +1,5 @@
 package com.aurora.arcadia.model;
 
-/**
- * 失物招领信息
- */
 public class LostAndFound {
     private Integer lostId;
 

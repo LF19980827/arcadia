@@ -1,8 +1,5 @@
 package com.aurora.arcadia.model;
 
-/**
- * 用户登陆信息
- */
 public class User {
     private Integer userId;
 
@@ -11,6 +8,25 @@ public class User {
     private String userPassword;
 
     private String userMobile;
+
+    public User(String userName, String userPassword) {
+        this.userName = userName;
+        this.userPassword = userPassword;
+    }
+
+    public User() {
+    }
+
+    public User(String userName) {
+        this.userName = userName;
+    }
+
+    public User(Integer userId, String userName, String userPassword, String userMobile) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userMobile = userMobile;
+    }
 
     public Integer getUserId() {
         return userId;

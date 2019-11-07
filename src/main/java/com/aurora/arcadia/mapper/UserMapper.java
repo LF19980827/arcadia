@@ -11,7 +11,21 @@ public interface UserMapper {
 
     User selectByPrimaryKey(Integer userId);
 
+    /**
+     * 根据用户名密码查询ID
+     * @param record
+     * @return
+     */
+    User selectByLogin(User record);
+
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    /**
+     * 根据用户名查询ID
+     * @param user
+     * @return
+     */
+    User selectByName(User user);
 }
