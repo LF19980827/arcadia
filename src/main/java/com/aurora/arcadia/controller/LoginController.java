@@ -5,10 +5,8 @@ import com.aurora.arcadia.vo.Constants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
@@ -67,6 +65,12 @@ public class LoginController {
                            @RequestParam(value = "telephone", required = true) String telephone) {
         Map<String, Object> map = new HashMap<>();
 
+        if (telephone!=username) {
+            //校验失败
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "用户名需和手机号相同");
+            return map;
+        }
 
         if (telephone.length() != 11 && password.length() <= 20 && password.length() >= 6) {
             //校验失败
@@ -74,6 +78,7 @@ public class LoginController {
             map.put(Constants.ERROR_MESSAGE, "格式错误");
             return map;
         }
+
 
         Integer userId = userService.getUserByName(username);
         if (userId != null) {
