@@ -364,16 +364,18 @@
             url: "https://169.254.106.172:8888/arcadia/login",
             type: "post",
             data: {"username":$username,"password":$password},
+            dataType: "json",
             success: function (result) {
-                var rtn = jQuery.parseJSON(result);
-                var code = rtn.code;
-                if (code == 'success') {
+                //var rtn = jQuery.parseJSON(result);
+                //var code = rtn.code;
+                if (result.status == 'success') {
                     //登陆成功
                     $(location).attr('href', '/BHY/html/BHY-findUserLimit.html');
-                } else if (code == 'error') {
+                } else if (result.status == 'error') {
                     //密码不正确
-                    var errorMessage = rtn.errorMessagr;
-                    alert(errorMessage)
+                    //var errorMessage = rtn.errorMessage;
+                    //alert(errorMessage)
+                    alert("登录失败")
                 }
             },error:function () {
                 alert("error");
