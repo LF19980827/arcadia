@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.UserMessageMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.UserMessage">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="u_name" jdbcType="VARCHAR" property="uName" />
+    <result column="u_gender" jdbcType="VARCHAR" property="uGender" />
+    <result column="u_birth" jdbcType="DATE" property="uBirth" />
+    <result column="u_address" jdbcType="VARCHAR" property="uAddress" />
+    <result column="u_career" jdbcType="VARCHAR" property="uCareer" />
+    <result column="u_intro" jdbcType="VARCHAR" property="uIntro" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, u_name, u_gender, u_birth, u_address, u_career, u_intro
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_message
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_message
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.UserMessage" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+    insert into user_message (user_id, u_name, u_gender, 
+      u_birth, u_address, u_career, 
+      u_intro)
+    values (#{userId,jdbcType=INTEGER}, #{uName,jdbcType=VARCHAR}, #{uGender,jdbcType=VARCHAR}, 
+      #{uBirth,jdbcType=DATE}, #{uAddress,jdbcType=VARCHAR}, #{uCareer,jdbcType=VARCHAR}, 
+      #{uIntro,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.UserMessage">
+    insert into user_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="uName != null">
+        u_name,
+      </if>
+      <if test="uGender != null">
+        u_gender,
+      </if>
+      <if test="uBirth != null">
+        u_birth,
+      </if>
+      <if test="uAddress != null">
+        u_address,
+      </if>
+      <if test="uCareer != null">
+        u_career,
+      </if>
+      <if test="uIntro != null">
+        u_intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="uName != null">
+        #{uName,jdbcType=VARCHAR},
+      </if>
+      <if test="uGender != null">
+        #{uGender,jdbcType=VARCHAR},
+      </if>
+      <if test="uBirth != null">
+        #{uBirth,jdbcType=DATE},
+      </if>
+      <if test="uAddress != null">
+        #{uAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="uCareer != null">
+        #{uCareer,jdbcType=VARCHAR},
+      </if>
+      <if test="uIntro != null">
+        #{uIntro,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.UserMessage">
+    update user_message
+    <set>
+      <if test="uName != null">
+        u_name = #{uName,jdbcType=VARCHAR},
+      </if>
+      <if test="uGender != null">
+        u_gender = #{uGender,jdbcType=VARCHAR},
+      </if>
+      <if test="uBirth != null">
+        u_birth = #{uBirth,jdbcType=DATE},
+      </if>
+      <if test="uAddress != null">
+        u_address = #{uAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="uCareer != null">
+        u_career = #{uCareer,jdbcType=VARCHAR},
+      </if>
+      <if test="uIntro != null">
+        u_intro = #{uIntro,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.UserMessage">
+    update user_message
+    set u_name = #{uName,jdbcType=VARCHAR},
+      u_gender = #{uGender,jdbcType=VARCHAR},
+      u_birth = #{uBirth,jdbcType=DATE},
+      u_address = #{uAddress,jdbcType=VARCHAR},
+      u_career = #{uCareer,jdbcType=VARCHAR},
+      u_intro = #{uIntro,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

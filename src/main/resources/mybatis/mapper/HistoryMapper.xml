@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.HistoryMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.History">
+    <id column="history_id" jdbcType="INTEGER" property="historyId" />
+    <result column="history_time" jdbcType="TIMESTAMP" property="historyTime" />
+    <result column="history_kind" jdbcType="INTEGER" property="historyKind" />
+    <result column="history_record" jdbcType="INTEGER" property="historyRecord" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    history_id, history_time, history_kind, history_record
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from history
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from history
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.History">
+    insert into history (history_id, history_time, history_kind, 
+      history_record)
+    values (#{historyId,jdbcType=INTEGER}, #{historyTime,jdbcType=TIMESTAMP}, #{historyKind,jdbcType=INTEGER}, 
+      #{historyRecord,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.History">
+    insert into history
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="historyId != null">
+        history_id,
+      </if>
+      <if test="historyTime != null">
+        history_time,
+      </if>
+      <if test="historyKind != null">
+        history_kind,
+      </if>
+      <if test="historyRecord != null">
+        history_record,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="historyId != null">
+        #{historyId,jdbcType=INTEGER},
+      </if>
+      <if test="historyTime != null">
+        #{historyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="historyKind != null">
+        #{historyKind,jdbcType=INTEGER},
+      </if>
+      <if test="historyRecord != null">
+        #{historyRecord,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.History">
+    update history
+    <set>
+      <if test="historyTime != null">
+        history_time = #{historyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="historyKind != null">
+        history_kind = #{historyKind,jdbcType=INTEGER},
+      </if>
+      <if test="historyRecord != null">
+        history_record = #{historyRecord,jdbcType=INTEGER},
+      </if>
+    </set>
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.History">
+    update history
+    set history_time = #{historyTime,jdbcType=TIMESTAMP},
+      history_kind = #{historyKind,jdbcType=INTEGER},
+      history_record = #{historyRecord,jdbcType=INTEGER}
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </update>
+</mapper>
