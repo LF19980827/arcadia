@@ -21,9 +21,9 @@ public class Constants {
     public static final String ERROE = "error";
 
     /**
-     * session中存储的user
+     * session中存储的userId
      */
-    public static final String SESSION_USER = "sessionUser";
+    public static final String SESSION_USERID = "sessionUserId";
 
     /**
      * code

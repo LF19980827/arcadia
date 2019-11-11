@@ -14,14 +14,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //使用WebMvcConfigurerAdapter可以来扩展SpringMVC的功能
 @Configuration
 public class SpringMvcConfig extends WebMvcConfigurerAdapter {
-
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        // super.addViewControllers(registry);
-        //浏览器发送 /hanhan 请求来到 login
-        registry.addViewController("/hanhan").setViewName("login");
-    }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         super.addResourceHandlers(registry);

@@ -52,7 +52,7 @@ public class LoginController {
 
         //登陆成功
         map.put(Constants.CODE, Constants.SUCCESS);
-        session.setAttribute(Constants.SESSION_USER, username);
+        session.setAttribute(Constants.SESSION_USERID, userId);
         return map;
     }
 
