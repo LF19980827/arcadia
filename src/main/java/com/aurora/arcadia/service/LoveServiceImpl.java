@@ -7,6 +7,8 @@ import com.aurora.arcadia.model.User;
 import com.aurora.arcadia.model.UserMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collection;
+
 public class LoveServiceImpl implements LoveService {
 
 	@Autowired
@@ -27,6 +29,11 @@ public class LoveServiceImpl implements LoveService {
 
 	@Override
 	public Love getLoveById(Integer userId) {
+		return null;
+	}
+
+	@Override
+	public Collection<Integer> getAllLoveUserId() {
 		return null;
 	}
 
