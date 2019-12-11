@@ -64,6 +64,8 @@ public class UserMessageController {
         return map;
     }
 
-    public Map<String, Object> showMyCollection(){}
+    public Map<String, Object> showMyCollection(){
+        return null;
+    }
 
 }
