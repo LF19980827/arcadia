@@ -64,4 +64,6 @@ public class UserMessageController {
         return map;
     }
 
+    public Map<String, Object> showMyCollection(){}
+
 }
