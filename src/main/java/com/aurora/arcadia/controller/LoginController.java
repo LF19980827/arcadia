@@ -35,7 +35,7 @@ public class LoginController {
 
         Integer userId;
 
-        if (username.length() != 11 || password.length() > 20 || password.length() < 6) {
+        if (username.length() > 11 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "用户名密码格式错误");
@@ -62,7 +62,7 @@ public class LoginController {
                                         @RequestParam(value = "telephone", required = true) String telephone) {
         Map<String, Object> map = new HashMap<>();
 
-        if (telephone.length() != 11 || password.length() > 20 || password.length() < 6) {
+        if (username.length()>15||telephone.length() != 11 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "格式错误");
