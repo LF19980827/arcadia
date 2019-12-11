@@ -20,4 +20,6 @@ public interface LoveMapper {
 
     Collection<Integer> getAllLoveUserId();
 
+    boolean saveLove(Love love);
+
 }

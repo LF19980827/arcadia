@@ -1,25 +1,39 @@
 package com.aurora.arcadia.service;
 
 import com.aurora.arcadia.model.Love;
+import com.aurora.arcadia.model.UserMessage;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface LoveService {
 
 	/**
-	 * 根据用户名查询用户ID
-	 * @param username
+	 * 根据用户ID查询用户信息
+	 * @param userId
 	 * @return
 	 */
-	Integer getUserByName(String username);
+	UserMessage getUserMessageById(Integer userId);
 
 	/**
-	 * 根据用户ID查询用户在表白墙的信息
+	 * 根据用户ID查询用户在表白墙的所有信息
 	 * @param userId
 	 * @return
 	 */
 	Love getLoveById(Integer userId);
 
-	Collection<Integer> getAllLoveUserId();
+	/**
+	 * 查询表白墙中所有用户的id
+	 * @return
+	 */
+	List<Integer> getAllLoveUserId();
+
+	Integer getLoveSignById(Integer loveUserId);
+
+	/**
+	 * 存储用户及相关信息到表白墙
+	 * @param love
+	 * @return
+	 */
+	boolean saveLove(Love love);
 
 }

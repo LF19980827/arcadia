@@ -3,11 +3,10 @@ package com.aurora.arcadia.service;
 import com.aurora.arcadia.mapper.LoveMapper;
 import com.aurora.arcadia.mapper.UserMapper;
 import com.aurora.arcadia.model.Love;
-import com.aurora.arcadia.model.User;
 import com.aurora.arcadia.model.UserMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collection;
+import java.util.List;
 
 public class LoveServiceImpl implements LoveService {
 
@@ -17,14 +16,8 @@ public class LoveServiceImpl implements LoveService {
 	private UserMapper userMapper;
 
 	@Override
-	public Integer getUserByName(String username) {
-		User user = new User(username);
-		try {
-			user = userMapper.selectByName(user);
-			return user.getUserId();
-		}catch (NullPointerException e) {
-			return null;
-		}
+	public UserMessage getUserMessageById(Integer userId) {
+		return null;
 	}
 
 	@Override
@@ -33,8 +26,18 @@ public class LoveServiceImpl implements LoveService {
 	}
 
 	@Override
-	public Collection<Integer> getAllLoveUserId() {
+	public List<Integer> getAllLoveUserId() {
 		return null;
+	}
+
+	@Override
+	public boolean saveLove(Love love) {
+		return false;
+	}
+
+	@Override
+	public Integer getLoveSignById(Integer loveUserId) {
+		return 0;
 	}
 
 }
