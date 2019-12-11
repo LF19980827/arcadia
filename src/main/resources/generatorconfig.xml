@@ -67,18 +67,18 @@
                enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"></table>
 
-        <table tableName="lostandfound"  domainObjectName="LostAndFound"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="love"          domainObjectName="Love"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
+<!--        <table tableName="lostandfound"  domainObjectName="LostAndFound"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="love"          domainObjectName="Love"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
 <!--        <table tableName="message"       domainObjectName="Message"-->
 <!--               enableCountByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
-        <table tableName="post"          domainObjectName="Post"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
+<!--        <table tableName="post"          domainObjectName="Post"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
 <!--        <table tableName="reply"         domainObjectName="Reply"-->
 <!--               enableCountByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->

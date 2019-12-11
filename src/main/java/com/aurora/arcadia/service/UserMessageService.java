@@ -1,6 +1,9 @@
 package com.aurora.arcadia.service;
 
+import com.aurora.arcadia.model.Collection;
 import com.aurora.arcadia.model.UserMessage;
+
+import java.util.List;
 
 /**
  * @author LFuser
@@ -21,4 +24,11 @@ public interface UserMessageService {
      * @return
      */
     boolean updateUserMessage(UserMessage userMessage);
+
+    /**
+     * 分页查询用户收藏
+     * @param userId
+     * @return
+     */
+    List<Collection> getCollectionAll(Integer userId);
 }
