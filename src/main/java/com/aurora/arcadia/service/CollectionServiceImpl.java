@@ -33,10 +33,28 @@ public class CollectionServiceImpl implements CollectionService {
     @Override
     public boolean delCollectionById(Integer colId) {
         try {
-            collectionMapper.deleteByPrimaryKey(colId);
+          int i = collectionMapper.deleteByPrimaryKey(colId);
+          if (i==1){
+              return true;
+          }else{
+              return false;
+          }
         }catch (Exception e){
             return false;
         }
-        return true;
+    }
+
+    @Override
+    public boolean insertCollection(Collection collection) {
+        try{
+            int i = collectionMapper.insertSelective(collection);
+            if (i==1){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
     }
 }

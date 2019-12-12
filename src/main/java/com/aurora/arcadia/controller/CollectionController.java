@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +28,7 @@ public class CollectionController {
 
 
     /**
-     * 展示用户收藏信息
+     * 展示用户收藏信息(按收藏时间降序)
      *
      * @param page
      * @param session
@@ -96,5 +95,30 @@ public class CollectionController {
         return map;
     }
 
+    /**
+     * 添加收藏信息
+     * @param collection
+     * @return
+     */
+    @PostMapping(value = "/insertCollection")
+    public Map<String, Object> insertMyCollection(Collection collection,HttpSession session){
+        Map<String, Object> map = new HashMap<>();
+        Integer userId = (Integer) session.getAttribute("sessionUserId");
+        if (userId==null){
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "登陆已失效");
+        }else if (userId!=collection.getColUserId()){
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "传输信息出错");
+        }else {
+            if (collectionService.insertCollection(collection)){
+                map.put(Constants.CODE, Constants.SUCCESS);
+            }else {
+                map.put(Constants.CODE, Constants.ERROE);
+                map.put(Constants.ERROR_MESSAGE, "增加失败");
+            }
+        }
+        return map;
+    }
 
 }

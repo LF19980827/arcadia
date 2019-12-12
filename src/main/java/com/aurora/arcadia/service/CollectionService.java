@@ -24,4 +24,11 @@ public interface CollectionService {
      * @return
      */
     boolean delCollectionById(Integer colId);
+
+    /**
+     * 增加收藏信息
+     * @param collection
+     * @return
+     */
+    boolean insertCollection(Collection collection);
 }

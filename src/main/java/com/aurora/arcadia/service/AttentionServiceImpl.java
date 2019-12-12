@@ -14,7 +14,6 @@ import java.util.List;
 @Service
 public class AttentionServiceImpl implements AttentionService{
 
-
     @Autowired
     private AttentionMapper attentionMapper;
 
@@ -27,5 +26,30 @@ public class AttentionServiceImpl implements AttentionService{
             return null;
         }
         return attentions;
+    }
+
+    @Override
+    public List<Attention> getBeAttentionAll(Integer userId) {
+        List<Attention> attentions;
+        try {
+            attentions =attentionMapper.selectByAttBeUserId(userId);
+        }catch (Exception e){
+            return null;
+        }
+        return attentions;
+    }
+
+    @Override
+    public boolean insertAttention(Attention attention) {
+        try{
+            int i = attentionMapper.insertSelective(attention);
+            if (i==1){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
     }
 }

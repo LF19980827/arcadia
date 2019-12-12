@@ -7,8 +7,6 @@ import java.util.List;
 public interface CollectionMapper {
     int deleteByPrimaryKey(Integer colId);
 
-    int insert(Collection record);
-
     int insertSelective(Collection record);
 
     Collection selectByPrimaryKey(Integer colId);

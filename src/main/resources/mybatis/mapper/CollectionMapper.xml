@@ -22,14 +22,7 @@
     delete from collection
     where col_id = #{colId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.aurora.arcadia.model.Collection">
-    insert into collection (col_id, col_user_id, col_time, 
-      col_post, col_post_time, col_title
-      )
-    values (#{colId,jdbcType=INTEGER}, #{colUserId,jdbcType=INTEGER}, #{colTime,jdbcType=TIMESTAMP}, 
-      #{colPost,jdbcType=INTEGER}, #{colPostTime,jdbcType=TIMESTAMP}, #{colTitle,jdbcType=VARCHAR}
-      )
-  </insert>
+
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Collection">
     insert into collection
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -104,11 +97,13 @@
     where col_id = #{colId,jdbcType=INTEGER}
   </update>
 
+  <!--根据用户查询关注列表-->
   <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from collection
     where col_user_id = #{colUserId,jdbcType=INTEGER}
+    order by col_time desc
   </select>
 
 
