@@ -9,10 +9,10 @@ mybatis: #配置文件版和注解版区别:主要是需要配置此处的mybati
 
 spring:
   datasource:
-    username: root
-    password: LF@0827
-    url: jdbc:mysql://localhost:3306/arcadia?serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: arcadia
+    password: arcadia
+    url: jdbc:mysql://49.235.228.156:3306/c?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
     # 初始化大小，最小，最大
