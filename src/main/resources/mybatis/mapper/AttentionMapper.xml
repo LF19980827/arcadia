@@ -5,9 +5,10 @@
     <id column="att_id" jdbcType="INTEGER" property="attId" />
     <result column="att_user_id" jdbcType="INTEGER" property="attUserId" />
     <result column="att_be_user_id" jdbcType="INTEGER" property="attBeUserId" />
+    <result column="att_time" jdbcType="TIMESTAMP" property="attTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    att_id, att_user_id, att_be_user_id
+    att_id, att_user_id, att_be_user_id, att_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -20,10 +21,10 @@
     where att_id = #{attId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.aurora.arcadia.model.Attention">
-    insert into attention (att_id, att_user_id, att_be_user_id
-      )
-    values (#{attId,jdbcType=INTEGER}, #{attUserId,jdbcType=INTEGER}, #{attBeUserId,jdbcType=INTEGER}
-      )
+    insert into attention (att_id, att_user_id, att_be_user_id, 
+      att_time)
+    values (#{attId,jdbcType=INTEGER}, #{attUserId,jdbcType=INTEGER}, #{attBeUserId,jdbcType=INTEGER}, 
+      #{attTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Attention">
     insert into attention
@@ -37,6 +38,9 @@
       <if test="attBeUserId != null">
         att_be_user_id,
       </if>
+      <if test="attTime != null">
+        att_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="attId != null">
@@ -47,6 +51,9 @@
       </if>
       <if test="attBeUserId != null">
         #{attBeUserId,jdbcType=INTEGER},
+      </if>
+      <if test="attTime != null">
+        #{attTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -59,13 +66,17 @@
       <if test="attBeUserId != null">
         att_be_user_id = #{attBeUserId,jdbcType=INTEGER},
       </if>
+      <if test="attTime != null">
+        att_time = #{attTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where att_id = #{attId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Attention">
     update attention
     set att_user_id = #{attUserId,jdbcType=INTEGER},
-      att_be_user_id = #{attBeUserId,jdbcType=INTEGER}
+      att_be_user_id = #{attBeUserId,jdbcType=INTEGER},
+      att_time = #{attTime,jdbcType=TIMESTAMP}
     where att_id = #{attId,jdbcType=INTEGER}
   </update>
 
@@ -74,6 +85,6 @@
     <include refid="Base_Column_List" />
     from attention
     where att_user_id = #{attUserId,jdbcType=INTEGER}
+    order by att_time desc
   </select>
-
 </mapper>

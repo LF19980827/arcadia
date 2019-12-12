@@ -18,8 +18,7 @@ public interface AttentionMapper {
     int updateByPrimaryKey(Attention record);
 
     /**
-     * 根据关注者ID查询关注列表
-     * @param attUserId
+     * 根据用户查询关注信息
      * @return
      */
     List<Attention> selectByAttUserId(Integer attUserId);

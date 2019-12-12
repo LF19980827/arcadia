@@ -7,9 +7,10 @@
     <result column="club_kind" jdbcType="VARCHAR" property="clubKind" />
     <result column="club_intro" jdbcType="VARCHAR" property="clubIntro" />
     <result column="club_manager" jdbcType="INTEGER" property="clubManager" />
+    <result column="club_time" jdbcType="TIMESTAMP" property="clubTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    club_id, club_name, club_kind, club_intro, club_manager
+    club_id, club_name, club_kind, club_intro, club_manager, club_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +24,11 @@
   </delete>
   <insert id="insert" parameterType="com.aurora.arcadia.model.Club">
     insert into club (club_id, club_name, club_kind, 
-      club_intro, club_manager)
+      club_intro, club_manager, club_time
+      )
     values (#{clubId,jdbcType=INTEGER}, #{clubName,jdbcType=VARCHAR}, #{clubKind,jdbcType=VARCHAR}, 
-      #{clubIntro,jdbcType=VARCHAR}, #{clubManager,jdbcType=INTEGER})
+      #{clubIntro,jdbcType=VARCHAR}, #{clubManager,jdbcType=INTEGER}, #{clubTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Club">
     insert into club
@@ -45,6 +48,9 @@
       <if test="clubManager != null">
         club_manager,
       </if>
+      <if test="clubTime != null">
+        club_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="clubId != null">
@@ -61,6 +67,9 @@
       </if>
       <if test="clubManager != null">
         #{clubManager,jdbcType=INTEGER},
+      </if>
+      <if test="clubTime != null">
+        #{clubTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -79,6 +88,9 @@
       <if test="clubManager != null">
         club_manager = #{clubManager,jdbcType=INTEGER},
       </if>
+      <if test="clubTime != null">
+        club_time = #{clubTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where club_id = #{clubId,jdbcType=INTEGER}
   </update>
@@ -87,7 +99,8 @@
     set club_name = #{clubName,jdbcType=VARCHAR},
       club_kind = #{clubKind,jdbcType=VARCHAR},
       club_intro = #{clubIntro,jdbcType=VARCHAR},
-      club_manager = #{clubManager,jdbcType=INTEGER}
+      club_manager = #{clubManager,jdbcType=INTEGER},
+      club_time = #{clubTime,jdbcType=TIMESTAMP}
     where club_id = #{clubId,jdbcType=INTEGER}
   </update>
 </mapper>

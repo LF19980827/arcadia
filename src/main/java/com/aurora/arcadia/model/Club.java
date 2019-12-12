@@ -1,5 +1,7 @@
 package com.aurora.arcadia.model;
 
+import java.util.Date;
+
 public class Club {
     private Integer clubId;
 
@@ -10,6 +12,8 @@ public class Club {
     private String clubIntro;
 
     private Integer clubManager;
+
+    private Date clubTime;
 
     public Integer getClubId() {
         return clubId;
@@ -49,5 +53,13 @@ public class Club {
 
     public void setClubManager(Integer clubManager) {
         this.clubManager = clubManager;
+    }
+
+    public Date getClubTime() {
+        return clubTime;
+    }
+
+    public void setClubTime(Date clubTime) {
+        this.clubTime = clubTime;
     }
 }
