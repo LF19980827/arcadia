@@ -7,9 +7,10 @@
     <result column="post_user_id" jdbcType="INTEGER" property="postUserId" />
     <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
     <result column="post_intro" jdbcType="VARCHAR" property="postIntro" />
+    <result column="post_time" jdbcType="TIMESTAMP" property="postTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    post_id, post_kind, post_user_id, post_title, post_intro
+    post_id, post_kind, post_user_id, post_title, post_intro, post_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +24,11 @@
   </delete>
   <insert id="insert" parameterType="com.aurora.arcadia.model.Post">
     insert into post (post_id, post_kind, post_user_id, 
-      post_title, post_intro)
+      post_title, post_intro, post_time
+      )
     values (#{postId,jdbcType=INTEGER}, #{postKind,jdbcType=INTEGER}, #{postUserId,jdbcType=INTEGER}, 
-      #{postTitle,jdbcType=VARCHAR}, #{postIntro,jdbcType=VARCHAR})
+      #{postTitle,jdbcType=VARCHAR}, #{postIntro,jdbcType=VARCHAR}, #{postTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Post">
     insert into post
@@ -45,6 +48,9 @@
       <if test="postIntro != null">
         post_intro,
       </if>
+      <if test="postTime != null">
+        post_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="postId != null">
@@ -61,6 +67,9 @@
       </if>
       <if test="postIntro != null">
         #{postIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null">
+        #{postTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -79,6 +88,9 @@
       <if test="postIntro != null">
         post_intro = #{postIntro,jdbcType=VARCHAR},
       </if>
+      <if test="postTime != null">
+        post_time = #{postTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where post_id = #{postId,jdbcType=INTEGER}
   </update>
@@ -87,7 +99,8 @@
     set post_kind = #{postKind,jdbcType=INTEGER},
       post_user_id = #{postUserId,jdbcType=INTEGER},
       post_title = #{postTitle,jdbcType=VARCHAR},
-      post_intro = #{postIntro,jdbcType=VARCHAR}
+      post_intro = #{postIntro,jdbcType=VARCHAR},
+      post_time = #{postTime,jdbcType=TIMESTAMP}
     where post_id = #{postId,jdbcType=INTEGER}
   </update>
 </mapper>

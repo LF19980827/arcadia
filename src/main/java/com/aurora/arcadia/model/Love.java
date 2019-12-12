@@ -1,5 +1,7 @@
 package com.aurora.arcadia.model;
 
+import java.util.Date;
+
 public class Love {
     private Integer loveId;
 
@@ -10,6 +12,8 @@ public class Love {
     private Integer loveSign;
 
     private Boolean loveUserStatus;
+
+    private Date loveTime;
 
     public Integer getLoveId() {
         return loveId;
@@ -49,5 +53,13 @@ public class Love {
 
     public void setLoveUserStatus(Boolean loveUserStatus) {
         this.loveUserStatus = loveUserStatus;
+    }
+
+    public Date getLoveTime() {
+        return loveTime;
+    }
+
+    public void setLoveTime(Date loveTime) {
+        this.loveTime = loveTime;
     }
 }

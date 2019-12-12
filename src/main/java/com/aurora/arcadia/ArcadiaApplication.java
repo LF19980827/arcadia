@@ -14,6 +14,9 @@ public class ArcadiaApplication {
     //启动spring
     public static void main(String[] args) {
         SpringApplication.run(ArcadiaApplication.class, args);
+        System.out.println("***************************************************************************");
+        System.out.println("**********************************启动成功**********************************");
+        System.out.println("***************************************************************************");
     }
 
 }

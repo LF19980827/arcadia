@@ -30,9 +30,8 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("accountManagement/login");
-                registry.addViewController("/index.html").setViewName("accountManagement/login");
                 registry.addViewController("/login.html").setViewName("accountManagement/login");
-                registry.addViewController("/main.html").setViewName("index");
+                registry.addViewController("/index.html").setViewName("index");
 
             }
 

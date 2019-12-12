@@ -12,8 +12,8 @@
 
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/arcadia?serverTimezone=UTC" userId="root"
-                        password="LF@0827">
+                        connectionURL="jdbc:mysql://49.235.228.156:3306/arcadia?serverTimezone=UTC" userId="arcadia"
+                        password="arcadia">
             <!--去除xxxWithBLOBs的影响-->
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
@@ -53,42 +53,41 @@
             如不需要example类添加下面四个属性
             enableCountByExample="false" enableDeleteByExample="false"
             enableSelectByExample="false" enableUpdateByExample="false"></table>-->
-        <table tableName="activity" 	 domainObjectName="Activity"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="attention"     domainObjectName="Attention"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="club" 	     domainObjectName="Club"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="collection"    domainObjectName="Collection"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="history"       domainObjectName="History"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="lostandfound"  domainObjectName="LostAndFound"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="love"          domainObjectName="Love"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="message"       domainObjectName="Message"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="post"          domainObjectName="Post"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="reply"         domainObjectName="Reply"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="user"          domainObjectName="User"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
-        <table tableName="user_message"  domainObjectName="UserMessage"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
+
+<!--        <table tableName="activity" 	 domainObjectName="Activity"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="attention"     domainObjectName="Attention"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="club" 	     domainObjectName="Club"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="collection"    domainObjectName="Collection"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+
+<!--        <table tableName="lostandfound"  domainObjectName="LostAndFound"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="love"          domainObjectName="Love"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="message"       domainObjectName="Message"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="post"          domainObjectName="Post"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="reply"         domainObjectName="Reply"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="user"          domainObjectName="User"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="user_message"  domainObjectName="UserMessage"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
 
 
     </context>

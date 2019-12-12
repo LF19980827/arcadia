@@ -1,5 +1,7 @@
 package com.aurora.arcadia.model;
 
+import java.util.Date;
+
 public class Post {
     private Integer postId;
 
@@ -10,6 +12,8 @@ public class Post {
     private String postTitle;
 
     private String postIntro;
+
+    private Date postTime;
 
     public Integer getPostId() {
         return postId;
@@ -49,5 +53,13 @@ public class Post {
 
     public void setPostIntro(String postIntro) {
         this.postIntro = postIntro == null ? null : postIntro.trim();
+    }
+
+    public Date getPostTime() {
+        return postTime;
+    }
+
+    public void setPostTime(Date postTime) {
+        this.postTime = postTime;
     }
 }

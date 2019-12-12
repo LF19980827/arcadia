@@ -1,4 +1,4 @@
-package com.aurora.arcadia.config;
+package com.aurora.arcadia.Interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

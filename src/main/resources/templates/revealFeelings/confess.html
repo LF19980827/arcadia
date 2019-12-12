@@ -34,13 +34,12 @@
                 </div>
             </nav>
 
-            <div class="panel panel-default">
+            <div class="panel panel-default" th:each="username:${usernames}">
                 <div class="panel-heading" style="background: darkgray">
-                    <h3 class="panel-title">一条鱼</h3>
+                    <h3 class="panel-title" th:text="${username.id}">一条鱼</h3>
                 </div>
                 <div class="panel-body">
-                    什么鬼<br>
-                    哈哈哈哈哈哈<br>
+                    <p th:text=""></p>
                     <div class="like" style="float: right">
                         <button type="button" class="btn btn-default">点赞</button>
                     </div>
@@ -68,7 +67,7 @@
                     什么鬼<br>
                     哈哈哈哈哈哈<br>
                     <div class="like" style="float: right">
-                        <button type="button" class="btn btn-default">点赞</button>
+                        <button type="button" class="btn btn-default" th:action="">点赞</button>
                     </div>
                 </div>
             </div>
