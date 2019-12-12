@@ -1,6 +1,5 @@
 package com.aurora.arcadia.service;
 
-import com.aurora.arcadia.model.Collection;
 import com.aurora.arcadia.model.UserMessage;
 
 import java.util.List;
@@ -25,17 +24,5 @@ public interface UserMessageService {
      */
     boolean updateUserMessage(UserMessage userMessage);
 
-    /**
-     * 分页查询用户收藏
-     * @param userId
-     * @return
-     */
-    List<Collection> getCollectionAll(Integer userId);
 
-    /**
-     * 根据记录ID删除收藏
-     * @param colId
-     * @return
-     */
-    boolean delCollectionById(Integer colId);
 }
