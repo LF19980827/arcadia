@@ -54,6 +54,7 @@ public class UserMessageController {
     public Map<String, Object> updateUserMessage(UserMessage userMessage,HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
+
         if (userMessageService.updateUserMessage(userMessage)) {
             map.put(Constants.CODE, Constants.SUCCESS);
         }else if (userId!=userMessage.getUserId()){

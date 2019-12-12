@@ -78,6 +78,13 @@ public class AttentionController {
         return map;
     }
 
+    /**
+     * 增加关注信息
+     * @param attention
+     * @param session
+     * @return
+     */
+    @PostMapping("/insertAttention")
     public Map<String, Object> insertAttention(Attention attention, HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
