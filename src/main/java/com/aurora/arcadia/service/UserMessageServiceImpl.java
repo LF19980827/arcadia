@@ -57,4 +57,14 @@ public class UserMessageServiceImpl implements UserMessageService {
         }
         return collections;
     }
+
+    @Override
+    public boolean delCollectionById(Integer colId) {
+        try {
+            userMessageMapper.deleteByPrimaryKey(colId);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
 }

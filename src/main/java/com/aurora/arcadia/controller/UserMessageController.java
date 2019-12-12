@@ -74,8 +74,8 @@ public class UserMessageController {
      * @param session
      * @return
      */
-    @PostMapping(value = "/showCollection")
-    public Map<String, Object> showMyCollection(@RequestParam(value = "page", required = true) Integer page, HttpSession session) {
+    @PostMapping(value = "/showCollections")
+    public Map<String, Object> showMyCollections(@RequestParam(value = "page", required = true) Integer page, HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
         if (userId!=null){
@@ -94,5 +94,45 @@ public class UserMessageController {
 
         return map;
     }
+
+    /**
+     * 根据收藏ID删除收藏
+     * @param colId
+     * @param session
+     * @return
+     */
+    @PostMapping(value = "/delCollection")
+    public Map<String, Object> delMyCollection(@RequestParam(value = "colId", required = true) Integer colId, HttpSession session){
+        Map<String, Object> map = new HashMap<>();
+        Integer userId = (Integer) session.getAttribute("sessionUserId");
+
+        if(userId!=null){
+            if (userMessageService.delCollectionById(colId)){
+                map.put(Constants.CODE,Constants.SUCCESS);
+            }else {
+                map.put(Constants.CODE,Constants.ERROE);
+                map.put(Constants.ERROR_MESSAGE,"删除失败");
+            }
+        }else {
+            map.put(Constants.CODE,Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE,"登陆已失效");
+        }
+
+        return map;
+    }
+
+    /**
+     * 根据收藏，进入帖子
+     * @param postId
+     * @return
+     */
+    @PostMapping(value = "/getCollection")
+    public Map<String,Object> getMyCollection(@RequestParam(value = "colPost") Integer postId){
+        Map<String, Object> map = new HashMap<>();
+        //按id查询帖子
+        return map;
+    }
+
+
 
 }

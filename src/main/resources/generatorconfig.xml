@@ -63,9 +63,9 @@
 <!--        <table tableName="club" 	     domainObjectName="Club"-->
 <!--               enableCountByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
-        <table tableName="collection"    domainObjectName="Collection"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"></table>
+<!--        <table tableName="collection"    domainObjectName="Collection"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
 
 <!--        <table tableName="lostandfound"  domainObjectName="LostAndFound"-->
 <!--               enableCountByExample="false" enableDeleteByExample="false"-->

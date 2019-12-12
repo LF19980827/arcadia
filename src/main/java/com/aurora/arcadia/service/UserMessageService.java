@@ -31,4 +31,11 @@ public interface UserMessageService {
      * @return
      */
     List<Collection> getCollectionAll(Integer userId);
+
+    /**
+     * 根据记录ID删除收藏
+     * @param colId
+     * @return
+     */
+    boolean delCollectionById(Integer colId);
 }
