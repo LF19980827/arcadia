@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,7 +36,7 @@ public class LoginController {
 
         Integer userId;
 
-        if (username.length() > 11 || password.length() > 20 || password.length() < 6) {
+        if (username.length() > 15 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "用户名密码格式错误");
