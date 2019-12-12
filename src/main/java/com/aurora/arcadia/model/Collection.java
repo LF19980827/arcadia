@@ -1,15 +1,19 @@
 package com.aurora.arcadia.model;
 
+import java.util.Date;
+
 public class Collection {
     private Integer colId;
 
-    private Integer colSign;
-
     private Integer colUserId;
 
-    private Integer colRecord;
+    private Date colTime;
 
-    private Integer colSignId;
+    private Integer colPost;
+
+    private Date colPostTime;
+
+    private String colTitle;
 
     public Integer getColId() {
         return colId;
@@ -17,14 +21,6 @@ public class Collection {
 
     public void setColId(Integer colId) {
         this.colId = colId;
-    }
-
-    public Integer getColSign() {
-        return colSign;
-    }
-
-    public void setColSign(Integer colSign) {
-        this.colSign = colSign;
     }
 
     public Integer getColUserId() {
@@ -35,19 +31,35 @@ public class Collection {
         this.colUserId = colUserId;
     }
 
-    public Integer getColRecord() {
-        return colRecord;
+    public Date getColTime() {
+        return colTime;
     }
 
-    public void setColRecord(Integer colRecord) {
-        this.colRecord = colRecord;
+    public void setColTime(Date colTime) {
+        this.colTime = colTime;
     }
 
-    public Integer getColSignId() {
-        return colSignId;
+    public Integer getColPost() {
+        return colPost;
     }
 
-    public void setColSignId(Integer colSignId) {
-        this.colSignId = colSignId;
+    public void setColPost(Integer colPost) {
+        this.colPost = colPost;
+    }
+
+    public Date getColPostTime() {
+        return colPostTime;
+    }
+
+    public void setColPostTime(Date colPostTime) {
+        this.colPostTime = colPostTime;
+    }
+
+    public String getColTitle() {
+        return colTitle;
+    }
+
+    public void setColTitle(String colTitle) {
+        this.colTitle = colTitle == null ? null : colTitle.trim();
     }
 }

@@ -7,9 +7,10 @@
     <result column="love_intro" jdbcType="VARCHAR" property="loveIntro" />
     <result column="love_sign" jdbcType="INTEGER" property="loveSign" />
     <result column="love_user_status" jdbcType="BIT" property="loveUserStatus" />
+    <result column="love_time" jdbcType="TIMESTAMP" property="loveTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    love_id, love_user_id, love_intro, love_sign, love_user_status
+    love_id, love_user_id, love_intro, love_sign, love_user_status, love_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +24,11 @@
   </delete>
   <insert id="insert" parameterType="com.aurora.arcadia.model.Love">
     insert into love (love_id, love_user_id, love_intro, 
-      love_sign, love_user_status)
+      love_sign, love_user_status, love_time
+      )
     values (#{loveId,jdbcType=INTEGER}, #{loveUserId,jdbcType=INTEGER}, #{loveIntro,jdbcType=VARCHAR}, 
-      #{loveSign,jdbcType=INTEGER}, #{loveUserStatus,jdbcType=BIT})
+      #{loveSign,jdbcType=INTEGER}, #{loveUserStatus,jdbcType=BIT}, #{loveTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Love">
     insert into love
@@ -45,6 +48,9 @@
       <if test="loveUserStatus != null">
         love_user_status,
       </if>
+      <if test="loveTime != null">
+        love_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="loveId != null">
@@ -61,6 +67,9 @@
       </if>
       <if test="loveUserStatus != null">
         #{loveUserStatus,jdbcType=BIT},
+      </if>
+      <if test="loveTime != null">
+        #{loveTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -79,6 +88,9 @@
       <if test="loveUserStatus != null">
         love_user_status = #{loveUserStatus,jdbcType=BIT},
       </if>
+      <if test="loveTime != null">
+        love_time = #{loveTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where love_id = #{loveId,jdbcType=INTEGER}
   </update>
@@ -87,7 +99,8 @@
     set love_user_id = #{loveUserId,jdbcType=INTEGER},
       love_intro = #{loveIntro,jdbcType=VARCHAR},
       love_sign = #{loveSign,jdbcType=INTEGER},
-      love_user_status = #{loveUserStatus,jdbcType=BIT}
+      love_user_status = #{loveUserStatus,jdbcType=BIT},
+      love_time = #{loveTime,jdbcType=TIMESTAMP}
     where love_id = #{loveId,jdbcType=INTEGER}
   </update>
 </mapper>

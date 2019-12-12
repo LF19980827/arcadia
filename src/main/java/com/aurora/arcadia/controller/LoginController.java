@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,13 +18,14 @@ import java.util.Map;
  * @author LFuser
  * @create 2019-11-06-上午 8:39
  */
+
 @RestController
 public class LoginController {
 
     @Autowired
     private UserService userService;
 
-    private Logger logger = LogManager.getLogger(UserController.class);
+    private Logger logger = LogManager.getLogger(LoginController.class);
 
 
     @PostMapping(value = "/login")
