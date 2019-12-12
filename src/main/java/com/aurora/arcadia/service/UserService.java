@@ -10,21 +10,17 @@ public interface UserService {
 
     /**
      * 根据用户名密码匹配用户
+     *
      * @param username
      * @param password
      * @return
      */
     Integer getUser(String username, String password);
 
-    /**
-     * 根据用户ID查询用户资料
-     * @param userId
-     * @return
-     */
-    UserMessage getUserMessageById(Integer userId);
 
     /**
      * 根据用户名查询用户ID
+     *
      * @param username
      * @return
      */
@@ -32,6 +28,7 @@ public interface UserService {
 
     /**
      * 增加新用户
+     *
      * @param username
      * @param password
      * @param telephone
@@ -40,6 +37,7 @@ public interface UserService {
 
     /**
      * 根据电话号更改密码
+     *
      * @param telephone
      * @param password
      * @return
@@ -48,6 +46,7 @@ public interface UserService {
 
     /**
      * 根据用户ID修改用户密码
+     *
      * @param userId
      * @param newpassword
      * @return

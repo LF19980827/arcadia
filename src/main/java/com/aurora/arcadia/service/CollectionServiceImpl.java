@@ -14,18 +14,16 @@ import java.util.List;
 @Service
 public class CollectionServiceImpl implements CollectionService {
 
-
     @Autowired
     private CollectionMapper collectionMapper;
 
     @Override
     public List<Collection> getCollectionAll(Integer userId) {
-
         List<Collection> collections;
         try {
             collections = collectionMapper.selectByUserId(userId);
-        }catch (Exception e){
-            return  null;
+        } catch (Exception e) {
+            return null;
         }
         return collections;
     }
@@ -33,27 +31,27 @@ public class CollectionServiceImpl implements CollectionService {
     @Override
     public boolean delCollectionById(Integer colId) {
         try {
-          int i = collectionMapper.deleteByPrimaryKey(colId);
-          if (i==1){
-              return true;
-          }else{
-              return false;
-          }
-        }catch (Exception e){
+            int i = collectionMapper.deleteByPrimaryKey(colId);
+            if (i == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
             return false;
         }
     }
 
     @Override
     public boolean insertCollection(Collection collection) {
-        try{
+        try {
             int i = collectionMapper.insertSelective(collection);
-            if (i==1){
+            if (i == 1) {
                 return true;
-            }else {
+            } else {
                 return false;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

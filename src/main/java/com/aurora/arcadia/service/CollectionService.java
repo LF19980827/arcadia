@@ -13,6 +13,7 @@ public interface CollectionService {
 
     /**
      * 分页查询用户收藏
+     *
      * @param userId
      * @return
      */
@@ -20,6 +21,7 @@ public interface CollectionService {
 
     /**
      * 根据记录ID删除收藏
+     *
      * @param colId
      * @return
      */
@@ -27,6 +29,7 @@ public interface CollectionService {
 
     /**
      * 增加收藏信息
+     *
      * @param collection
      * @return
      */

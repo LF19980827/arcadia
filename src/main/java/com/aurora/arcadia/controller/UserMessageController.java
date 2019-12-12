@@ -1,6 +1,5 @@
 package com.aurora.arcadia.controller;
 
-
 import com.aurora.arcadia.model.UserMessage;
 import com.aurora.arcadia.service.UserMessageService;
 import com.aurora.arcadia.vo.Constants;
@@ -51,24 +50,20 @@ public class UserMessageController {
      * @return
      */
     @PostMapping(value = "/updateMessage")
-    public Map<String, Object> updateUserMessage(UserMessage userMessage,HttpSession session) {
+    public Map<String, Object> updateUserMessage(UserMessage userMessage, HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
 
         if (userMessageService.updateUserMessage(userMessage)) {
             map.put(Constants.CODE, Constants.SUCCESS);
-        }else if (userId!=userMessage.getUserId()){
+        } else if (userId != userMessage.getUserId()) {
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "传输信息有误");
-        }
-        else {
+        } else {
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "修改失败");
         }
-
         return map;
     }
-
-
 
 }
