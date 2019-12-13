@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.*;
 
 public class LoveController {
@@ -27,7 +26,8 @@ public class LoveController {
 
 		List loveSigns = new ArrayList();
 		for (Integer loveUserId : loveUserIds) {
-			Integer loveSign = loveService.getLoveSignById(loveUserId);
+			Love love = loveService.getLoveById(loveUserId);
+			Integer loveSign = love.getLoveSign();
 			loveSigns.add(loveSign);
 		}
 		model.addAttribute("loveSigns", loveUserNames);

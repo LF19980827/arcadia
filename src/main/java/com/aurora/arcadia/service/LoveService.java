@@ -27,8 +27,6 @@ public interface LoveService {
 	 */
 	List<Integer> getAllLoveUserId();
 
-	Integer getLoveSignById(Integer loveUserId);
-
 	/**
 	 * 存储用户及相关信息到表白墙
 	 * @param love

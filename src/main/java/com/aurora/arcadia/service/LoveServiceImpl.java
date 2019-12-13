@@ -2,10 +2,12 @@ package com.aurora.arcadia.service;
 
 import com.aurora.arcadia.mapper.LoveMapper;
 import com.aurora.arcadia.mapper.UserMapper;
+import com.aurora.arcadia.mapper.UserMessageMapper;
 import com.aurora.arcadia.model.Love;
 import com.aurora.arcadia.model.UserMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LoveServiceImpl implements LoveService {
@@ -13,31 +15,49 @@ public class LoveServiceImpl implements LoveService {
 	@Autowired
 	private LoveMapper loveMapper;
 	@Autowired
-	private UserMapper userMapper;
+	private UserMessageMapper userMessageMapper;
 
 	@Override
 	public UserMessage getUserMessageById(Integer userId) {
-		return null;
+		UserMessage userMessage;
+		try {
+			userMessage = userMessageMapper.selectByPrimaryKey(userId);
+		} catch (Exception e) {
+			return null;
+		}
+		return userMessage;
 	}
 
 	@Override
 	public Love getLoveById(Integer userId) {
-		return null;
+		Love love;
+		try {
+			love = loveMapper.getLoveById(userId);
+		} catch (Exception e) {
+			return null;
+		}
+		return love;
 	}
 
 	@Override
 	public List<Integer> getAllLoveUserId() {
-		return null;
+		List list = new ArrayList();
+		try {
+			list = loveMapper.getAllLoveUserId();
+		} catch (Exception e) {
+			return null;
+		}
+		return list;
 	}
 
 	@Override
 	public boolean saveLove(Love love) {
-		return false;
+		boolean flag;
+		try {
+			flag = loveMapper.saveLove(love);
+		} catch (Exception e) {
+			return false;
+		}
+		return flag;
 	}
-
-	@Override
-	public Integer getLoveSignById(Integer loveUserId) {
-		return 0;
-	}
-
 }
