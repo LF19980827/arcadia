@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aurora.arcadia.mapper.LoveMapper">
+
   <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Love">
     <id column="love_id" jdbcType="INTEGER" property="loveId" />
     <result column="love_user_id" jdbcType="INTEGER" property="loveUserId" />
@@ -9,9 +10,11 @@
     <result column="love_user_status" jdbcType="BIT" property="loveUserStatus" />
     <result column="love_time" jdbcType="TIMESTAMP" property="loveTime" />
   </resultMap>
+
   <sql id="Base_Column_List">
     love_id, love_user_id, love_intro, love_sign, love_user_status, love_time
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -103,4 +106,20 @@
       love_time = #{loveTime,jdbcType=TIMESTAMP}
     where love_id = #{loveId,jdbcType=INTEGER}
   </update>
+
+  <insert id="saveLove" parameterType="com.aurora.arcadia.model.Love">
+    insert into love(love_id, love_user_id, love_intro, love_sign, love_user_status, love_time)
+    values (#{loveId}, #{loveUserId}, #{love_intro}, #{love_sign}, #{love_user_status}, #{love_time});
+  </insert>
+
+  <select id="getLoveById" parameterType="int" resultMap="BaseResultMap">
+    select *
+    from love
+    where love_user_id = #{loveUserId};
+    </select>
+
+  <select id="getAllLoveUserId" resultType="int">
+        select count(distinct love_user_id)
+        from love;
+  </select>
 </mapper>
