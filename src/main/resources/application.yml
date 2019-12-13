@@ -17,7 +17,7 @@ spring:
   datasource:
     username: arcadia
     password: arcadia
-    url: jdbc:mysql://49.235.228.156:3306/c?serverTimezone=UTC
+    url: jdbc:mysql://49.235.228.156:3306/arcadia?characterEncoding=utf-8&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
