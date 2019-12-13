@@ -43,7 +43,7 @@ public class CollectionServiceImpl implements CollectionService {
     }
 
     @Override
-    public boolean addCollection(Collection collection) {
+    public boolean insertCollection(Collection collection) {
         try {
             int i = collectionMapper.insertSelective(collection);
             if (i == 1) {

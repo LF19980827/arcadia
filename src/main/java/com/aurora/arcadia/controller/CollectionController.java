@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -100,32 +99,27 @@ public class CollectionController {
     /**
      * 添加收藏信息
      *
-     * @param collection 传入的参数封装,必须要包含colPost,即帖子id
+     * @param collection
      * @return
      */
-    @PostMapping(value = "/collection")
-    public Map<String, Object> collection(Collection collection, HttpSession session) {
+    @PostMapping(value = "/insertCollection")
+    public Map<String, Object> insertMyCollection(Collection collection, HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
-
-        collection.setColTime(new Date());
-        collection.setColUserId(userId);
-
         if (userId == null) {
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "登陆已失效");
-
-            return map;
-        }
-
-        if (!collectionService.addCollection(collection)) {
+        } else if (userId != collection.getColUserId()) {
             map.put(Constants.CODE, Constants.ERROE);
-            map.put(Constants.ERROR_MESSAGE, "增加失败");
-            return map;
+            map.put(Constants.ERROR_MESSAGE, "传输信息出错");
+        } else {
+            if (collectionService.insertCollection(collection)) {
+                map.put(Constants.CODE, Constants.SUCCESS);
+            } else {
+                map.put(Constants.CODE, Constants.ERROE);
+                map.put(Constants.ERROR_MESSAGE, "增加失败");
+            }
         }
-
-        map.put(Constants.CODE, Constants.SUCCESS);
-
         return map;
     }
 }
