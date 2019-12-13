@@ -26,6 +26,11 @@ public class Constants {
     public static final String SESSION_USERID = "sessionUserId";
 
     /**
+     * session中存储的user对象对应的key
+     */
+    public static final String SESSION_USER = "sessionUser";
+
+    /**
      * code
      */
     public static final String CODE = "code";
