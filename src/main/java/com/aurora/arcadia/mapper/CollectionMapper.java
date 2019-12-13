@@ -7,8 +7,6 @@ import java.util.List;
 public interface CollectionMapper {
     int deleteByPrimaryKey(Integer colId);
 
-    int insert(Collection record);
-
     int insertSelective(Collection record);
 
     Collection selectByPrimaryKey(Integer colId);
@@ -17,6 +15,11 @@ public interface CollectionMapper {
 
     int updateByPrimaryKey(Collection record);
 
-    List<Collection>  selectByUserId(Integer colUserId);
+    /**
+     * 根据用户ID查询所有收藏
+     * @param colUserId
+     * @return
+     */
+    List<Collection> selectByUserId(Integer colUserId);
 
 }

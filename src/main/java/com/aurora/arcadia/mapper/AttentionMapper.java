@@ -7,8 +7,6 @@ import java.util.List;
 public interface AttentionMapper {
     int deleteByPrimaryKey(Integer attId);
 
-    int insert(Attention record);
-
     int insertSelective(Attention record);
 
     Attention selectByPrimaryKey(Integer attId);
@@ -18,9 +16,17 @@ public interface AttentionMapper {
     int updateByPrimaryKey(Attention record);
 
     /**
-     * 根据关注者ID查询关注列表
-     * @param attUserId
+     * 根据用户查询关注信息
+     *
      * @return
      */
     List<Attention> selectByAttUserId(Integer attUserId);
+
+    /**
+     * 根据用户查询粉丝信息
+     *
+     * @param attBeUserId
+     * @return
+     */
+    List<Attention> selectByAttBeUserId(Integer attBeUserId);
 }

@@ -1,5 +1,7 @@
 package com.aurora.arcadia.model;
 
+import java.util.Date;
+
 public class Message {
     private Integer msgId;
 
@@ -8,6 +10,8 @@ public class Message {
     private String msgBody;
 
     private Integer msgSign;
+
+    private Date msgTime;
 
     public Integer getMsgId() {
         return msgId;
@@ -39,5 +43,13 @@ public class Message {
 
     public void setMsgSign(Integer msgSign) {
         this.msgSign = msgSign;
+    }
+
+    public Date getMsgTime() {
+        return msgTime;
+    }
+
+    public void setMsgTime(Date msgTime) {
+        this.msgTime = msgTime;
     }
 }

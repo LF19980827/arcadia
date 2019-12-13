@@ -6,9 +6,10 @@
     <result column="msg_user" jdbcType="INTEGER" property="msgUser" />
     <result column="msg_body" jdbcType="VARCHAR" property="msgBody" />
     <result column="msg_sign" jdbcType="INTEGER" property="msgSign" />
+    <result column="msg_time" jdbcType="TIMESTAMP" property="msgTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    msg_id, msg_user, msg_body, msg_sign
+    msg_id, msg_user, msg_body, msg_sign, msg_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -22,9 +23,9 @@
   </delete>
   <insert id="insert" parameterType="com.aurora.arcadia.model.Message">
     insert into message (msg_id, msg_user, msg_body, 
-      msg_sign)
+      msg_sign, msg_time)
     values (#{msgId,jdbcType=INTEGER}, #{msgUser,jdbcType=INTEGER}, #{msgBody,jdbcType=VARCHAR}, 
-      #{msgSign,jdbcType=INTEGER})
+      #{msgSign,jdbcType=INTEGER}, #{msgTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Message">
     insert into message
@@ -41,6 +42,9 @@
       <if test="msgSign != null">
         msg_sign,
       </if>
+      <if test="msgTime != null">
+        msg_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="msgId != null">
@@ -54,6 +58,9 @@
       </if>
       <if test="msgSign != null">
         #{msgSign,jdbcType=INTEGER},
+      </if>
+      <if test="msgTime != null">
+        #{msgTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -69,6 +76,9 @@
       <if test="msgSign != null">
         msg_sign = #{msgSign,jdbcType=INTEGER},
       </if>
+      <if test="msgTime != null">
+        msg_time = #{msgTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where msg_id = #{msgId,jdbcType=INTEGER}
   </update>
@@ -76,7 +86,8 @@
     update message
     set msg_user = #{msgUser,jdbcType=INTEGER},
       msg_body = #{msgBody,jdbcType=VARCHAR},
-      msg_sign = #{msgSign,jdbcType=INTEGER}
+      msg_sign = #{msgSign,jdbcType=INTEGER},
+      msg_time = #{msgTime,jdbcType=TIMESTAMP}
     where msg_id = #{msgId,jdbcType=INTEGER}
   </update>
 </mapper>
