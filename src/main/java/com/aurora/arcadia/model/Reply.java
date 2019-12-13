@@ -3,14 +3,29 @@ package com.aurora.arcadia.model;
 import java.util.Date;
 
 public class Reply {
+    /**
+     * 回复记录id
+     */
     private Integer replyId;
 
+    /**
+     * 回复的帖子id
+     */
     private Integer replyPostId;
 
+    /**
+     * 回复时间
+     */
     private Date replyTime;
 
+    /**
+     * 回复的内容
+     */
     private String replyIntro;
 
+    /**
+     * 回复者的uid
+     */
     private Integer replyUserId;
 
     public Integer getReplyId() {

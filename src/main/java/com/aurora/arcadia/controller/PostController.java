@@ -67,10 +67,26 @@ public class PostController {
             rtnMap.put(Constants.ERROR_MESSAGE, "服务器繁忙,请稍后重新发布!");
 
             logger.warn("submitNewPost:{postTitle = " + postTitle + "}");
+            return rtnMap;
         }
         rtnMap.put(Constants.CODE, Constants.SUCCESS);
 
         logger.info("submitNewPost:{uid = " + postUserId + ", postTitle = " + postTitle + "}");
+
+        return rtnMap;
+    }
+
+    /**
+     * 查询该帖子id对应的帖子信息,并一并返回所有的回复,按时间顺序排列
+     * @param postId 帖子id
+     * @return 数据封装
+     */
+    @ResponseBody
+    @RequestMapping(value = "/showPost")
+    public Map<String,Object> showPost(@RequestParam(value = "postId", required = true) Integer postId){
+        Map<String, Object> rtnMap = new HashMap<>();
+
+
 
         return rtnMap;
     }
