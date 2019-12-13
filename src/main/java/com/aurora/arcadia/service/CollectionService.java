@@ -33,5 +33,5 @@ public interface CollectionService {
      * @param collection
      * @return
      */
-    boolean insertCollection(Collection collection);
+    boolean addCollection(Collection collection);
 }
