@@ -13,6 +13,7 @@ public interface UserMapper {
 
     /**
      * 根据用户名密码查询ID
+     *
      * @param record
      * @return
      */
@@ -24,6 +25,7 @@ public interface UserMapper {
 
     /**
      * 根据用户名查询ID
+     *
      * @param user
      * @return
      */
@@ -31,6 +33,7 @@ public interface UserMapper {
 
     /**
      * 根据电话修改密码
+     *
      * @param user
      * @return
      */

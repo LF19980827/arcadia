@@ -2,17 +2,39 @@ package com.aurora.arcadia.model;
 
 import java.util.Date;
 
+/**
+ * 论坛帖子实体
+ */
 public class Post {
+    /**
+     * 帖子的id
+     */
     private Integer postId;
 
+    /**
+     * 帖子标签
+     * 暂时不适用,闲置
+     */
     private Integer postKind;
 
+    /**
+     * 发帖者的uid
+     */
     private Integer postUserId;
 
+    /**
+     * 帖子标题
+     */
     private String postTitle;
 
+    /**
+     * 帖子内容
+     */
     private String postIntro;
 
+    /**
+     * 发布时间
+     */
     private Date postTime;
 
     public Integer getPostId() {

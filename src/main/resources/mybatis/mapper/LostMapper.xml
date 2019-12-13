@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.LostMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Lost">
+    <id column="lost_id" jdbcType="INTEGER" property="lostId" />
+    <result column="lost_title" jdbcType="VARCHAR" property="lostTitle" />
+    <result column="lost_intro" jdbcType="VARCHAR" property="lostIntro" />
+    <result column="lost_sign" jdbcType="INTEGER" property="lostSign" />
+    <result column="lost_user_id" jdbcType="INTEGER" property="lostUserId" />
+    <result column="lost_time" jdbcType="TIMESTAMP" property="lostTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    lost_id, lost_title, lost_intro, lost_sign, lost_user_id, lost_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from lost
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from lost
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aurora.arcadia.model.Lost">
+    insert into lost (lost_id, lost_title, lost_intro, 
+      lost_sign, lost_user_id, lost_time
+      )
+    values (#{lostId,jdbcType=INTEGER}, #{lostTitle,jdbcType=VARCHAR}, #{lostIntro,jdbcType=VARCHAR}, 
+      #{lostSign,jdbcType=INTEGER}, #{lostUserId,jdbcType=INTEGER}, #{lostTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Lost">
+    insert into lost
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lostId != null">
+        lost_id,
+      </if>
+      <if test="lostTitle != null">
+        lost_title,
+      </if>
+      <if test="lostIntro != null">
+        lost_intro,
+      </if>
+      <if test="lostSign != null">
+        lost_sign,
+      </if>
+      <if test="lostUserId != null">
+        lost_user_id,
+      </if>
+      <if test="lostTime != null">
+        lost_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lostId != null">
+        #{lostId,jdbcType=INTEGER},
+      </if>
+      <if test="lostTitle != null">
+        #{lostTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="lostIntro != null">
+        #{lostIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="lostSign != null">
+        #{lostSign,jdbcType=INTEGER},
+      </if>
+      <if test="lostUserId != null">
+        #{lostUserId,jdbcType=INTEGER},
+      </if>
+      <if test="lostTime != null">
+        #{lostTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Lost">
+    update lost
+    <set>
+      <if test="lostTitle != null">
+        lost_title = #{lostTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="lostIntro != null">
+        lost_intro = #{lostIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="lostSign != null">
+        lost_sign = #{lostSign,jdbcType=INTEGER},
+      </if>
+      <if test="lostUserId != null">
+        lost_user_id = #{lostUserId,jdbcType=INTEGER},
+      </if>
+      <if test="lostTime != null">
+        lost_time = #{lostTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Lost">
+    update lost
+    set lost_title = #{lostTitle,jdbcType=VARCHAR},
+      lost_intro = #{lostIntro,jdbcType=VARCHAR},
+      lost_sign = #{lostSign,jdbcType=INTEGER},
+      lost_user_id = #{lostUserId,jdbcType=INTEGER},
+      lost_time = #{lostTime,jdbcType=TIMESTAMP}
+    where lost_id = #{lostId,jdbcType=INTEGER}
+  </update>
+</mapper>

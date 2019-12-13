@@ -2,11 +2,8 @@ package com.aurora.arcadia.controller;
 
 import com.aurora.arcadia.service.UserService;
 import com.aurora.arcadia.vo.Constants;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,19 +22,15 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    private Logger logger = LogManager.getLogger(LoginController.class);
-
-
     @PostMapping(value = "/login")
     public Map<String, Object> login(@RequestParam(value = "username", required = true) String username,
                                      @RequestParam(value = "password", required = true) String password,
                                      HttpSession session) {
 
         Map<String, Object> map = new HashMap<>();
-
         Integer userId;
 
-        if (username.length() > 11 || password.length() > 20 || password.length() < 6) {
+        if (username.length() > 15 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "用户名密码格式错误");
@@ -64,7 +57,7 @@ public class LoginController {
                                         @RequestParam(value = "telephone", required = true) String telephone) {
         Map<String, Object> map = new HashMap<>();
 
-        if (username.length()>15||telephone.length() != 11 || password.length() > 20 || password.length() < 6) {
+        if (username.length() > 15 || telephone.length() != 11 || password.length() > 20 || password.length() < 6) {
             //校验失败
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "格式错误");
@@ -135,7 +128,7 @@ public class LoginController {
             return map;
         }
 
-        if (userService.UpdateUserById(userId,newpassword)) {
+        if (userService.UpdateUserById(userId, newpassword)) {
             map.put(Constants.CODE, Constants.SUCCESS);
         } else {
             map.put(Constants.CODE, Constants.ERROE);

@@ -15,6 +15,7 @@ public class UserMessageServiceImpl implements UserMessageService {
     @Autowired
     private UserMessageMapper userMessageMapper;
 
+
     @Override
     public UserMessage getUserMessageById(Integer userId) {
         UserMessage userMessage;
@@ -35,4 +36,5 @@ public class UserMessageServiceImpl implements UserMessageService {
         }
         return true;
     }
+
 }

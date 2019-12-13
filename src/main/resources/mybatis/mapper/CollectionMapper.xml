@@ -4,11 +4,13 @@
   <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Collection">
     <id column="col_id" jdbcType="INTEGER" property="colId" />
     <result column="col_user_id" jdbcType="INTEGER" property="colUserId" />
-    <result column="col_record" jdbcType="INTEGER" property="colRecord" />
+    <result column="col_time" jdbcType="TIMESTAMP" property="colTime" />
     <result column="col_post" jdbcType="INTEGER" property="colPost" />
+    <result column="col_post_time" jdbcType="TIMESTAMP" property="colPostTime" />
+    <result column="col_title" jdbcType="VARCHAR" property="colTitle" />
   </resultMap>
   <sql id="Base_Column_List">
-    col_id, col_user_id, col_record, col_post
+    col_id, col_user_id, col_time, col_post, col_post_time, col_title
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -20,12 +22,7 @@
     delete from collection
     where col_id = #{colId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.aurora.arcadia.model.Collection">
-    insert into collection (col_id, col_user_id, col_record, 
-      col_post)
-    values (#{colId,jdbcType=INTEGER}, #{colUserId,jdbcType=INTEGER}, #{colRecord,jdbcType=INTEGER}, 
-      #{colPost,jdbcType=INTEGER})
-  </insert>
+
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Collection">
     insert into collection
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -35,11 +32,17 @@
       <if test="colUserId != null">
         col_user_id,
       </if>
-      <if test="colRecord != null">
-        col_record,
+      <if test="colTime != null">
+        col_time,
       </if>
       <if test="colPost != null">
         col_post,
+      </if>
+      <if test="colPostTime != null">
+        col_post_time,
+      </if>
+      <if test="colTitle != null">
+        col_title,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -49,11 +52,17 @@
       <if test="colUserId != null">
         #{colUserId,jdbcType=INTEGER},
       </if>
-      <if test="colRecord != null">
-        #{colRecord,jdbcType=INTEGER},
+      <if test="colTime != null">
+        #{colTime,jdbcType=TIMESTAMP},
       </if>
       <if test="colPost != null">
         #{colPost,jdbcType=INTEGER},
+      </if>
+      <if test="colPostTime != null">
+        #{colPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="colTitle != null">
+        #{colTitle,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -63,11 +72,17 @@
       <if test="colUserId != null">
         col_user_id = #{colUserId,jdbcType=INTEGER},
       </if>
-      <if test="colRecord != null">
-        col_record = #{colRecord,jdbcType=INTEGER},
+      <if test="colTime != null">
+        col_time = #{colTime,jdbcType=TIMESTAMP},
       </if>
       <if test="colPost != null">
         col_post = #{colPost,jdbcType=INTEGER},
+      </if>
+      <if test="colPostTime != null">
+        col_post_time = #{colPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="colTitle != null">
+        col_title = #{colTitle,jdbcType=VARCHAR},
       </if>
     </set>
     where col_id = #{colId,jdbcType=INTEGER}
@@ -75,8 +90,21 @@
   <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Collection">
     update collection
     set col_user_id = #{colUserId,jdbcType=INTEGER},
-      col_record = #{colRecord,jdbcType=INTEGER},
-      col_post = #{colPost,jdbcType=INTEGER}
+      col_time = #{colTime,jdbcType=TIMESTAMP},
+      col_post = #{colPost,jdbcType=INTEGER},
+      col_post_time = #{colPostTime,jdbcType=TIMESTAMP},
+      col_title = #{colTitle,jdbcType=VARCHAR}
     where col_id = #{colId,jdbcType=INTEGER}
   </update>
+
+  <!--根据用户查询关注列表-->
+  <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from collection
+    where col_user_id = #{colUserId,jdbcType=INTEGER}
+    order by col_time desc
+  </select>
+
+
 </mapper>
