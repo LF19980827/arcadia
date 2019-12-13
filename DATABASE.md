@@ -8,7 +8,7 @@
 | ------------- | ------ | ----------- | --------------------------- |
 | user_id       | 用户ID | INT(11)     | 主键、外键（userMessage表） |
 | user_name     | 用户名 | VARCHAR(15) |                             |
-| user_password | 密码   | VARCHAR(21) |                             |
+| user_password | 密码   | VARCHAR(11) |                             |
 | user_mobile   | 手机号 | VARCHAR(11) |                             |
 
 ## 2、userMessage（用户资料表）
