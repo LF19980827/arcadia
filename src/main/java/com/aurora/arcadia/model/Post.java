@@ -37,6 +37,19 @@ public class Post {
      */
     private Date postTime;
 
+    /**
+     * 帖子访问量
+     */
+    private Integer postPageView;
+
+    public Integer getPostPageView() {
+        return postPageView;
+    }
+
+    public void setPostPageView(Integer postPageView) {
+        this.postPageView = postPageView;
+    }
+
     public Integer getPostId() {
         return postId;
     }

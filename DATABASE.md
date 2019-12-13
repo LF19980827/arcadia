@@ -90,14 +90,15 @@
 
 ## 9、post（帖子信息表）
 
-| 列名         | 含义         | 数据类型     | 备注                  |
-| ------------ | ------------ | ------------ | --------------------- |
-| post_id      | 帖子记录ID   | INT(11)      | 主键、自增            |
-| post_kind    | 帖子类型     | INT(11)      | 暂不使用（保留）      |
-| post_user_id | 帖子发布者   | INT(11)      | 外键（userMessage表） |
-| post_title   | 帖子标题     | VARCHAR(50)  |                       |
-| post_intro   | 帖子内容     | VARCHAR(200) |                       |
-| post_time    | 帖子发布时间 | DATETIME     |                       |
+| 列名           | 含义         | 数据类型     | 备注                  |
+| -------------- | ------------ | ------------ | --------------------- |
+| post_id        | 帖子记录ID   | INT(11)      | 主键、自增            |
+| post_kind      | 帖子类型     | INT(11)      | 暂不使用（保留）      |
+| post_user_id   | 帖子发布者   | INT(11)      | 外键（userMessage表） |
+| post_title     | 帖子标题     | VARCHAR(50)  |                       |
+| post_intro     | 帖子内容     | VARCHAR(200) |                       |
+| post_time      | 帖子发布时间 | DATETIME     |                       |
+| post_page_view | 帖子访问量   | int          | 非空,默认为0          |
 
 ## 10、reply（帖子回复信息表）
 
