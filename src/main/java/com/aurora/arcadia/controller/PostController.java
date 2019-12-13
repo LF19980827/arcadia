@@ -35,6 +35,7 @@ public class PostController {
      * 发布新的帖子
      * @param postTitle 帖子标题,是不超过50字符的字符串
      * @param postIntro 帖子内容,是不超过200字符的字符串
+     * @param postUserId 贴主的uid,非必须,目的在于方便调试
      * @param request request
      * @return 封装的JSON格式响应信息
      */
