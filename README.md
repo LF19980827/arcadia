@@ -165,7 +165,7 @@ eg2:
 
 查询所有未结束的活动（按时间排序）
 
-请求地址 : /activites
+请求地址 :
 
 ​	参数:
 
@@ -189,7 +189,7 @@ eg1:
 ### 2.2 展示所有已结束的活动信息
 查询所有已结束的活动（按时间排序）
 
-​	请求地址 : /activites
+​	请求地址 : 
 
 ​	参数:
 
@@ -212,7 +212,7 @@ eg1:
 
 ### 2.3 按时间搜索活动（按时间排序）
 
-​	请求地址 : /activites
+​	请求地址 :
 
 ​	参数:
 
@@ -235,7 +235,7 @@ eg1:
 
 ### 2.4 按名称模糊搜索的活动（按时间排序）
 
-​	请求地址 : /activites
+​	请求地址 : 
 
 ​	参数:
 
@@ -258,7 +258,7 @@ eg1:
 
 ### 2.5 按所属社团查询活动（按时间排序）
 
-​	请求地址 : /activites
+​	请求地址 : 
 
 ​	参数:
 
@@ -281,7 +281,7 @@ eg1:
 
 ### 2.6 查询登陆者是否为社团负责人
 
-​	请求地址 : /activites
+​	请求地址 :
 
 ​	参数:
 
@@ -304,7 +304,7 @@ eg1:
 
 ### 2.7 按ID查询活动信息
 
-​	请求地址 : /activites
+​	请求地址 : 
 
 ​	参数:
 
@@ -329,7 +329,7 @@ eg1:
 
 ### 2.8 增加社团活动
 
-​	请求地址 : /activites
+​	请求地址 :
 
 ​	参数:
 
@@ -352,7 +352,7 @@ eg1:
 
 ### 2.9 修改社团活动信息
 
-​	请求地址 : /activites
+​	请求地址 :
 
 ​	参数:
 
@@ -377,7 +377,7 @@ eg1:
 
 ### 2.10 删除社团活动
 
-​	请求地址 : /activites
+​	请求地址 :
 
 ​	参数:
 
@@ -404,7 +404,7 @@ eg1:
 
 ### 3.1 查询所有社团
 
-​	请求地址 : /club
+​	请求地址 :
 
 ​	参数:
 
@@ -427,7 +427,7 @@ eg1:
 
 ### 3.2 按名称模糊查询社团
 
-​	请求地址 :  /club
+​	请求地址 : 
 
 ​	参数:
 
@@ -450,7 +450,7 @@ eg1:
 
 ### 3.3 按类型查询社团
 
-​	请求地址 : /club
+​	请求地址 :
 
 ​	参数:
 
@@ -473,7 +473,7 @@ eg1:
 
 ### 3.4 按ID查询社团
 
-​	请求地址 :  /club
+​	请求地址 : 
 
 ​	参数:
 
@@ -498,7 +498,7 @@ eg1:
 
 ### 3.5 新增社团
 
-​	请求地址 :  /club
+​	请求地址 :  
 
 ​	参数:
 
@@ -521,7 +521,7 @@ eg1:
 
 ### 3.6 修改社团
 
-​	请求地址 :  /club
+​	请求地址 :  
 
 ​	参数:
 
@@ -544,7 +544,7 @@ eg1:
 
 ### 3.7 删除社团
 
-​	请求地址 :  /club
+​	请求地址 : 
 
 ​	参数:
 
@@ -571,7 +571,7 @@ eg1:
 
 ### 4.1 查询所有失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 :
 
 ​	参数:
 
@@ -594,7 +594,7 @@ eg1:
 
 ### 4.2 按发布时间查询失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 : 
 
 ​	参数:
 
@@ -618,7 +618,7 @@ eg1:
 
 ### 4.3 根据发布者ID查询失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 :
 
 ​	参数:
 
@@ -641,7 +641,7 @@ eg1:
 
 ### 4.4 根据ID查询失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 : 
 
 ​	参数:
 
@@ -664,7 +664,7 @@ eg1:
 
 ### 4.5 新增失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 : 
 
 ​	参数:
 
@@ -687,7 +687,7 @@ eg1:
 
 ### 4.6 修改失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 :
 
 ​	参数:
 
@@ -710,7 +710,7 @@ eg1:
 
 ### 4.7 删除失物信息
 
-​	请求地址 : /lostAndFound
+​	请求地址 :
 
 ​	参数:
 
@@ -739,7 +739,7 @@ eg1:
 
 ### 5.1 查询所有表白信息
 
-​	请求地址 : /revealFeelings
+​	请求地址 :
 
 ​	参数:
 
@@ -762,7 +762,7 @@ eg1:
 
 ### 5.2 按发布时间查询表白信息
 
-​	请求地址 : /revealFeelings
+​	请求地址 : 
 
 ​	参数:
 
@@ -786,7 +786,7 @@ eg1:
 
 ### 5.3 根据发布者ID查询表白信息
 
-​	请求地址 :/revealFeelings
+​	请求地址 :
 
 ​	参数:
 
@@ -809,7 +809,7 @@ eg1:
 
 ### 5.4 根据ID查询表白信息
 
-​	请求地址 : /revealFeelings
+​	请求地址 :
 
 ​	参数:
 
@@ -832,7 +832,7 @@ eg1:
 
 ### 5.5 新增表白信息
 
-​	请求地址 : /revealFeelings
+​	请求地址 :
 
 ​	参数:
 
@@ -884,24 +884,48 @@ eg1:
 
 ​	查询个人资料信息
 
-​	请求地址 : 
+​	请求地址 : /userMessage/getMessage
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+|                     |         |        |
 
 ​	响应参数:
 
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
+| 参数名       | 类型        | 意义         |
+| ------------ | ----------- | ------------ |
+| errorMessage | String      | "错误信息"   |
+| code         | String      | 状态信息     |
+| data         | UserMessage | 个人资料信息 |
 
 eg1:
+
+```json
+{
+    "code": "success",
+    "data": {
+        "userId": 2,
+        "uName": "峰",
+        "uGender": "男",
+        "uBirth": "1998-08-26T00:00:00.000+0000",
+        "uAddress": "陕西西安",
+        "uCareer": "无",
+        "uIntro": "aaa111"
+    }
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "未登录，请先登陆"
+}
+```
 
 
 
@@ -909,14 +933,20 @@ eg1:
 
 ​	修改个人资料信息
 
-​	请求地址 : 
+​	请求地址 : /userMessage/updateMessage
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义     |
+| ------------------- | ------- | -------- |
+| userId（session中） | Integer | 用户id   |
+| userId              | Integer | 用户id   |
+| uName               | String  | 姓名     |
+| uGender             | String  | 性别     |
+| uBirth              | Date    | 生日     |
+| uAddress            | String  | 地址     |
+| uCareer             | String  | 职业     |
+| uIntro              | String  | 个人介绍 |
 
 ​	响应参数:
 
@@ -924,34 +954,98 @@ eg1:
 | ------------ | ------ | ---------- |
 | errorMessage | string | "错误信息" |
 | code         | string | 状态信息   |
-|              |        |            |
 
 eg1:
+
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
 ### 6.3 展示个人收藏界面
 
-​	查询个人收藏的信息
+​	（1）查询个人收藏的信息
 
-​	请求地址 : 
+​	（2）使用分页插件返回分页信息
 
-​	参数:
+​	（3）查询结果按收藏时间降序
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+​	请求地址 : /collection/showCollections
+
+​	请求参数:
+
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+| page                | Integer | 第几页 |
 
 ​	响应参数:
 
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
+| 参数名       | 类型                 | 意义           |
+| ------------ | -------------------- | -------------- |
+| errorMessage | string               | "错误信息"     |
+| code         | string               | 状态信息       |
+| data         | PageInfo<Collection> | 查询的结果信息 |
 
 eg1:
+
+```json
+{
+    "code": "success",
+    "data": {
+        "total": 1,
+        "list": [
+            {
+                "colId": 1,
+                "colUserId": 2,
+                "colTime": "2019-12-13T13:10:10.000+0000",
+                "colPost": 1,
+                "colPostTime": "2019-12-13T04:02:36.000+0000",
+                "colTitle": "测试标题"
+            }
+        ],
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 1,
+        "startRow": 1,
+        "endRow": 1,
+        "pages": 1,
+        "prePage": 0,
+        "nextPage": 0,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [
+            1
+        ],
+        "navigateFirstPage": 1,
+        "navigateLastPage": 1
+    }
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
@@ -961,12 +1055,12 @@ eg1:
 
 ​	请求地址 : 
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+| colPost             | Integer | 帖子ID |
 
 ​	响应参数:
 
@@ -986,12 +1080,12 @@ eg1:
 
 ​	请求地址 : 
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义       |
+| ------------------- | ------- | ---------- |
+| userId（session中） | Integer | 用户id     |
+| colId               | Integer | 收藏记录ID |
 
 ​	响应参数:
 
@@ -1002,6 +1096,21 @@ eg1:
 |              |        |            |
 
 eg1:
+
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
@@ -1009,14 +1118,95 @@ eg1:
 
 ​	查询关注信息
 
-​	请求地址 : 
+​	请求地址 : /attention/showAttentions
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+| page                | Integer | 第几页 |
+
+​	响应参数:
+
+| 参数名       | 类型                | 意义           |
+| ------------ | ------------------- | -------------- |
+| errorMessage | string              | "错误信息"     |
+| code         | string              | 状态信息       |
+| data         | PageInfo<Attention> | 查询的结果信息 |
+
+eg1:
+
+```json
+{
+    "code": "success",
+    "data": {
+        "total": 3,
+        "list": [
+            {
+                "attId": 1,
+                "attUserId": 2,
+                "attBeUserId": 1,
+                "attTime": "2019-12-13T13:00:01.000+0000"
+            },
+            {
+                "attId": 2,
+                "attUserId": 2,
+                "attBeUserId": 3,
+                "attTime": "2019-12-13T13:00:01.000+0000"
+            },
+            {
+                "attId": 3,
+                "attUserId": 2,
+                "attBeUserId": 4,
+                "attTime": "2019-12-13T13:00:01.000+0000"
+            }
+        ],
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 3,
+        "startRow": 1,
+        "endRow": 3,
+        "pages": 1,
+        "prePage": 0,
+        "nextPage": 0,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [
+            1
+        ],
+        "navigateFirstPage": 1,
+        "navigateLastPage": 1
+    }
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
+
+
+
+### 6.7 点击关注
+
+​	请求地址 : /attention/insertAttention
+
+​	请求参数:
+
+| 参数名              | 类型    | 意义       |
+| ------------------- | ------- | ---------- |
+| userId（session中） | Integer | 用户id     |
+| attUserId           | Integer | 关注者ID   |
+| attBeUserId         | Integer | 被关注者ID |
+| attTime             | Date    | 关注时间   |
 
 ​	响应参数:
 
@@ -1024,34 +1214,23 @@ eg1:
 | ------------ | ------ | ---------- |
 | errorMessage | string | "错误信息" |
 | code         | string | 状态信息   |
-|              |        |            |
 
 eg1:
 
+```json
+{
+    "code": "success"
+}
+```
 
+eg2:
 
-### 6.7 点击查看用户的个人主页
-
-​	查询关注信息
-
-​	请求地址 : 
-
-​	参数:
-
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
-
-​	响应参数:
-
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
-
-eg1:
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
@@ -1059,14 +1238,14 @@ eg1:
 
 ​	删除关注信息
 
-​	请求地址 : 
+​	请求地址 : /attention/delAttention
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义       |
+| ------------------- | ------- | ---------- |
+| userId（session中） | Integer | 用户id     |
+| attId               | Integer | 关注记录ID |
 
 ​	响应参数:
 
@@ -1077,6 +1256,21 @@ eg1:
 |              |        |            |
 
 eg1:
+
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
@@ -1084,49 +1278,68 @@ eg1:
 
 ​	查询粉丝信息
 
-​	请求地址 : 
+​	请求地址 : /attention/showBeAttentions
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
-
-​	响应参数:
-
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
-
-eg1:
-
-
-
-### 6.10 添加关注
-
-​	增加关注信息
-
-​	请求地址 : 
-
-​	参数:
-
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+| page                | Integer | 第几页 |
 
 ​	响应参数:
 
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
+| 参数名       | 类型                | 意义           |
+| ------------ | ------------------- | -------------- |
+| errorMessage | string              | "错误信息"     |
+| code         | string              | 状态信息       |
+| data         | PageInfo<Attention> | 查询的结果信息 |
 
 eg1:
+
+```json
+{
+    "code": "success",
+    "data": {
+        "total": 1,
+        "list": [
+            {
+                "attId": 5,
+                "attUserId": 3,
+                "attBeUserId": 2,
+                "attTime": "2019-12-13T13:00:01.000+0000"
+            }
+        ],
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 1,
+        "startRow": 1,
+        "endRow": 1,
+        "pages": 1,
+        "prePage": 0,
+        "nextPage": 0,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [
+            1
+        ],
+        "navigateFirstPage": 1,
+        "navigateLastPage": 1
+    }
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
@@ -1134,14 +1347,74 @@ eg1:
 
 ​	查询个人历史发布
 
-​	请求地址 : 
+​	请求地址 : /history/showHistories
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+| page                | Integer | 第几页 |
+
+​	响应参数:
+
+| 参数名       | 类型              | 意义           |
+| ------------ | ----------------- | -------------- |
+| errorMessage | string            | "错误信息"     |
+| code         | string            | 状态信息       |
+| data         | PageInfo<History> | 查询的结果信息 |
+
+eg1:
+
+```json
+{
+    "code": "success",
+    "data": {
+        "total": 0,
+        "list": [],
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 0,
+        "startRow": 0,
+        "endRow": 0,
+        "pages": 0,
+        "prePage": 0,
+        "nextPage": 0,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [],
+        "navigateFirstPage": 0,
+        "navigateLastPage": 0
+    }
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
+
+
+
+### 6.12 删除一个用户活动记录
+
+​	删除一个活动轨迹
+
+​	请求地址 :/history/delHistory
+
+​	请求参数:
+
+| 参数名              | 类型    | 意义           |
+| ------------------- | ------- | -------------- |
+| userId（session中） | Integer | 用户id         |
+| historyId           | Integer | 用户活动记录ID |
 
 ​	响应参数:
 
@@ -1149,38 +1422,114 @@ eg1:
 | ------------ | ------ | ---------- |
 | errorMessage | string | "错误信息" |
 | code         | string | 状态信息   |
-|              |        |            |
 
 eg1:
 
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
-### 6.12 展示消息通知界面
+
+### 6.13 展示系统通知界面
 
 ​	查询系统通知信息
 
-​	请求地址 : 
+​	请求地址 : /message/showMessages
 
-​	参数:
+​	请求参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义   |
+| ------------------- | ------- | ------ |
+| userId（session中） | Integer | 用户id |
+| page                | Integer | 第几页 |
 
 ​	响应参数:
 
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
+| 参数名       | 类型              | 意义           |
+| ------------ | ----------------- | -------------- |
+| errorMessage | string            | "错误信息"     |
+| code         | string            | 状态信息       |
+| data         | PageInfo<Message> | 查询的结果信息 |
 
 eg1:
 
+```json
+{
+    "code": "success",
+    "data": {
+        "total": 3,
+        "list": [
+            {
+                "msgId": 1,
+                "msgUser": 2,
+                "msgTitle": "欢迎新用户",
+                "msgBody": "欢迎lfuser加入arcadia论坛！！！",
+                "msgSign": null,
+                "msgTime": "2019-11-10T04:00:00.000+0000"
+            },
+            {
+                "msgId": 2,
+                "msgUser": 2,
+                "msgTitle": "测试消息1",
+                "msgBody": "欢迎lfuser加入arcadia论坛！！！",
+                "msgSign": null,
+                "msgTime": "2019-11-10T04:00:00.000+0000"
+            },
+            {
+                "msgId": 3,
+                "msgUser": 2,
+                "msgTitle": "测试消息2",
+                "msgBody": "欢迎lfuser加入arcadia论坛！！！",
+                "msgSign": null,
+                "msgTime": "2019-11-10T04:00:00.000+0000"
+            }
+        ],
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 3,
+        "startRow": 1,
+        "endRow": 3,
+        "pages": 1,
+        "prePage": 0,
+        "nextPage": 0,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [
+            1
+        ],
+        "navigateFirstPage": 1,
+        "navigateLastPage": 1
+    }
+}
+```
+
+eg2：
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
-### 6.13 标记已读消息通知
+
+### 6.14 标记已读消息通知（待定）
 
 ​	
 
@@ -1205,18 +1554,20 @@ eg1:
 
 
 
-### 6.14 删除消息通知
+### 6.16 新增消息通知
 
-​	
-
-​	请求地址 : 
+​	请求地址 : /message/insertMessage
 
 ​	参数:
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+| 参数名              | 类型    | 意义             |
+| ------------------- | ------- | ---------------- |
+| userId（session中） | Integer | 用户id           |
+| msgUser             | Integer | 通知接收者的ID   |
+| msgTitle            | String  | 通知标题         |
+| msgBody             | String  | 通知内容         |
+| msgSign             | Integer | 通知状态（待定） |
+| msgTime             | Date    | 通知时间         |
 
 ​	响应参数:
 
@@ -1224,9 +1575,62 @@ eg1:
 | ------------ | ------ | ---------- |
 | errorMessage | string | "错误信息" |
 | code         | string | 状态信息   |
-|              |        |            |
 
 eg1:
+
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
+
+
+
+### 6.16 删除消息通知
+
+​	
+
+​	请求地址 : 
+
+​	参数:
+
+| 参数名              | 类型    | 意义           |
+| ------------------- | ------- | -------------- |
+| userId（session中） | Integer | 用户id         |
+| msgId               | Integer | 系统通知记录ID |
+
+​	响应参数:
+
+| 参数名       | 类型   | 意义       |
+| ------------ | ------ | ---------- |
+| errorMessage | string | "错误信息" |
+| code         | string | 状态信息   |
+
+eg1:
+
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```json
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 
@@ -1287,14 +1691,20 @@ eg1:
 
 ### 7.3 收藏帖子
 
-​	请求地址 : 
+​	(1) 如何防止重复添加相同的收藏信息
 
-​	参数:
+​	请求地址 : /collection/insertCollection
 
-| 参数名 | 类型 | 意义 |
-| ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
+​	请求参数:
+
+| 参数名              | 类型    | 意义         |
+| ------------------- | ------- | ------------ |
+| userId（session中） | Integer | 用户id       |
+| colUserId           | Integer | 用户id       |
+| colTime             | Date    | 收藏时间     |
+| colPost             | Integer | 帖子ID       |
+| colPostTime         | Date    | 帖子发布时间 |
+| colTitle            | String  | 帖子标题     |
 
 ​	响应参数:
 
@@ -1305,6 +1715,21 @@ eg1:
 |              |        |            |
 
 eg1:
+
+```json
+{
+    "code": "success"
+}
+```
+
+eg2:
+
+```
+{
+    "code": "error",
+    "errorMessage": "登陆已失效"
+}
+```
 
 
 

@@ -53,16 +53,21 @@ public class UserMessageController {
     public Map<String, Object> updateUserMessage(UserMessage userMessage, HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
-
-        if (userMessageService.updateUserMessage(userMessage)) {
-            map.put(Constants.CODE, Constants.SUCCESS);
-        } else if (userId != userMessage.getUserId()) {
+        if (userId == null) {
             map.put(Constants.CODE, Constants.ERROE);
-            map.put(Constants.ERROR_MESSAGE, "传输信息有误");
+            map.put(Constants.ERROR_MESSAGE, "登陆已失效");
         } else {
-            map.put(Constants.CODE, Constants.ERROE);
-            map.put(Constants.ERROR_MESSAGE, "修改失败");
+            if (userMessageService.updateUserMessage(userMessage)) {
+                map.put(Constants.CODE, Constants.SUCCESS);
+            } else if (userId != userMessage.getUserId()) {
+                map.put(Constants.CODE, Constants.ERROE);
+                map.put(Constants.ERROR_MESSAGE, "传输信息有误");
+            } else {
+                map.put(Constants.CODE, Constants.ERROE);
+                map.put(Constants.ERROR_MESSAGE, "修改失败");
+            }
         }
+
         return map;
     }
 

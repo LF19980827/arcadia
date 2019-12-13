@@ -27,6 +27,7 @@ public class CollectionController {
     @Autowired
     private CollectionService collectionService;
 
+
     /**
      * 展示用户收藏信息(按收藏时间降序)
      *
@@ -91,6 +92,7 @@ public class CollectionController {
     public Map<String, Object> getMyCollection(@RequestParam(value = "colPost") Integer postId) {
         Map<String, Object> map = new HashMap<>();
         //按id查询帖子
+
         return map;
     }
 
