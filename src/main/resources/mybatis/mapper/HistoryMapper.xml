@@ -24,14 +24,6 @@
     delete from history
     where history_id = #{historyId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.aurora.arcadia.model.History">
-    insert into history (history_id, history_user_id, history_kind, 
-      history_kind_id, history_title, history_body, 
-      history_time)
-    values (#{historyId,jdbcType=INTEGER}, #{historyUserId,jdbcType=INTEGER}, #{historyKind,jdbcType=INTEGER}, 
-      #{historyKindId,jdbcType=INTEGER}, #{historyTitle,jdbcType=VARCHAR}, #{historyBody,jdbcType=VARCHAR}, 
-      #{historyTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.History">
     insert into history
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -115,4 +107,13 @@
       history_time = #{historyTime,jdbcType=TIMESTAMP}
     where history_id = #{historyId,jdbcType=INTEGER}
   </update>
+
+  <!--根据用户ID查询用户活动轨迹-->
+  <select id="selectByHistoryUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from history
+    where history_user_id = #{historyUserId,jdbcType=INTEGER}
+    order by history_time desc
+  </select>
 </mapper>

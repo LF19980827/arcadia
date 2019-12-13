@@ -25,7 +25,7 @@ public class MessageServiceImpl implements MessageService {
         } catch (Exception e) {
             return null;
         }
-        return null;
+        return messages;
     }
 
     @Override

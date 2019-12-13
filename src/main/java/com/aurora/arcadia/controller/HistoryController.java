@@ -1,7 +1,7 @@
 package com.aurora.arcadia.controller;
 
-import com.aurora.arcadia.model.Message;
-import com.aurora.arcadia.service.MessageService;
+import com.aurora.arcadia.model.History;
+import com.aurora.arcadia.service.HistoryService;
 import com.aurora.arcadia.vo.Constants;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -18,32 +18,31 @@ import java.util.Map;
 
 /**
  * @author LFuser
- * @create 2019-12-13-下午 4:08
+ * @create 2019-12-13-下午 4:46
  */
 @RestController
-@RequestMapping("message")
-public class MessageController {
+@RequestMapping("history")
+public class HistoryController {
     @Autowired
-    private MessageService messageService;
+    private HistoryService historyService;
 
     /**
-     * 展示用户的系统通知信息（按时间降序）
-     *
+     * 展示用户活动轨迹（时间降序）
      * @param page
      * @param session
      * @return
      */
-    @PostMapping(value = "/showMessages")
-    public Map<String, Object> showMyMessages(@RequestParam(value = "page", required = true) Integer page, HttpSession session) {
+    @PostMapping(value = "/showHistories")
+    public Map<String, Object> showMyHistories(@RequestParam(value = "page", required = true) Integer page, HttpSession session){
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
-        if (userId != null) {
-            PageHelper.startPage(page, 10);
-            List<Message> messages = messageService.getMessageAll(userId);
-            PageInfo<Message> pageInfo = new PageInfo<>(messages);
+        if (userId!=null){
+            PageHelper.startPage(page,10);
+            List<History> histories = historyService.getHistoryAll(userId);
+            PageInfo<History> pageInfo = new PageInfo<>(histories);
             map.put(Constants.CODE, Constants.SUCCESS);
             map.put(Constants.DATA, pageInfo);
-        } else {
+        }else {
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "登陆已失效");
         }
@@ -51,37 +50,17 @@ public class MessageController {
     }
 
     /**
-     * 添加一条系统通知
-     *
-     * @param message
-     * @return
-     */
-    @PostMapping(value = "/insertMessage")
-    public Map<String, Object> insertMessage(Message message) {
-        Map<String, Object> map = new HashMap<>();
-        if (messageService.insertMessage(message)) {
-            map.put(Constants.CODE, Constants.SUCCESS);
-        } else {
-            map.put(Constants.CODE, Constants.ERROE);
-            map.put(Constants.ERROR_MESSAGE, "增加失败");
-        }
-        return map;
-    }
-
-    /**
-     * 删除一条系统通知
-     *
-     * @param msgId
+     * 删除一条活动轨迹
+     * @param historyId
      * @param session
      * @return
      */
-    @PostMapping(value = "/delMessage")
-    public Map<String, Object> delMyMessage(@RequestParam(value = "msgId", required = true) Integer msgId, HttpSession session) {
+    @PostMapping(value = "/delHistory")
+    public Map<String, Object> delHistory(@RequestParam(value = "historyId", required = true) Integer historyId, HttpSession session){
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
-
         if (userId != null) {
-            if (messageService.delMessage(msgId)) {
+            if (historyService.delHistory(historyId)) {
                 map.put(Constants.CODE, Constants.SUCCESS);
             } else {
                 map.put(Constants.CODE, Constants.ERROE);
@@ -91,7 +70,7 @@ public class MessageController {
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "登陆已失效");
         }
-
         return map;
     }
+
 }
