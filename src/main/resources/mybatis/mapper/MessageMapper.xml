@@ -4,12 +4,13 @@
   <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Message">
     <id column="msg_id" jdbcType="INTEGER" property="msgId" />
     <result column="msg_user" jdbcType="INTEGER" property="msgUser" />
+    <result column="msg_title" jdbcType="VARCHAR" property="msgTitle" />
     <result column="msg_body" jdbcType="VARCHAR" property="msgBody" />
     <result column="msg_sign" jdbcType="INTEGER" property="msgSign" />
     <result column="msg_time" jdbcType="TIMESTAMP" property="msgTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    msg_id, msg_user, msg_body, msg_sign, msg_time
+    msg_id, msg_user, msg_title, msg_body, msg_sign, msg_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -22,10 +23,12 @@
     where msg_id = #{msgId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.aurora.arcadia.model.Message">
-    insert into message (msg_id, msg_user, msg_body, 
-      msg_sign, msg_time)
-    values (#{msgId,jdbcType=INTEGER}, #{msgUser,jdbcType=INTEGER}, #{msgBody,jdbcType=VARCHAR}, 
-      #{msgSign,jdbcType=INTEGER}, #{msgTime,jdbcType=TIMESTAMP})
+    insert into message (msg_id, msg_user, msg_title, 
+      msg_body, msg_sign, msg_time
+      )
+    values (#{msgId,jdbcType=INTEGER}, #{msgUser,jdbcType=INTEGER}, #{msgTitle,jdbcType=VARCHAR}, 
+      #{msgBody,jdbcType=VARCHAR}, #{msgSign,jdbcType=INTEGER}, #{msgTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Message">
     insert into message
@@ -35,6 +38,9 @@
       </if>
       <if test="msgUser != null">
         msg_user,
+      </if>
+      <if test="msgTitle != null">
+        msg_title,
       </if>
       <if test="msgBody != null">
         msg_body,
@@ -53,6 +59,9 @@
       <if test="msgUser != null">
         #{msgUser,jdbcType=INTEGER},
       </if>
+      <if test="msgTitle != null">
+        #{msgTitle,jdbcType=VARCHAR},
+      </if>
       <if test="msgBody != null">
         #{msgBody,jdbcType=VARCHAR},
       </if>
@@ -70,6 +79,9 @@
       <if test="msgUser != null">
         msg_user = #{msgUser,jdbcType=INTEGER},
       </if>
+      <if test="msgTitle != null">
+        msg_title = #{msgTitle,jdbcType=VARCHAR},
+      </if>
       <if test="msgBody != null">
         msg_body = #{msgBody,jdbcType=VARCHAR},
       </if>
@@ -85,6 +97,7 @@
   <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Message">
     update message
     set msg_user = #{msgUser,jdbcType=INTEGER},
+      msg_title = #{msgTitle,jdbcType=VARCHAR},
       msg_body = #{msgBody,jdbcType=VARCHAR},
       msg_sign = #{msgSign,jdbcType=INTEGER},
       msg_time = #{msgTime,jdbcType=TIMESTAMP}
