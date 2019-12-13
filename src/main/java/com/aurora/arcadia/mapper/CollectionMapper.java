@@ -15,6 +15,11 @@ public interface CollectionMapper {
 
     int updateByPrimaryKey(Collection record);
 
-    List<Collection>  selectByUserId(Integer colUserId);
+    /**
+     * 根据用户ID查询所有收藏
+     * @param colUserId
+     * @return
+     */
+    List<Collection> selectByUserId(Integer colUserId);
 
 }

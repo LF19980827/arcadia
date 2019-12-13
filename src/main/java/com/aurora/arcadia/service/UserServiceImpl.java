@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @create 2019-10-31-上午 9:27
  */
 @Service
-public class UserServiceImpl implements UserService  {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
@@ -22,18 +22,13 @@ public class UserServiceImpl implements UserService  {
 
     @Override
     public Integer getUser(String username, String password) {
-        User user = new User(username,password);
+        User user = new User(username, password);
         try {
             user = userMapper.selectByLogin(user);
             return user.getUserId();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return null;
         }
-    }
-
-    @Override
-    public UserMessage getUserMessageById(Integer userId) {
-        return userMessageMapper.selectByPrimaryKey(userId);
     }
 
     @Override
@@ -42,27 +37,27 @@ public class UserServiceImpl implements UserService  {
         try {
             user = userMapper.selectByName(user);
             return user.getUserId();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return null;
         }
     }
 
     @Override
     public boolean InsertUser(String username, String password, String telephone) {
-       try {
-           UserMessage userMessage=new UserMessage();
-           userMessageMapper.insert(userMessage);
+        try {
+            UserMessage userMessage = new UserMessage();
+            userMessageMapper.insert(userMessage);
 
-           userMapper.insert(new User(userMessage.getUserId(),username,password,telephone));
-       }catch (Exception e){
-           return false;
-       }
+            userMapper.insert(new User(userMessage.getUserId(), username, password, telephone));
+        } catch (Exception e) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public boolean UpdateUserByTelephone(String telephone, String password) {
-        if (userMapper.updateByTelephone(new User(null,null,password,telephone))){
+        if (userMapper.updateByTelephone(new User(null, null, password, telephone))) {
             return true;
         }
         return false;
@@ -71,9 +66,9 @@ public class UserServiceImpl implements UserService  {
     @Override
     public boolean UpdateUserById(Integer userId, String password) {
         try {
-            userMapper.updateByPrimaryKeySelective(new User(userId,null,password,null));
+            userMapper.updateByPrimaryKeySelective(new User(userId, null, password, null));
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

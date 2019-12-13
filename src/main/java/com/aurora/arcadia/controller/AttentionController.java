@@ -24,7 +24,6 @@ import java.util.Map;
 @RequestMapping("attention")
 public class AttentionController {
 
-
     @Autowired
     private AttentionService attentionService;
 
@@ -49,10 +48,8 @@ public class AttentionController {
             map.put(Constants.CODE, Constants.ERROE);
             map.put(Constants.ERROR_MESSAGE, "登陆已失效");
         }
-
         return map;
     }
-
 
     /**
      * 展示用户粉丝信息
@@ -78,6 +75,14 @@ public class AttentionController {
         return map;
     }
 
+    /**
+     * 增加关注信息
+     *
+     * @param attention
+     * @param session
+     * @return
+     */
+    @PostMapping("/insertAttention")
     public Map<String, Object> insertAttention(Attention attention, HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
@@ -93,6 +98,31 @@ public class AttentionController {
             } else {
                 map.put(Constants.CODE, Constants.ERROE);
                 map.put(Constants.ERROR_MESSAGE, "增加失败");
+            }
+        }
+        return map;
+    }
+
+    /**
+     * 取消关注
+     *
+     * @param attId
+     * @param session
+     * @return
+     */
+    @PostMapping("/delAttention")
+    public Map<String, Object> delAttention(@RequestParam(value = "attId", required = true) Integer attId, HttpSession session) {
+        Map<String, Object> map = new HashMap<>();
+        Integer userId = (Integer) session.getAttribute("sessionUserId");
+        if (userId == null) {
+            map.put(Constants.CODE, Constants.ERROE);
+            map.put(Constants.ERROR_MESSAGE, "登陆已失效");
+        } else {
+            if (attentionService.delAttention(attId)) {
+                map.put(Constants.CODE, Constants.SUCCESS);
+            } else {
+                map.put(Constants.CODE, Constants.ERROE);
+                map.put(Constants.ERROR_MESSAGE, "取消关注失败");
             }
         }
         return map;

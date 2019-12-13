@@ -17,12 +17,14 @@ public interface AttentionMapper {
 
     /**
      * 根据用户查询关注信息
+     *
      * @return
      */
     List<Attention> selectByAttUserId(Integer attUserId);
 
     /**
      * 根据用户查询粉丝信息
+     *
      * @param attBeUserId
      * @return
      */
