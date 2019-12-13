@@ -29,24 +29,28 @@
                 <div class="container-fluid">
                     <h1>表白墙
                         <small>爱就要大声说出来</small>
-                        <a class="btn btn-default" href="confessRelease.html" role="button" style="float: right">我要发帖</a>
+                        <a class="btn btn-default" role="button" style="float: right"
+                           href="confessRelease.html"
+                           th:href="@{revealfeelings/confessRelease.html}">我要发帖</a>
                     </h1>
                 </div>
             </nav>
 
-            <div class="panel panel-default" th:each="username:${usernames}">
+            <div class="panel panel-default" th:each="loveUserName:${loveUserNames}">
                 <div class="panel-heading" style="background: darkgray">
-                    <h3 class="panel-title" th:text="${username.id}">一条鱼</h3>
+                    <h3 class="panel-title" th:text="${loveUserName}">一条鱼</h3>
                 </div>
                 <div class="panel-body">
                     <p th:text=""></p>
                     <div class="like" style="float: right">
-                        <button type="button" class="btn btn-default">点赞</button>
+                        <button type="button" class="btn btn-default"
+                                href="confess.html"
+                                th:href="@{revealFeelings/confess.html}">点赞</button>
                     </div>
                 </div>
             </div>
 
-            <div class="panel panel-default">
+            <!--<div class="panel panel-default">
                 <div class="panel-heading" style="background: darkgray">
                     <h3 class="panel-title">一条鱼</h3>
                 </div>
@@ -83,7 +87,7 @@
                         <button type="button" class="btn btn-default">点赞</button>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <div style="text-align: center">
                 <nav aria-label="Page navigation">

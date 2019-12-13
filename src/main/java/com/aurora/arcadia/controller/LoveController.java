@@ -3,54 +3,53 @@ package com.aurora.arcadia.controller;
 import com.aurora.arcadia.model.Love;
 import com.aurora.arcadia.service.LoveService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
-import java.util.Map;
+import java.util.*;
 
 public class LoveController {
 
 	@Autowired
 	private LoveService loveService;
 
-	@PostMapping(value = "/giveLike")
-	public Map<String, Object> giveLike(@RequestParam(value = "username", required = true) String username,
-										HttpSession session) {
-		int id = loveService.getUserByName(username);
-		Love love = loveService.getLoveById(id);
-		int sign = love.getLoveSign();
-		sign++;
-		love.setLoveUserId(sign);
-		return null;
-	}
+	@GetMapping("/confess")
+	public String confess(Model model) {
+		List<Integer> loveUserIds = loveService.getAllLoveUserId();
 
-	/*@GetMapping("/confess")
-	public String list(Model model) {
-		Collection<Love> loves = loveService.selectByPrimaryKey();
-		//存入请求域中，请求域：Modal，ModalMap，Map
-		model.addAttribute("love", loves);
-		return "emp/list";
-	}
+		List loveUserNames = new ArrayList();
+		for (Integer loveUserId : loveUserIds) {
+			String loveUserName = loveService.getUserMessageById(loveUserId).getuName();
+			loveUserNames.add(loveUserName);
+		}
+		model.addAttribute("loveUserNames", loveUserNames);
 
+		List loveSigns = new ArrayList();
+		for (Integer loveUserId : loveUserIds) {
+			Love love = loveService.getLoveById(loveUserId);
+			Integer loveSign = love.getLoveSign();
+			loveSigns.add(loveSign);
+		}
+		model.addAttribute("loveSigns", loveUserNames);
 
-	@GetMapping("/emp")
-	public String toAddPage(Model model) {
-		//查出所有部门，在添加页面显示
-		Collection<Department> departments = departmentDao.getDepartments();
-		model.addAttribute("depts", departments);
-		return "emp/add";
+		return "revealFeelings/confess";
 	}
 
 	//SpringMVC自动将请求参数和参数对象内的属性进行一一绑定，但是要求请求参数名和参数对象内的属性名一样
-	@PostMapping("/emp")
-	public String addEmp(Employee employee) {
-		//保存员工到数据库
-		employeeDao.save(employee);
-		//添加完成应该再次来到员工列表页面
-		//redirect: 表示重定向到一个地址---/代表当前项目路径
-		//forward: 表示转发到一个地址
-		return "redirect:/emps";
-	}*/
+	@PostMapping("/confessRelease")
+	public String confessRelease(Love love) {
+		loveService.saveLove(love);		//保存到数据库
+		return "redirect:/confess";		//应该再次来到表白墙页面
+	}
+
+	@GetMapping(value = "/giveLove/{loveUserId}")
+	public String giveLove(@PathVariable("loveUserId") Integer loveUserId) {
+		Love love = loveService.getLoveById(loveUserId);
+		int sign = love.getLoveSign();
+		sign++;
+		love.setLoveUserId(sign);
+		loveService.saveLove(love);
+		return "redirect:/confess";		//应该再次来到表白墙页面
+	}
 
 }
