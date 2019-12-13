@@ -2,24 +2,26 @@
 
 ## 1、用户登陆模块
 
-### 1.1 登录
+（已测试）
 
+### 1.1 登录
+ 
 ​	请求地址 : /login
 
-​	参数:
+​	请求参数:
 
 | 参数名   | 类型   | 意义     |
 | -------- | ------ | -------- |
-| username | string | 用户名   |
-| password | string | 登录密码 |
+| username | String | 用户名   |
+| password | String | 登录密码 |
 
 ​	响应参数:
 
-| 参数名       | 类型   | 意义       |
-| ------------ | ------ | ---------- |
-| errorMessage | string | "错误信息" |
-| code         | string | 状态信息   |
-|              |        |            |
+| 参数名        | 类型    | 意义                |
+| ------------- | ------- | ------------------- |
+| errorMessage  | String  | "错误信息"          |
+| code          | String  | 状态信息            |
+| sessionUserId | Integer | 用户ID（session中） |
 
 eg1:
 
@@ -50,8 +52,9 @@ eg2:
 
 | 参数名    | 类型   | 意义   |
 | --------- | ------ | ------ |
-| telephone | string | 手机号 |
-| password  | string | 密码   |
+| username  | String | 用户名 |
+| password  | String | 密码   |
+| telephone | String | 手机号 |
 
 响应参数:
 
@@ -87,10 +90,8 @@ eg2:
 
 | 参数名    | 类型   | 意义   |
 | --------- | ------ | ------ |
-| username  | string | 用户名 |
 | password  | string | 密码   |
 | telephone | string | 手机号 |
-|           |        |        |
 
 响应参数:
 
@@ -130,7 +131,6 @@ eg2:
 | username    | string | 用户名 |
 | oldpassword | string | 旧密码 |
 | newpassword | string | 新密码 |
-|             |        |        |
 
 响应参数:
 
@@ -159,7 +159,7 @@ eg2:
 
 
 
-## 2、社团活动模块
+## 2、社团活动模块（待定）
 
 ### 2.1 展示所有社团活动
 
@@ -398,7 +398,7 @@ eg1:
 
 
 
-## 3、社团信息模块
+## 3、社团信息模块（待定）
 
 ​	/*添加社团logo*/
 
@@ -565,7 +565,7 @@ eg1:
 
 
 
-## 4、失物招领模块
+## 4、失物招领模块（待定）
 
 ​	/*删除lostSign标记*/
 
@@ -731,7 +731,7 @@ eg1:
 
 
 
-## 5、表白墙模块
+## 5、表白墙模块（待定）
 
 /*删除表白标记*/
 

@@ -27,7 +27,7 @@ public class UserMessageController {
      * @param session
      * @return
      */
-    @GetMapping(value = "/getMessage")
+    @PostMapping(value = "/getMessage")
     public Map<String, Object> getUserMessage(HttpSession session) {
         Map<String, Object> map = new HashMap<>();
         Integer userId = (Integer) session.getAttribute("sessionUserId");
