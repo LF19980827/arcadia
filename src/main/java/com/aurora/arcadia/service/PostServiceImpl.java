@@ -1,7 +1,11 @@
 package com.aurora.arcadia.service;
 
+import com.aurora.arcadia.mapper.PostMapper;
+import com.aurora.arcadia.model.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -16,8 +20,18 @@ import java.util.Map;
  */
 @Service
 public class PostServiceImpl implements PostService {
+
+    @Autowired
+    private PostMapper postMapper;
+
     @Override
     public boolean submitNewPost(Map<String, Object> paraMap) {
-        return false;
+        Post newPost = new Post();
+        newPost.setPostIntro((String) paraMap.get("postIntro"));
+        newPost.setPostTitle((String) paraMap.get("postTitle"));
+        newPost.setPostUserId((Integer) paraMap.get("postUserId"));
+        newPost.setPostTime((Date) paraMap.get("postTime"));
+
+        return postMapper.insertSelective(newPost) > 0;
     }
 }

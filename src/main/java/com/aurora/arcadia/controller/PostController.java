@@ -32,20 +32,23 @@ public class PostController {
 
     /**
      * 发布新的帖子
-     * @param postTitle
-     * @param postIntro
-     * @param request
-     * @return
+     * @param postTitle 帖子标题,是不超过50字符的字符串
+     * @param postIntro 帖子内容,是不超过200字符的字符串
+     * @param request request
+     * @return 封装的JSON格式响应信息
      */
     @ResponseBody
     public Map<String, Object> submitNewPost(@RequestParam(value = "postTitle", required = true)String postTitle,
                                              @RequestParam(value = "postIntro", required = true)String postIntro,
+                                             @RequestParam(value = "postUserId", required = false)Integer postUserId,
                                              HttpServletRequest request){
         Map<String, Object> rtnMap = new HashMap<>();
         Map<String, Object> paraMap = new HashMap<>();
 
         // 从session中获取user信息,并生成当前时间信息
-        int postUserId = (int) request.getAttribute(Constants.SESSION_USERID);
+        if (postUserId == null) {
+            postUserId = (int) request.getAttribute(Constants.SESSION_USERID);
+        }
         Date postTime = new Date();
 
         //封装数据到map中传入下一层
