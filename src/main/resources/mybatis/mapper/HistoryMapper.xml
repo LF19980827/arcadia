@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aurora.arcadia.mapper.HistoryMapper">
+  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.History">
+    <id column="history_id" jdbcType="INTEGER" property="historyId" />
+    <result column="history_user_id" jdbcType="INTEGER" property="historyUserId" />
+    <result column="history_kind" jdbcType="INTEGER" property="historyKind" />
+    <result column="history_kind_id" jdbcType="INTEGER" property="historyKindId" />
+    <result column="history_title" jdbcType="VARCHAR" property="historyTitle" />
+    <result column="history_body" jdbcType="VARCHAR" property="historyBody" />
+    <result column="history_time" jdbcType="TIMESTAMP" property="historyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    history_id, history_user_id, history_kind, history_kind_id, history_title, history_body, 
+    history_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from history
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from history
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.History">
+    insert into history
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="historyId != null">
+        history_id,
+      </if>
+      <if test="historyUserId != null">
+        history_user_id,
+      </if>
+      <if test="historyKind != null">
+        history_kind,
+      </if>
+      <if test="historyKindId != null">
+        history_kind_id,
+      </if>
+      <if test="historyTitle != null">
+        history_title,
+      </if>
+      <if test="historyBody != null">
+        history_body,
+      </if>
+      <if test="historyTime != null">
+        history_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="historyId != null">
+        #{historyId,jdbcType=INTEGER},
+      </if>
+      <if test="historyUserId != null">
+        #{historyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="historyKind != null">
+        #{historyKind,jdbcType=INTEGER},
+      </if>
+      <if test="historyKindId != null">
+        #{historyKindId,jdbcType=INTEGER},
+      </if>
+      <if test="historyTitle != null">
+        #{historyTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBody != null">
+        #{historyBody,jdbcType=VARCHAR},
+      </if>
+      <if test="historyTime != null">
+        #{historyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.History">
+    update history
+    <set>
+      <if test="historyUserId != null">
+        history_user_id = #{historyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="historyKind != null">
+        history_kind = #{historyKind,jdbcType=INTEGER},
+      </if>
+      <if test="historyKindId != null">
+        history_kind_id = #{historyKindId,jdbcType=INTEGER},
+      </if>
+      <if test="historyTitle != null">
+        history_title = #{historyTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBody != null">
+        history_body = #{historyBody,jdbcType=VARCHAR},
+      </if>
+      <if test="historyTime != null">
+        history_time = #{historyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.History">
+    update history
+    set history_user_id = #{historyUserId,jdbcType=INTEGER},
+      history_kind = #{historyKind,jdbcType=INTEGER},
+      history_kind_id = #{historyKindId,jdbcType=INTEGER},
+      history_title = #{historyTitle,jdbcType=VARCHAR},
+      history_body = #{historyBody,jdbcType=VARCHAR},
+      history_time = #{historyTime,jdbcType=TIMESTAMP}
+    where history_id = #{historyId,jdbcType=INTEGER}
+  </update>
+
+  <!--根据用户ID查询用户活动轨迹-->
+  <select id="selectByHistoryUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from history
+    where history_user_id = #{historyUserId,jdbcType=INTEGER}
+    order by history_time desc
+  </select>
+</mapper>

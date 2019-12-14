@@ -7,6 +7,8 @@ public class Message {
 
     private Integer msgUser;
 
+    private String msgTitle;
+
     private String msgBody;
 
     private Integer msgSign;
@@ -27,6 +29,14 @@ public class Message {
 
     public void setMsgUser(Integer msgUser) {
         this.msgUser = msgUser;
+    }
+
+    public String getMsgTitle() {
+        return msgTitle;
+    }
+
+    public void setMsgTitle(String msgTitle) {
+        this.msgTitle = msgTitle == null ? null : msgTitle.trim();
     }
 
     public String getMsgBody() {

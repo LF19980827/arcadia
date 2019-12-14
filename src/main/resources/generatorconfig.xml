@@ -67,7 +67,10 @@
 <!--               enableCountByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
 
-<!--        <table tableName="lostandfound"  domainObjectName="LostAndFound"-->
+<!--        <table tableName="history"  domainObjectName="History"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
+<!--        <table tableName="lost"  domainObjectName="Lost"-->
 <!--               enableCountByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" enableUpdateByExample="false"></table>-->
 <!--        <table tableName="love"          domainObjectName="Love"-->

@@ -1,93 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aurora.arcadia.mapper.MessageMapper">
-  <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Message">
-    <id column="msg_id" jdbcType="INTEGER" property="msgId" />
-    <result column="msg_user" jdbcType="INTEGER" property="msgUser" />
-    <result column="msg_body" jdbcType="VARCHAR" property="msgBody" />
-    <result column="msg_sign" jdbcType="INTEGER" property="msgSign" />
-    <result column="msg_time" jdbcType="TIMESTAMP" property="msgTime" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    msg_id, msg_user, msg_body, msg_sign, msg_time
+    <resultMap id="BaseResultMap" type="com.aurora.arcadia.model.Message">
+        <id column="msg_id" jdbcType="INTEGER" property="msgId"/>
+        <result column="msg_user" jdbcType="INTEGER" property="msgUser"/>
+        <result column="msg_title" jdbcType="VARCHAR" property="msgTitle"/>
+        <result column="msg_body" jdbcType="VARCHAR" property="msgBody"/>
+        <result column="msg_sign" jdbcType="INTEGER" property="msgSign"/>
+        <result column="msg_time" jdbcType="TIMESTAMP" property="msgTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    msg_id, msg_user, msg_title, msg_body, msg_sign, msg_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from message
-    where msg_id = #{msgId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where msg_id = #{msgId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from message
     where msg_id = #{msgId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.aurora.arcadia.model.Message">
-    insert into message (msg_id, msg_user, msg_body, 
-      msg_sign, msg_time)
-    values (#{msgId,jdbcType=INTEGER}, #{msgUser,jdbcType=INTEGER}, #{msgBody,jdbcType=VARCHAR}, 
-      #{msgSign,jdbcType=INTEGER}, #{msgTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Message">
-    insert into message
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="msgId != null">
-        msg_id,
-      </if>
-      <if test="msgUser != null">
-        msg_user,
-      </if>
-      <if test="msgBody != null">
-        msg_body,
-      </if>
-      <if test="msgSign != null">
-        msg_sign,
-      </if>
-      <if test="msgTime != null">
-        msg_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="msgId != null">
-        #{msgId,jdbcType=INTEGER},
-      </if>
-      <if test="msgUser != null">
-        #{msgUser,jdbcType=INTEGER},
-      </if>
-      <if test="msgBody != null">
-        #{msgBody,jdbcType=VARCHAR},
-      </if>
-      <if test="msgSign != null">
-        #{msgSign,jdbcType=INTEGER},
-      </if>
-      <if test="msgTime != null">
-        #{msgTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Message">
-    update message
-    <set>
-      <if test="msgUser != null">
-        msg_user = #{msgUser,jdbcType=INTEGER},
-      </if>
-      <if test="msgBody != null">
-        msg_body = #{msgBody,jdbcType=VARCHAR},
-      </if>
-      <if test="msgSign != null">
-        msg_sign = #{msgSign,jdbcType=INTEGER},
-      </if>
-      <if test="msgTime != null">
-        msg_time = #{msgTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where msg_id = #{msgId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Message">
+
+    <insert id="insertSelective" parameterType="com.aurora.arcadia.model.Message">
+        insert into message
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="msgId != null">
+                msg_id,
+            </if>
+            <if test="msgUser != null">
+                msg_user,
+            </if>
+            <if test="msgTitle != null">
+                msg_title,
+            </if>
+            <if test="msgBody != null">
+                msg_body,
+            </if>
+            <if test="msgSign != null">
+                msg_sign,
+            </if>
+            <if test="msgTime != null">
+                msg_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="msgId != null">
+                #{msgId,jdbcType=INTEGER},
+            </if>
+            <if test="msgUser != null">
+                #{msgUser,jdbcType=INTEGER},
+            </if>
+            <if test="msgTitle != null">
+                #{msgTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="msgBody != null">
+                #{msgBody,jdbcType=VARCHAR},
+            </if>
+            <if test="msgSign != null">
+                #{msgSign,jdbcType=INTEGER},
+            </if>
+            <if test="msgTime != null">
+                #{msgTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.aurora.arcadia.model.Message">
+        update message
+        <set>
+            <if test="msgUser != null">
+                msg_user = #{msgUser,jdbcType=INTEGER},
+            </if>
+            <if test="msgTitle != null">
+                msg_title = #{msgTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="msgBody != null">
+                msg_body = #{msgBody,jdbcType=VARCHAR},
+            </if>
+            <if test="msgSign != null">
+                msg_sign = #{msgSign,jdbcType=INTEGER},
+            </if>
+            <if test="msgTime != null">
+                msg_time = #{msgTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where msg_id = #{msgId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.aurora.arcadia.model.Message">
     update message
     set msg_user = #{msgUser,jdbcType=INTEGER},
+      msg_title = #{msgTitle,jdbcType=VARCHAR},
       msg_body = #{msgBody,jdbcType=VARCHAR},
       msg_sign = #{msgSign,jdbcType=INTEGER},
       msg_time = #{msgTime,jdbcType=TIMESTAMP}
     where msg_id = #{msgId,jdbcType=INTEGER}
   </update>
+
+    <!--根据用户ID查询系统通知，并按时间降序-->
+    <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from message
+        where msg_user = #{msgUser,jdbcType=INTEGER}
+        order by msg_time desc
+    </select>
 </mapper>
