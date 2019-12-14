@@ -21,17 +21,15 @@ public interface LoveMapper {
     int updateByPrimaryKey(Love record);
 
     /**
-     * 根据用户ID查询用户在表白墙的所有信息
-     * @param userId
-     * @return
+     * 根据Id查询这条表白墙信息
      */
-    Love getLoveById(Integer userId);
+    Love getLoveById(Integer loveId);
 
     /**
      * 查询表白墙中所有用户的id
      * @return
      */
-    List<Integer> getAllLoveUserId();
+    List<Integer> getAllLoveId();
 
     /**
      * 存储用户及相关信息到表白墙
@@ -39,5 +37,12 @@ public interface LoveMapper {
      * @return
      */
     boolean saveLove(Love love);
+
+    /**
+     * 设置点赞数
+     * @param love
+     * @return
+     */
+    boolean setLoveSign(Love love);
 
 }

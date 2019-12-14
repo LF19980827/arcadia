@@ -22,7 +22,7 @@
 <div class="container-fluid bg-color">
 	<div class="row">
 		<div class="col-lg-2 hidden-md hidden-sm hidden-xs" >
-			<!--<div class="panel panel=primary">
+			<div class="panel panel=primary">
 				<div class="heading">失物招领</div>
 				<div class="panel-body">
 					<a href="#">进入</a>
@@ -39,7 +39,7 @@
 				<div class="panel-body">
 					<a href="#">进入</a>
 				</div>
-			</div>-->
+			</div>
 		</div>
 
 		<div class="col-lg-8">
@@ -60,17 +60,21 @@
 									<img src="../../static/img/2.png" style="height: 100px;width: 100px;">
 								</ul>
 								<ul class="list-group" style="text-align: center">
-									<li class="list-group-item"><a href="#">一条鱼</a></li>
+									<li class="list-group-item" th:text="${loveUserName}"><a href="#">aaa</a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-10">
-							<form th:action="@{/confessRelease}" method="post">
-								<textarea name="confess" placeholder="请开始你的表演"
-										  id="confess" cols="100" rows="10"></textarea>
+							<form th:action="@{/submitConfess}" method="post">
+								<textarea name="loveIntro" placeholder="请开始你的表演"
+										  id="intro" cols="100" rows="10"></textarea>
+								<input type="hidden" name="loveTime" th:value="${new java.util.Date()}" />
+								<input type="hidden" name="loveSign" th:value=0 />
+								<input type="hidden" name="loveUserId" th:value="${love.loveUserId}" />
 								<div id="input" style="text-align: center">
-									<input type="submit" value="提交" id="confessRelease_submit_btn"
-										   style="text-align: center">
+									<input type="submit" class="btn btn-default" id="confessRelease_submit_btn"
+										   style="text-align: center"
+										   value="aaa">
 								</div>
 							</form>
 						</div>
