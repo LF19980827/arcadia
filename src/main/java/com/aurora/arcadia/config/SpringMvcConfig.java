@@ -32,7 +32,6 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/").setViewName("accountManagement/login");
                 registry.addViewController("/login.html").setViewName("accountManagement/login");
                 registry.addViewController("/index.html").setViewName("index");
-
             }
 
 //            //注册拦截器

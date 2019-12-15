@@ -16,18 +16,13 @@ public class LoveController {
 
 	@GetMapping("/confess")
 	public String confess(Model model) {
-		List<Integer> loveUserIds = loveService.getAllLoveId();
-
-		List loveUserNames = new ArrayList();
-		for (Integer loveUserId : loveUserIds) {
-			String loveUserName = loveService.getUserMessageById(loveUserId).getuName();
-			loveUserNames.add(loveUserName);
-		}
-		model.addAttribute("loveUserNames", loveUserNames);
+		List<Integer> loveIds = loveService.getAllLoveId();
 
 		List loves = new ArrayList();
-		for (Integer loveUserId : loveUserIds) {
-			Love love = loveService.getLoveById(loveUserId);
+		for (Integer loveId : loveIds) {
+			Love love = loveService.getLoveById(loveId);
+			String loveUserName = loveService.getUserMessageById(loveId).getuName();
+			love.setLoveUser(loveUserName);
 			loves.add(love);
 		}
 		model.addAttribute("loves", loves);

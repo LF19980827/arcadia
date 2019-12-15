@@ -108,17 +108,17 @@
   </update>
 
   <insert id="saveLove" parameterType="com.aurora.arcadia.model.Love">
-    insert into love(love_id, love_user_id, love_intro, love_sign, love_user_status, love_time)
-    values (#{loveId}, #{loveUserId}, #{love_intro}, #{love_sign}, #{love_user_status}, #{love_time});
+    insert into love(love_id, love_user_id, love_intro, love_sign, love_time)
+    values (#{loveId}, #{loveUserId}, #{love_intro}, #{love_sign}, #{love_time});
   </insert>
 
   <select id="getLoveById" parameterType="int" resultMap="BaseResultMap">
     select *
     from love
-    where love_user_id = #{loveUserId};
+    where love_id = #{loveId};
     </select>
 
-  <select id="getAllLoveUserId" resultType="int">
+  <select id="getAllLoveId" resultType="int">
         select love_id
         from love
         order by love_id desc
