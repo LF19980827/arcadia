@@ -40,10 +40,10 @@ public class LoveServiceImpl implements LoveService {
 	}
 
 	@Override
-	public List<Integer> getAllLoveUserId() {
+	public List<Integer> getAllLoveId() {
 		List list = new ArrayList();
 		try {
-			list = loveMapper.getAllLoveUserId();
+			list = loveMapper.getAllLoveId();
 		} catch (Exception e) {
 			return null;
 		}
@@ -60,4 +60,12 @@ public class LoveServiceImpl implements LoveService {
 		}
 		return flag;
 	}
+
+	public void setLoveSign(int loveId, int loveSign) {
+		Love love = new Love();
+		love.setLoveId(loveId);
+		love.setLoveSign(loveSign);
+		loveMapper.setLoveSign(love);
+	}
+
 }

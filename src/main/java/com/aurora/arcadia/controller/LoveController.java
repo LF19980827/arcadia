@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class LoveController {
@@ -15,7 +16,7 @@ public class LoveController {
 
 	@GetMapping("/confess")
 	public String confess(Model model) {
-		List<Integer> loveUserIds = loveService.getAllLoveUserId();
+		List<Integer> loveUserIds = loveService.getAllLoveId();
 
 		List loveUserNames = new ArrayList();
 		for (Integer loveUserId : loveUserIds) {
@@ -24,32 +25,37 @@ public class LoveController {
 		}
 		model.addAttribute("loveUserNames", loveUserNames);
 
-		List loveSigns = new ArrayList();
+		List loves = new ArrayList();
 		for (Integer loveUserId : loveUserIds) {
 			Love love = loveService.getLoveById(loveUserId);
-			Integer loveSign = love.getLoveSign();
-			loveSigns.add(loveSign);
+			loves.add(love);
 		}
-		model.addAttribute("loveSigns", loveUserNames);
+		model.addAttribute("loves", loves);
 
 		return "revealFeelings/confess";
 	}
 
-	//SpringMVC自动将请求参数和参数对象内的属性进行一一绑定，但是要求请求参数名和参数对象内的属性名一样
-	@PostMapping("/confessRelease")
-	public String confessRelease(Love love) {
-		loveService.saveLove(love);		//保存到数据库
-		return "redirect:/confess";		//应该再次来到表白墙页面
+	@GetMapping("/confessRelease/{loveUserId}")
+	public String toConfessRelease(@PathVariable("loveUserId") Integer loveUserId, Model model) {
+		String loveUserName = loveService.getUserMessageById(loveUserId).getuName();
+		model.addAttribute("loveUserName", loveUserName);
+		model.addAttribute("loveUserId", loveUserId);
+		return "revealFeelings/confessRelease";		//应该再次来到表白墙页面
 	}
 
-	@GetMapping(value = "/giveLove/{loveUserId}")
-	public String giveLove(@PathVariable("loveUserId") Integer loveUserId) {
-		Love love = loveService.getLoveById(loveUserId);
-		int sign = love.getLoveSign();
-		sign++;
-		love.setLoveUserId(sign);
+	@PostMapping("/submitConfess")
+	public String confessRelease(Love love) {
 		loveService.saveLove(love);
-		return "redirect:/confess";		//应该再次来到表白墙页面
+		return "redirect:/confess";
+	}
+
+	@GetMapping(value = "/giveLove/{loveId}")
+	public String giveLove(@PathVariable("loveId") Integer loveId) {
+		Love love = loveService.getLoveById(loveId);
+		int loveSign = love.getLoveSign();
+		loveSign++;
+		loveService.setLoveSign(loveId, loveSign);
+		return "redirect:/confess";
 	}
 
 }

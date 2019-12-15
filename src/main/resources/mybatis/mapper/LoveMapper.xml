@@ -119,7 +119,14 @@
     </select>
 
   <select id="getAllLoveUserId" resultType="int">
-        select count(distinct love_user_id)
-        from love;
+        select love_id
+        from love
+        order by love_id desc
   </select>
+
+  <update id="setLoveSign" parameterType="com.aurora.arcadia.model.Love">
+    update love
+    set love_sign = #{loveSign}
+    where love_id = #{loveId}
+  </update>
 </mapper>
