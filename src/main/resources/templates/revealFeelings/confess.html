@@ -13,7 +13,7 @@
 <body>
 
 <!--导航条-->
-<div th:replace="commons/demo :: topBar"></div>
+<!--<div th:replace="commons/demo :: topBar"></div>-->
 
 
 
@@ -36,9 +36,9 @@
                 </div>
             </nav>
 
-            <div class="panel panel-default" th:each="loveUserName:${loveUserNames}">
+            <div class="panel panel-default" th:each="love:${loves}">
                 <div class="panel-heading" style="background: darkgray">
-                    <h1 class="panel-title" th:text="${loveUserName}">hhh</h1>
+                    <h1 class="panel-title" th:text="${love.loveUser}">hhh</h1>
                     <h6 th:text="${#dates.format(love.loveTime, 'MM-dd HH:mm')}">2019</h6>
                 </div>
                 <div class="panel-body">

@@ -15,6 +15,8 @@ public class Love {
 
     private Date loveTime;
 
+    private String loveUser;
+
     public Integer getLoveId() {
         return loveId;
     }
@@ -61,5 +63,13 @@ public class Love {
 
     public void setLoveTime(Date loveTime) {
         this.loveTime = loveTime;
+    }
+
+    public String getLoveUser() {
+        return loveUser;
+    }
+
+    public void setLoveUser(String loveUser) {
+        this.loveUser = loveUser;
     }
 }
