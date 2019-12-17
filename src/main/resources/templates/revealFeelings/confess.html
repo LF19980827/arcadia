@@ -13,10 +13,7 @@
 <body>
 
 <!--导航条-->
-<!--<div th:replace="commons/demo :: topBar"></div>-->
-
-
-
+<div th:replace="commons/demo :: topBar"></div>
 
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
@@ -31,7 +28,7 @@
                         <small>爱就要大声说出来</small>
                         <a class="btn btn-default" role="button" style="float: right"
                            href="confessRelease.html"
-                           th:href="@{/confessRelease} + ${loveUserId}">我要发帖</a>
+                           th:href="@{/confessRelease} + ${userId}">我要发帖</a>
                     </h1>
                 </div>
             </nav>
@@ -52,32 +49,6 @@
             </div>
 
             <!--<div class="panel panel-default">
-                <div class="panel-heading" style="background: darkgray">
-                    <h3 class="panel-title">一条鱼</h3>
-                </div>
-                <div class="panel-body">
-                    什么鬼<br>
-                    哈哈哈哈哈哈<br>
-                    <div class="like" style="float: right">
-                        <button type="button" class="btn btn-default">点赞</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading" style="background: darkgray">
-                    <h3 class="panel-title">一条鱼</h3>
-                </div>
-                <div class="panel-body">
-                    什么鬼<br>
-                    哈哈哈哈哈哈<br>
-                    <div class="like" style="float: right">
-                        <button type="button" class="btn btn-default" th:action="">点赞</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
                 <div class="panel-heading" style="background: darkgray">
                     <h3 class="panel-title">一条鱼</h3>
                 </div>
