@@ -49,7 +49,7 @@
 
             <ul class="nav nav-list"><li class="divider"></li></ul>
 
-            <div >
+            <!--<div >
                 <ul class="personCollectionList">
                     <li>
                         <div class="panel panel-default">
@@ -76,32 +76,24 @@
                         </div>
                     </li>
                 </ul>
+            </div>-->
+
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                    <th>消息内容</th>
+                    <th>消息时间</th>
+                    </thead>
+                    <tbody id="tb">
+                </table>
             </div>
-            <ul class="nav nav-list"><li class="divider"></li></ul>
-            <div class="col-lg-4"></div>
-            <div >
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+
+            <div>
+                <span style="margin: 80px;"><button onclick="pageNumber(-1)">上一页</button></span>
+                <span>当前在第&nbsp<label id="page">1</label>&nbsp页</span>
+                <span style="margin: 80px;"><button onclick="pageNumber(1)">下一页</button></span>
             </div>
         </div>
-
 
 
     </div>
@@ -137,15 +129,37 @@
 </div>
 
 <script type="text/javascript">
-    $("#message_title").click(function () {
-        //清除表单数据（重置）
-        //发送Ajax请求
-        //弹出模态框
-        $("#userMessageModal").modal({
-            backdrop:"static"
-        });
-    });
-</script>
+    function pageNumber(num) {
+        var page = eval(document.getElementById("page").innerText);
+        if (page === 1 && num === -1) {
+            num = 0;
+        }
+        page += num;
+        document.getElementById("page").innerText = page;
+        $.ajax({
+            url: "arcadia/message/showMessages",
+            type: "post",
+            data: {"page": page},
+            success: function (result) {
+                var tb = document.getElementById("tb");
+                var jsons = JSON.parse(result);
 
+                $.each(jsons, function (i, item) {
+                    var tr = document.createElement("tr");
+                    var td_msgTitle = document.createElement("td");
+                    td_msgTitle.innerHTML = item.msgTitle;
+                    var td_msgTime= document.createElement("td");
+                    td_msgTime.innerHTML = item.msgTime;
+
+                    tr.appendChild(td_msgTitle);
+                    tr.appendChild(td_msgTime)
+                    tb.appendChild(tr);
+
+                })
+
+            }
+        })
+    }
+</script>
 </body>
 </html>

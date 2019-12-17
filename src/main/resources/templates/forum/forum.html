@@ -123,45 +123,75 @@
                 </div>
             </div>
             <div class="col-lg-4"></div>
-            <div >
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+
+
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <th>标题</th>
+                    <th>楼主</th>
+                    <th>楼层</th>
+                    <th>人气</th>
+                    </thead>
+                    <tbody id="tb">
+
+                    </tbody>
+                </table>
+
+            <div>
+                <span style="margin: 80px;"><button onclick="forumLimit(-1)">上一页</button></span>
+                <span>当前在第&nbsp<label id="page">1</label>&nbsp页</span>
+                <span style="margin: 80px;"><button onclick="forumLimit(1)">下一页</button></span>
             </div>
+
         </div>
     </div>
-
-
 </div>
 
 </div>
 </div>
-<script type="text/javascript">
-    $("#forum_enter_btn").click(function () {
-        $(location).attr("href", "submitPost.html");
-    });
-    
-    $('.carousel').carousel({
-        interval: 1000
-    });
+<script>
+    function forumLimit(num) {
+        var page = eval(document.getElementById("page").innerText);
+        if (page === 1 && num === -1) {
+            num = 0;
+        }
+        page += num;
+        document.getElementById("page").innerText = page;
+        $.ajax({
+            url: "",
+            type: "post",
+            data: {"page": page},
+            success: function (result) {
+                var tb = document.getElementById("tb");
+                var json = jQuery.parseJSON(result);
+                var jsons = json.users;
+                $.each(jsons, function (i, item) {
+
+                    var tr = document.createElement("tr");
+                    var td_title = document.createElement("td");
+                    td_title.innerHTML = item.title;
+                    var td_user = document.createElement("td");
+                    td_user.innerHTML = item.user;
+                    var td_number = document.createElement("td");
+                    td_number.innerHTML = item.number;
+                    var td_hot = document.createElement("td");
+                    td_hot.innerHTML = item.hot;
+
+                    td_input.appendChild(input);
+                    tr.appendChild(td_title);
+                    tr.appendChild(td_user);
+                    tr.appendChild(td_number);
+                    tr.appendChild(td_hot)
+                    tb.appendChild(tr);
+                })
+            },
+            error: function () {
+                alert("error");
+            }
+        })
+
 
 </script>
-
 </body>
 </html>

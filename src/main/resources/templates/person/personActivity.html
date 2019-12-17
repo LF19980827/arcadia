@@ -12,10 +12,11 @@
     <script src="../../static/js/jquery-1.12.4.min.js"></script>
     <script src="../../static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <style>
-        body{
+        body {
             background: #f5f6f7;
         }
-        .wrapper{
+
+        .wrapper {
             width: 200px;
         }
     </style>
@@ -30,76 +31,90 @@
 <!-- -页面的第三个部分，使用删格体系将页面分为２，８，２三个部分 -->
 <div class="container-fluid bg-color">
     <div class="col-lg-2"></div>
-    <div class="col-lg-2 hidden-md hidden-sm hidden-xs wrapper" >
+    <div class="col-lg-2 hidden-md hidden-sm hidden-xs wrapper">
         <div class="panel panel=primary">
             <div class="list-group wrapper">
-                    <a href="personInformation.html" class="list-group-item ">个人资料</a>
-                    <a href="personCollection.html" class="list-group-item ">我的收藏</a>
-                    <a href="personAttention.html" class="list-group-item ">我的关注</a>
-                    <a href="personFan.html" class="list-group-item ">我的粉丝</a>
-                    <a href="#" class="list-group-item disabled">活动轨迹</a>
-                    <a href="personNotification.html" class="list-group-item">消息与通知</a>
-                </div>
+                <a href="personInformation.html" class="list-group-item ">个人资料</a>
+                <a href="personCollection.html" class="list-group-item ">我的收藏</a>
+                <a href="personAttention.html" class="list-group-item ">我的关注</a>
+                <a href="personFan.html" class="list-group-item ">我的粉丝</a>
+                <a href="#" class="list-group-item disabled">活动轨迹</a>
+                <a href="personNotification.html" class="list-group-item">消息与通知</a>
             </div>
-        </div>
-
-        <div class="col-lg-7">
-            <!--3右下方模块-->
-            <div>
-                <h2>活动轨迹</h2>
-            </div>
-            <div >
-                <ul class="personCollectionList">
-                    <li>
-                        <div class="panel panel-default" style="width: 900px">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">活动1</h3>
-                            </div>
-                            <div class="panel-body">
-                                ......
-                            </div>
-                        </div>
-                    </li>
-
-
-                </ul>
-            </div>
-
-            <ul class="nav nav-list"><li class="divider"></li></ul>
-
-            <div class="col-lg-4"></div>
-            <div >
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
         </div>
     </div>
 
+    <div class="col-lg-7">
+        <!--3右下方模块-->
+        <div>
+            <h2>活动轨迹</h2>
+        </div>
+        <!--<div>
+            <ul class="personCollectionList">
+                <li>
+                    <div class="panel panel-default" style="width: 900px">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">活动1</h3>
+                        </div>
+                        <div class="panel-body">
+                            ......
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>-->
 
+        <div>
+            <table class="table table-striped">
+                <thead>
+                <th>活动时间</th>
+                <th>活动内容</th>
+                </thead>
+                <tbody id="tb">
+            </table>
+        </div>
 
+        <div>
+            <span style="margin: 80px;"><button onclick="pageNumber(-1)">上一页</button></span>
+            <span>当前在第&nbsp<label id="page">1</label>&nbsp页</span>
+            <span style="margin: 80px;"><button onclick="pageNumber(1)">下一页</button></span>
+        </div>
+
+    </div>
 </div>
 
-</div>
-</div>
+<script type="text/javascript">
+    function pageNumber(num) {
+        var page = eval(document.getElementById("page").innerText);
+        if (page === 1 && num === -1) {
+            num = 0;
+        }
+        page += num;
+        document.getElementById("page").innerText = page;
+        $.ajax({
+            url: "/arcadia/history/showHistories",
+            type: "post",
+            data: {"page": page},
+            success: function (result) {
+                var tb = document.getElementById("tb");
+                var jsons = JSON.parse(result);
 
+                $.each(jsons, function (i, item) {
+                    var tr = document.createElement("tr");
+                    var td_date = document.createElement("td");
+                    td_date.innerHTML = item.date;
+                    var td_body = document.createElement("td");
+                    td_body.innerHTML = item.body;
 
+                    tr.appendChild(td_date);
+                    tr.appendChild(td_body)
+                    tb.appendChild(tr);
+
+                })
+
+            }
+        })
+    }
+</script>
 </body>
 </html>

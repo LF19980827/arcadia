@@ -110,9 +110,8 @@
 
 
         </div>
-
-
-
+    </div>
+</div>
 
 <!-- 修改资料的模态框 -->
 <div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -181,7 +180,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="user_save_btn">保存</button>
+                <button type="button" class="btn btn-primary" id="user_save_btn" onclick="updateUser()">保存</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
@@ -278,6 +277,32 @@
 
     })
 
+
+
+
+    function updateUser() {
+        $.ajax({
+            url: "/arcadia/userMessage/updateMessage",
+            type: "post",
+            data: {
+                "userId_add_input": $("#userId_add_input").val(),
+                "uName": $("#uName").val(),
+                "uGender": $("#uGender").val(),
+                "uBirth": $("#uBirth").val(),
+                "uAddress": $("#uAddress").val(),
+                "uCareer": $("uCareer").val(),
+                "uIntro": $("#uIntro").val(),
+            }, success: function (result) {
+                var json = jQuery.parseJSON(result);
+                if (json.code === success) {
+                    alert("修改成功");
+                    $(location).attr("href", "");
+                } else {
+                    alert("修改失败");
+                }
+            }
+        })
+    }
 </script>
 </body>
 </html>
