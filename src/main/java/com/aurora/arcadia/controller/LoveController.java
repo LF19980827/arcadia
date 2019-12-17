@@ -2,11 +2,12 @@ package com.aurora.arcadia.controller;
 
 import com.aurora.arcadia.model.Love;
 import com.aurora.arcadia.service.LoveService;
+import com.aurora.arcadia.vo.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 public class LoveController {
@@ -15,9 +16,11 @@ public class LoveController {
 	private LoveService loveService;
 
 	@GetMapping("/confess")
-	public String confess(Model model) {
-		List<Integer> loveIds = loveService.getAllLoveId();
+	public String confess(Model model, HttpSession session) {
+		Object attribute = session.getAttribute(Constants.SESSION_USERID);
+		model.addAttribute("userId", attribute);
 
+		List<Integer> loveIds = loveService.getAllLoveId();
 		List loves = new ArrayList();
 		for (Integer loveId : loveIds) {
 			Love love = loveService.getLoveById(loveId);
@@ -30,12 +33,12 @@ public class LoveController {
 		return "revealFeelings/confess";
 	}
 
-	@GetMapping("/confessRelease/{loveUserId}")
-	public String toConfessRelease(@PathVariable("loveUserId") Integer loveUserId, Model model) {
-		String loveUserName = loveService.getUserMessageById(loveUserId).getuName();
+	@GetMapping("/confessRelease/{userId}")
+	public String toConfessRelease(@PathVariable("userId") Integer userId, Model model) {
+		String loveUserName = loveService.getUserMessageById(userId).getuName();
 		model.addAttribute("loveUserName", loveUserName);
-		model.addAttribute("loveUserId", loveUserId);
-		return "revealFeelings/confessRelease";		//应该再次来到表白墙页面
+		model.addAttribute("userId", userId);
+		return "revealFeelings/confessRelease";
 	}
 
 	@PostMapping("/submitConfess")
